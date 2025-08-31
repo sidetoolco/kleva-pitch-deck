@@ -37,6 +37,7 @@
             overflow: hidden;
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
         .deck-container {
             height: 100vh;
@@ -52,68 +53,82 @@
             align-items: center;
             justify-content: center;
             padding: 3rem 2rem;
+            position: relative;
         }
         .container {
             max-width: 1200px;
             margin: 0 auto;
             width: 100%;
         }
-        h1 {
-            font-size: 4rem;
-            font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
-            letter-spacing: -0.02em;
-            opacity: 0;
-        }
-        .slide.active h1 { opacity: 1; }
     </style>
     
     <!-- Load fonts with font-display: swap for better performance -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
 
+        /* Kleva website animations */
         @keyframes fadeInUp {
             from { 
                 opacity: 0; 
-                transform: translate3d(0, 30px, 0);
+                transform: translateY(20px);
             }
             to { 
                 opacity: 1; 
-                transform: translate3d(0, 0, 0);
+                transform: translateY(0);
             }
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        @keyframes slideIn {
             from { 
-                opacity: 0;
-                transform: translate3d(-20px, 0, 0);
+                opacity: 0; 
             }
             to { 
-                opacity: 1;
-                transform: translate3d(0, 0, 0);
+                opacity: 1; 
             }
         }
 
-        @keyframes scaleIn {
+        @keyframes slideInLeft {
             from { 
                 opacity: 0;
-                transform: scale3d(0.95, 0.95, 1);
+                transform: translateX(-30px);
             }
             to { 
                 opacity: 1;
-                transform: scale3d(1, 1, 1);
+                transform: translateX(0);
             }
+        }
+
+        @keyframes scaleUp {
+            from { 
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to { 
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes pulseCore {
+            0%, 100% { 
+                opacity: 1;
+                transform: scale(1);
+            }
+            50% { 
+                opacity: 0.8;
+                transform: scale(1.05);
+            }
+        }
+
+        @keyframes rotatingRing {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes floatParticle {
+            0%, 100% { transform: translate(0, 0); }
+            33% { transform: translate(10px, -10px); }
+            66% { transform: translate(-10px, 10px); }
         }
 
         :root {
@@ -157,44 +172,122 @@
             position: relative;
         }
 
-        /* Optimized animations with will-change and GPU acceleration */
-        .animate-element {
+        /* Animation classes matching Kleva website */
+        [data-animate] {
             opacity: 0;
-            will-change: transform, opacity;
         }
 
-        .slide.active .animate-element {
-            opacity: 1;
+        .slide.active [data-animate="fade-up"] {
+            animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
         }
 
+        .slide.active [data-animate="fade-in"] {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+
+        .slide.active [data-animate="slide-in"] {
+            animation: slideInLeft 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+
+        .slide.active [data-animate="scale"] {
+            animation: scaleUp 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+
+        /* Staggered animations for elements */
+        .slide.active [data-animate-delay="1"] { animation-delay: 0.1s; }
+        .slide.active [data-animate-delay="2"] { animation-delay: 0.2s; }
+        .slide.active [data-animate-delay="3"] { animation-delay: 0.3s; }
+        .slide.active [data-animate-delay="4"] { animation-delay: 0.4s; }
+        .slide.active [data-animate-delay="5"] { animation-delay: 0.5s; }
+        .slide.active [data-animate-delay="6"] { animation-delay: 0.6s; }
+
+        /* Specific element animations */
         .slide.active .badge {
-            animation: slideIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            animation: slideInLeft 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
         }
 
         .slide.active h1, .slide.active h2 {
-            animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
+            animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s forwards;
         }
 
-        .slide.active p, .slide.active .feature-list {
-            animation: fadeIn 0.5s ease-out 0.2s forwards;
+        .slide.active p {
+            animation: fadeIn 0.6s ease-out 0.4s forwards;
         }
+
+        .slide.active .feature-list {
+            animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.5s forwards;
+        }
+
+        .slide.active .feature-list li {
+            opacity: 0;
+            animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+
+        .slide.active .feature-list li:nth-child(1) { animation-delay: 0.5s; }
+        .slide.active .feature-list li:nth-child(2) { animation-delay: 0.6s; }
+        .slide.active .feature-list li:nth-child(3) { animation-delay: 0.7s; }
+        .slide.active .feature-list li:nth-child(4) { animation-delay: 0.8s; }
 
         .slide.active .stat-card {
-            animation: scaleIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            animation: scaleUp 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
         }
 
-        .slide.active .stat-card:nth-child(1) { animation-delay: 0.1s; }
-        .slide.active .stat-card:nth-child(2) { animation-delay: 0.15s; }
-        .slide.active .stat-card:nth-child(3) { animation-delay: 0.2s; }
-        .slide.active .stat-card:nth-child(4) { animation-delay: 0.25s; }
+        .slide.active .stat-card:nth-child(1) { animation-delay: 0.3s; }
+        .slide.active .stat-card:nth-child(2) { animation-delay: 0.4s; }
+        .slide.active .stat-card:nth-child(3) { animation-delay: 0.5s; }
+        .slide.active .stat-card:nth-child(4) { animation-delay: 0.6s; }
+
+        /* Team member animations */
+        .slide.active .team-member {
+            opacity: 0;
+            animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+
+        .slide.active .team-member:nth-child(1) { animation-delay: 0.3s; }
+        .slide.active .team-member:nth-child(2) { animation-delay: 0.4s; }
+        .slide.active .team-member:nth-child(3) { animation-delay: 0.5s; }
+        .slide.active .team-member:nth-child(4) { animation-delay: 0.6s; }
+        .slide.active .team-member:nth-child(5) { animation-delay: 0.7s; }
+        .slide.active .team-member:nth-child(6) { animation-delay: 0.8s; }
 
         .logo {
             width: 60px;
             height: 60px;
             margin-bottom: 2rem;
-            animation: scaleIn 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-            will-change: transform;
+            opacity: 0;
+            animation: scaleUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
         }
+
+        /* Animated geometric SVG like Kleva website hero */
+        .hero-visual {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            margin: 2rem auto;
+        }
+
+        .hero-visual svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .rotating-ring {
+            animation: rotatingRing 20s linear infinite;
+            transform-origin: center;
+        }
+
+        .pulse-core {
+            animation: pulseCore 2s ease-in-out infinite;
+        }
+
+        .particle {
+            animation: floatParticle 6s ease-in-out infinite;
+        }
+
+        .particle-1 { animation-delay: 0s; }
+        .particle-2 { animation-delay: 1.5s; }
+        .particle-3 { animation-delay: 3s; }
+        .particle-4 { animation-delay: 4.5s; }
 
         .container {
             max-width: 1200px;
@@ -304,6 +397,7 @@
             color: var(--color-gray-900);
             display: flex;
             align-items: flex-start;
+            opacity: 0;
         }
 
         .feature-list li:before {
@@ -351,6 +445,7 @@
 
         .team-member {
             text-align: center;
+            opacity: 0;
         }
 
         .team-name {
@@ -381,8 +476,28 @@
             background: var(--color-gray-light);
             border-radius: 50%;
             cursor: pointer;
-            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             border: 2px solid transparent;
+            position: relative;
+        }
+
+        .nav-dot::after {
+            content: '';
+            position: absolute;
+            top: -4px;
+            left: -4px;
+            right: -4px;
+            bottom: -4px;
+            border: 2px solid var(--color-primary);
+            border-radius: 50%;
+            opacity: 0;
+            transform: scale(0.8);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nav-dot.active::after {
+            opacity: 1;
+            transform: scale(1);
         }
 
         .nav-dot.active {
@@ -409,8 +524,7 @@
             height: 100%;
             background: var(--color-primary);
             width: 0;
-            transition: width 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-            will-change: width;
+            transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         /* CTA Button */
@@ -420,12 +534,31 @@
             background: var(--color-black);
             color: var(--color-white);
             text-decoration: none;
-            border-radius: 6px;
+            border-radius: 8px;
             font-weight: 600;
             font-size: 1.125rem;
-            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: all 0.3s ease;
             margin-top: 2rem;
-            will-change: transform;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .cta-button:hover::before {
+            width: 300px;
+            height: 300px;
         }
 
         .cta-button:hover {
@@ -479,8 +612,35 @@
                         <rect width="100" height="100" rx="20" fill="#000000"/>
                         <text x="50" y="65" font-family="Inter, sans-serif" font-size="55" font-weight="800" fill="white" text-anchor="middle">K</text>
                     </svg>
-                    <h1>Kleva</h1>
-                    <p class="large-text">AI that collects debt better than humans in Latin America</p>
+                    <h1 data-animate="fade-up">Kleva</h1>
+                    <p class="large-text" data-animate="fade-in" data-animate-delay="2">AI that collects debt better than humans in Latin America</p>
+                    
+                    <!-- Add geometric animation like Kleva hero -->
+                    <div class="hero-visual" data-animate="scale" data-animate-delay="3">
+                        <svg viewBox="0 0 400 400">
+                            <defs>
+                                <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                                    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(0,0,0,0.05)" stroke-width="1"/>
+                                </pattern>
+                            </defs>
+                            <rect width="100%" height="100%" fill="url(#grid)" opacity="0.3"/>
+                            
+                            <!-- Central visualization -->
+                            <g class="ai-core">
+                                <circle cx="200" cy="200" r="80" fill="none" stroke="rgba(0,0,0,0.1)" stroke-width="2"/>
+                                <circle cx="200" cy="200" r="80" fill="none" stroke="rgba(0,0,0,0.3)" stroke-width="2" stroke-dasharray="10 5" class="rotating-ring"/>
+                                <circle cx="200" cy="200" r="60" fill="none" stroke="rgba(0,0,0,0.2)" stroke-width="1"/>
+                                <circle cx="200" cy="200" r="40" fill="rgba(0,0,0,0.05)"/>
+                                <circle cx="200" cy="200" r="30" fill="#000" class="pulse-core"/>
+                                
+                                <!-- Nodes -->
+                                <circle cx="200" cy="120" r="4" fill="#000" class="particle particle-1"/>
+                                <circle cx="280" cy="200" r="4" fill="#000" class="particle particle-2"/>
+                                <circle cx="200" cy="280" r="4" fill="#000" class="particle particle-3"/>
+                                <circle cx="120" cy="200" r="4" fill="#000" class="particle particle-4"/>
+                            </g>
+                        </svg>
+                    </div>
                 </div>
             </div>
         </div>
@@ -869,18 +1029,21 @@
                 }
             });
 
-            // Intersection Observer with better thresholds for smoother animations
+            // Intersection Observer matching Kleva website timing
             const observerOptions = {
                 root: deck,
-                rootMargin: '-10% 0px -10% 0px',
-                threshold: [0.1, 0.5, 0.9]
+                rootMargin: '0px',
+                threshold: [0.25, 0.5, 0.75]
             };
 
             const slideObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
-                    if (entry.intersectionRatio > 0.5) {
+                    if (entry.intersectionRatio > 0.25) {
+                        // Add active class with slight delay for smoother entrance
                         if (!entry.target.classList.contains('active')) {
-                            entry.target.classList.add('active');
+                            requestAnimationFrame(() => {
+                                entry.target.classList.add('active');
+                            });
                         }
                     } else if (entry.intersectionRatio < 0.1) {
                         entry.target.classList.remove('active');
@@ -912,6 +1075,29 @@
                     document.body.classList.add('fonts-loaded');
                 });
             }
+
+            // Add smooth parallax effect on scroll (subtle like Kleva)
+            let ticking = false;
+            function updateParallax() {
+                if (!ticking) {
+                    requestAnimationFrame(() => {
+                        const scrolled = deck.scrollTop;
+                        const speed = 0.5;
+                        
+                        // Update any parallax elements
+                        const parallaxElements = document.querySelectorAll('[data-parallax]');
+                        parallaxElements.forEach(el => {
+                            const yPos = -(scrolled * speed);
+                            el.style.transform = `translateY(${yPos}px)`;
+                        });
+                        
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            }
+            
+            deck.addEventListener('scroll', updateParallax, { passive: true });
         })();
     </script>
 </body>
