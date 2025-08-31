@@ -1,0 +1,26 @@
+---
+export interface Props {
+  id: string;
+  className?: string;
+  bgColor?: string;
+  centerContent?: boolean;
+}
+
+const { id, className = '', bgColor = 'bg-black', centerContent = true } = Astro.props;
+---
+
+<section 
+  id={id}
+  class={`slide min-h-screen w-full ${bgColor} ${centerContent ? 'flex items-center justify-center' : ''} ${className}`}
+  data-slide={id}
+>
+  <div class="container max-w-7xl mx-auto px-8 py-16">
+    <slot />
+  </div>
+</section>
+
+<style>
+  .slide {
+    scroll-snap-align: start;
+  }
+</style>

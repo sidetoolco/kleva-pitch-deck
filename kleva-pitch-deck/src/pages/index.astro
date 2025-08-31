@@ -1,0 +1,342 @@
+---
+import DeckLayout from '../layouts/DeckLayout.astro';
+import Slide from '../components/Slide.astro';
+---
+
+<DeckLayout>
+  
+  <main class="h-screen overflow-y-auto snap-y snap-mandatory scroll-smooth">
+    
+    <!-- Slide 1: Title -->
+    <Slide id="title" bgColor="bg-gradient-to-br from-black to-secondary">
+      <div class="text-center">
+        <h1 class="text-7xl font-bold mb-6 bg-gradient-to-r from-primary to-purple bg-clip-text text-transparent">
+          Kleva
+        </h1>
+        <p class="text-2xl text-text-secondary">
+          AI that collects debt better than humans in Latin America
+        </p>
+      </div>
+    </Slide>
+
+    <!-- Slide 2: Quick Intro -->
+    <Slide id="intro">
+      <div class="text-center">
+        <h2 class="text-5xl font-bold mb-12 text-primary">Quick Intro</h2>
+        <div class="space-y-6 text-2xl">
+          <p>Live with 3 paying clients ($37K MRR)</p>
+          <p>150,000 minutes of collection calls monthly</p>
+          <p>Team of 9 from Sidetool (AI agency)</p>
+          <p>Invested $100K of our own money to build this</p>
+        </div>
+      </div>
+    </Slide>
+
+    <!-- Slide 3: The Problem -->
+    <Slide id="problem">
+      <div class="text-center">
+        <h2 class="text-5xl font-bold mb-8 text-primary">The Problem</h2>
+        <p class="text-3xl font-bold mb-8 text-warning">60% of Latin American fintech loans go bad</p>
+        <div class="max-w-3xl mx-auto">
+          <p class="text-xl leading-relaxed text-gray mb-6">
+            Maria is a collections agent in Guatemala. She makes 80 calls a day. Gets yelled at 40 times. Collects from maybe 5 people. She'll quit in 3 months like everyone before her.
+          </p>
+          <p class="text-xl font-semibold">
+            This is happening at every bank in Latin America.
+          </p>
+        </div>
+      </div>
+    </Slide>
+
+    <!-- Slide 4: How They Solve It Today -->
+    <Slide id="current-solution">
+      <div class="text-center">
+        <h2 class="text-5xl font-bold mb-8 text-primary">How They Solve It Today</h2>
+        <p class="text-3xl font-bold mb-8">Banks throw humans at the problem</p>
+        <div class="space-y-4 text-xl">
+          <p>200+ agents at each bank just making calls</p>
+          <p>75-100% annual turnover</p>
+          <p>Excel spreadsheets to track everything</p>
+          <p>Only recovering 20 cents per dollar</p>
+        </div>
+        <p class="text-2xl mt-8 font-semibold text-danger">
+          The system is completely broken.
+        </p>
+      </div>
+    </Slide>
+
+    <!-- Slide 5: What If Instead... -->
+    <Slide id="what-if" bgColor="bg-gradient-to-br from-secondary to-black">
+      <div class="text-center">
+        <h2 class="text-5xl font-bold mb-8 text-primary">What If Instead...</h2>
+        <p class="text-3xl font-bold mb-8">What if AI could make those calls?</p>
+        <p class="text-xl leading-relaxed mb-8">
+          Never gets tired. Never quits. Works 24/7.<br/>
+          And debtors actually prefer talking to it.
+        </p>
+        <p class="text-4xl font-bold text-primary">
+          That's Kleva.
+        </p>
+      </div>
+    </Slide>
+
+    <!-- Slide 6: Our Solution -->
+    <Slide id="solution">
+      <div class="text-center">
+        <h2 class="text-5xl font-bold mb-8 text-primary">Our Solution</h2>
+        <p class="text-3xl font-bold mb-8">Kleva: AI Collections Agents</p>
+        <div class="space-y-4 text-xl">
+          <p>Makes 5,000 calls per day</p>
+          <p>20% higher recovery rates than humans</p>
+          <p>60% lower cost</p>
+          <p>Speaks perfect Spanish & Portuguese</p>
+          <p>Never judges, infinite patience</p>
+        </div>
+        <p class="text-sm mt-8 text-gray">
+          [Screenshot of dashboard showing real-time collections]
+        </p>
+      </div>
+    </Slide>
+
+    <!-- Slide 7: The Dream -->
+    <Slide id="dream" bgColor="bg-gradient-to-br from-black to-secondary">
+      <div class="text-center">
+        <h2 class="text-5xl font-bold mb-8 text-primary">The Dream</h2>
+        <p class="text-2xl mb-8">We're building the AI workforce for Latin American finance</p>
+        <p class="text-xl mb-8">
+          Start with collections (the hardest problem)<br/>
+          Then expand to every repetitive role in banking
+        </p>
+        <p class="text-3xl font-bold text-primary">
+          This is a $67B market in LATAM alone.
+        </p>
+      </div>
+    </Slide>
+
+    <!-- Slide 8: Traction -->
+    <Slide id="traction">
+      <div class="text-center">
+        <h2 class="text-5xl font-bold mb-8 text-primary">Traction</h2>
+        <p class="text-3xl font-bold mb-8">From $0 to $37K MRR in 3 months</p>
+        
+        <p class="text-sm mb-8 text-gray">[Chart showing growth]</p>
+        
+        <div class="space-y-4 text-xl mb-8">
+          <p>Vana: $17K/month (microloans)</p>
+          <p>ADT: $15K/month (security subscriptions)</p>
+          <p>DirecTV: $5K/month (satellite contracts)</p>
+        </div>
+        
+        <p class="text-2xl font-bold text-primary">
+          Pipeline: $158K MRR closing September
+        </p>
+      </div>
+    </Slide>
+
+    <!-- Slide 9: Why We're Different -->
+    <Slide id="different">
+      <div class="text-center">
+        <h2 class="text-5xl font-bold mb-8 text-primary">Why We're Different</h2>
+        <p class="text-3xl font-bold mb-8">Others use chatbots. We make phone calls.</p>
+        
+        <div class="space-y-4 text-xl">
+          <p>Colektia: WhatsApp campaigns only</p>
+          <p>Traditional call centers: $3/minute with humans</p>
+          <p class="text-primary font-bold">Us: $0.17/minute with AI that works better</p>
+        </div>
+        
+        <p class="text-xl mt-8 font-semibold">
+          We handle the hardest channel (voice) with the best results.
+        </p>
+      </div>
+    </Slide>
+
+    <!-- Slide 10: The Wave We're Riding -->
+    <Slide id="wave" bgColor="bg-gradient-to-br from-secondary to-black">
+      <div class="text-center">
+        <h2 class="text-5xl font-bold mb-8 text-primary">The Wave We're Riding</h2>
+        <p class="text-3xl font-bold mb-8">Delinquency is exploding globally</p>
+        
+        <div class="space-y-4 text-xl mb-8">
+          <p>Brazil: 77.5% of families in debt</p>
+          <p>Argentina: Personal loans at 4%+ delinquency (9-month high)</p>
+          <p>US: Even superprime borrowers defaulting 109% more YoY</p>
+        </div>
+        
+        <p class="text-2xl font-semibold text-primary">
+          Collections is becoming THE critical function for every lender.
+        </p>
+      </div>
+    </Slide>
+
+    <!-- Slide 11: Why Now? -->
+    <Slide id="why-now">
+      <div class="text-center">
+        <h2 class="text-5xl font-bold mb-8 text-primary">Why Now?</h2>
+        <p class="text-3xl font-bold mb-8">The perfect storm:</p>
+        
+        <div class="space-y-4 text-xl mb-8">
+          <p><span class="text-success font-bold">Tech finally works:</span> GPT-4 speaks perfect Spanish/Portuguese</p>
+          <p><span class="text-success font-bold">Costs collapsed:</span> What cost $1/minute now costs $0.06</p>
+          <p><span class="text-warning font-bold">Crisis accelerating:</span> Banks can't hire collectors fast enough</p>
+          <p><span class="text-warning font-bold">LATAM ready:</span> Lower regulatory barriers than US</p>
+        </div>
+        
+        <p class="text-2xl font-semibold">
+          We couldn't have built this 2 years ago. Now we can.
+        </p>
+      </div>
+    </Slide>
+
+    <!-- Slide 12: Why Us? -->
+    <Slide id="why-us" bgColor="bg-gradient-to-br from-black to-secondary">
+      <div class="text-center">
+        <h2 class="text-5xl font-bold mb-8 text-primary">Why Us?</h2>
+        <p class="text-3xl font-bold mb-8">We understand both AI and LATAM</p>
+        
+        <div class="space-y-4 text-xl mb-8">
+          <p><span class="font-bold">Ed:</span> Built Sidetool, embedded in 20+ companies</p>
+          <p><span class="font-bold">Nicolás Mencia:</span> 10 years in collections, ex-MercadoPago</p>
+          <p><span class="font-bold">Team:</span> 9 engineers who've been building AI agents for 2 years</p>
+        </div>
+        
+        <p class="text-xl font-semibold">
+          We're not collections experts who learned AI.<br/>
+          We're AI experts who fell in love with solving collections.
+        </p>
+      </div>
+    </Slide>
+
+    <!-- Slide 13: Next Milestone -->
+    <Slide id="milestone">
+      <div class="text-center">
+        <h2 class="text-5xl font-bold mb-8 text-primary">Next Milestone</h2>
+        <p class="text-3xl font-bold mb-8">With this funding, by December 2025:</p>
+        
+        <div class="space-y-4 text-xl">
+          <p><span class="font-bold">Revenue:</span> $150K MRR (from $37K today)</p>
+          <p><span class="font-bold">Scale:</span> 1M minutes/month</p>
+          <p><span class="font-bold">Clients:</span> 10 enterprise banks signed</p>
+          <p><span class="font-bold">Geography:</span> Operating in 5 countries</p>
+          <p><span class="font-bold">Team:</span> 15 people fully dedicated to Kleva</p>
+        </div>
+      </div>
+    </Slide>
+
+    <!-- Slide 14: The Bigger Vision -->
+    <Slide id="vision" bgColor="bg-gradient-to-br from-secondary to-black">
+      <div class="text-center">
+        <h2 class="text-5xl font-bold mb-8 text-primary">The Bigger Vision</h2>
+        
+        <div class="space-y-4 text-xl mb-8">
+          <p><span class="font-bold">Year 1:</span> Master collections</p>
+          <p><span class="font-bold">Year 2:</span> Expand to dispute resolution, fraud detection</p>
+          <p><span class="font-bold">Year 3:</span> Full AI workforce for finance</p>
+        </div>
+        
+        <p class="text-2xl font-semibold mb-4">
+          Every bank in LATAM will use Kleva agents.<br/>
+          Then we go to the US with proven results.
+        </p>
+        
+        <p class="text-xl text-primary">
+          We handle the AI complexity. Banks focus on lending.
+        </p>
+      </div>
+    </Slide>
+
+    <!-- Slide 15: Contact -->
+    <Slide id="contact" bgColor="bg-gradient-to-br from-black via-secondary to-primary/20">
+      <div class="text-center">
+        <h2 class="text-5xl font-bold mb-8 text-primary">Contact</h2>
+        <p class="text-2xl mb-12">Let's fix collections in Latin America together</p>
+        
+        <div class="mb-8">
+          <h3 class="text-3xl font-bold mb-2">Ed Escobar</h3>
+          <p class="text-xl text-gray mb-4">CEO & Cofounder</p>
+          <p class="text-xl mb-2">
+            <a href="mailto:ed@kleva.co" class="text-primary hover:text-purple transition-colors">
+              ed@kleva.co
+            </a>
+          </p>
+          <p class="text-xl">
+            <a href="https://linkedin.com/in/edjescobar" class="text-primary hover:text-purple transition-colors">
+              LinkedIn
+            </a>
+          </p>
+        </div>
+        
+        <div class="space-y-2 text-lg">
+          <p>Website: <a href="https://kleva.co" class="text-primary hover:text-purple transition-colors">kleva.co</a></p>
+          <p>Financial Model: <a href="https://sdtl.io/46QLbsQ" class="text-primary hover:text-purple transition-colors">sdtl.io/46QLbsQ</a></p>
+        </div>
+      </div>
+    </Slide>
+
+  </main>
+</DeckLayout>
+
+<style>
+  main {
+    scrollbar-width: thin;
+    scrollbar-color: #BE79FF #141C25;
+  }
+</style>
+
+<script>
+  // Keyboard navigation
+  document.addEventListener('keydown', (e) => {
+    const slides = document.querySelectorAll('.slide');
+    const currentSlide = Math.round(window.scrollY / window.innerHeight);
+    
+    if (e.key === 'ArrowDown' || e.key === ' ' || e.key === 'PageDown') {
+      e.preventDefault();
+      if (currentSlide < slides.length - 1) {
+        slides[currentSlide + 1].scrollIntoView({ behavior: 'smooth' });
+      }
+    } else if (e.key === 'ArrowUp' || e.key === 'PageUp') {
+      e.preventDefault();
+      if (currentSlide > 0) {
+        slides[currentSlide - 1].scrollIntoView({ behavior: 'smooth' });
+      }
+    } else if (e.key === 'Home') {
+      e.preventDefault();
+      slides[0].scrollIntoView({ behavior: 'smooth' });
+    } else if (e.key === 'End') {
+      e.preventDefault();
+      slides[slides.length - 1].scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+
+  // Update URL hash on scroll
+  let ticking = false;
+  function updateHash() {
+    const slides = document.querySelectorAll('.slide');
+    const currentSlide = Math.round(window.scrollY / window.innerHeight);
+    const currentSlideElement = slides[currentSlide];
+    if (currentSlideElement) {
+      const id = currentSlideElement.getAttribute('data-slide');
+      if (id && window.location.hash !== `#${id}`) {
+        history.replaceState(null, null, `#${id}`);
+      }
+    }
+    ticking = false;
+  }
+
+  document.querySelector('main').addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(updateHash);
+      ticking = true;
+    }
+  });
+
+  // Navigate to hash on load
+  if (window.location.hash) {
+    const target = document.querySelector(window.location.hash);
+    if (target) {
+      setTimeout(() => {
+        target.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    }
+  }
+</script>
