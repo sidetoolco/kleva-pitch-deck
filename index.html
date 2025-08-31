@@ -366,13 +366,15 @@
         }
 
         .comparison-card.negative {
-            background: linear-gradient(135deg, rgba(239, 68, 68, 0.05) 0%, rgba(239, 68, 68, 0.02) 100%);
-            border: 1px solid rgba(239, 68, 68, 0.2);
+            background: var(--color-white);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
         }
 
         .comparison-card.positive {
-            background: linear-gradient(135deg, rgba(16, 185, 129, 0.05) 0%, rgba(16, 185, 129, 0.02) 100%);
-            border: 1px solid rgba(16, 185, 129, 0.2);
+            background: var(--color-white);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
         }
 
         .big-number {
@@ -506,7 +508,7 @@
         .badge {
             display: inline-block;
             padding: 0.5rem 1.25rem;
-            background: linear-gradient(135deg, var(--color-black) 0%, var(--color-gray-900) 100%);
+            background: var(--color-black);
             color: var(--color-white);
             border-radius: 50px;
             font-size: 0.75rem;
@@ -913,30 +915,30 @@
                     
                     <!-- Compact Maria's Journey -->
                     <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem; margin: 1.5rem auto; max-width: 800px;">
-                        <div style="text-align: center; padding: 1rem; background: linear-gradient(135deg, #fef3c7, #fcd34d); border-radius: 8px;">
-                            <div style="font-size: 1.2rem; font-weight: bold; margin-bottom: 0.3rem;">8 AM</div>
-                            <div style="font-size: 0.8rem; color: #92400e;">Starts work</div>
+                        <div style="text-align: center; padding: 1rem; background: var(--color-white); border-radius: 8px; border: 1px solid rgba(0, 0, 0, 0.1); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <div style="font-size: 1.2rem; font-weight: bold; margin-bottom: 0.3rem; color: var(--color-black);">8 AM</div>
+                            <div style="font-size: 0.8rem; color: var(--color-gray);">Starts work</div>
                         </div>
-                        <div style="text-align: center; padding: 1rem; background: linear-gradient(135deg, #dbeafe, #93c5fd); border-radius: 8px;">
-                            <div style="font-size: 1.2rem; font-weight: bold; margin-bottom: 0.3rem;">80</div>
-                            <div style="font-size: 0.8rem; color: #1e3a8a;">Calls made</div>
+                        <div style="text-align: center; padding: 1rem; background: var(--color-white); border-radius: 8px; border: 1px solid rgba(0, 0, 0, 0.1); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <div style="font-size: 1.2rem; font-weight: bold; margin-bottom: 0.3rem; color: var(--color-black);">80</div>
+                            <div style="font-size: 0.8rem; color: var(--color-gray);">Calls made</div>
                         </div>
-                        <div style="text-align: center; padding: 1rem; background: linear-gradient(135deg, #fee2e2, #fca5a5); border-radius: 8px;">
-                            <div style="font-size: 1.2rem; font-weight: bold; margin-bottom: 0.3rem; color: #dc2626;">40</div>
-                            <div style="font-size: 0.8rem; color: #dc2626;">Yelled at</div>
+                        <div style="text-align: center; padding: 1rem; background: var(--color-white); border-radius: 8px; border: 1px solid rgba(0, 0, 0, 0.1); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <div style="font-size: 1.2rem; font-weight: bold; margin-bottom: 0.3rem; color: var(--color-black);">40</div>
+                            <div style="font-size: 0.8rem; color: var(--color-gray);">Yelled at</div>
                         </div>
-                        <div style="text-align: center; padding: 1rem; background: linear-gradient(135deg, #dcfce7, #86efac); border-radius: 8px;">
-                            <div style="font-size: 1.2rem; font-weight: bold; margin-bottom: 0.3rem; color: #16a34a;">5</div>
-                            <div style="font-size: 0.8rem; color: #16a34a;">Collections</div>
+                        <div style="text-align: center; padding: 1rem; background: var(--color-white); border-radius: 8px; border: 1px solid rgba(0, 0, 0, 0.1); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <div style="font-size: 1.2rem; font-weight: bold; margin-bottom: 0.3rem; color: var(--color-black);">5</div>
+                            <div style="font-size: 0.8rem; color: var(--color-gray);">Collections</div>
                         </div>
-                        <div style="text-align: center; padding: 1rem; background: linear-gradient(135deg, #f3f4f6, #d1d5db); border-radius: 8px;">
-                            <div style="font-size: 1.2rem; font-weight: bold; margin-bottom: 0.3rem; color: #6b7280;">3mo</div>
-                            <div style="font-size: 0.8rem; color: #6b7280;">Quits</div>
+                        <div style="text-align: center; padding: 1rem; background: var(--color-white); border-radius: 8px; border: 1px solid rgba(0, 0, 0, 0.1); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+                            <div style="font-size: 1.2rem; font-weight: bold; margin-bottom: 0.3rem; color: var(--color-black);">3mo</div>
+                            <div style="font-size: 0.8rem; color: var(--color-gray);">Quits</div>
                         </div>
                     </div>
                     
                     <!-- Key message -->
-                    <div style="background: linear-gradient(135deg, #fef3c7 0%, #fed7aa 100%); border-radius: 12px; padding: 1.5rem; margin: 1.5rem auto; max-width: 600px;">
+                    <div style="background: var(--color-white); border-radius: 12px; padding: 1.5rem; margin: 1.5rem auto; max-width: 600px; border: 1px solid rgba(0, 0, 0, 0.1); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);">
                         <p style="font-size: 1.1rem; font-style: italic; color: #7c2d12; margin-bottom: 1rem;">
                             "Goes home exhausted. Quits in 3 months like everyone before her."
                         </p>
@@ -1424,7 +1426,7 @@
                     
                     <!-- Enhanced Revenue Growth Visualization -->
                     <div style="margin: 3rem auto; max-width: 800px;">
-                        <div style="background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%); border-radius: 24px; padding: 2.5rem; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border: 1px solid rgba(190, 121, 255, 0.1);">
+                        <div style="background: var(--color-white); border-radius: 12px; padding: 2.5rem; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); border: 1px solid rgba(0, 0, 0, 0.1);">
                             <svg width="100%" height="320" viewBox="0 0 700 320">
                                 <defs>
                                     <linearGradient id="revenueGradient" x1="0%" y1="0%" x2="0%" y2="100%">
