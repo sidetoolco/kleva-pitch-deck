@@ -3,11 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kleva - AI that collects debt better than humans in Latin America. $37K MRR, 150K minutes monthly.">
     <title>Kleva - Investor Pitch Deck</title>
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext x='50%25' y='50%25' font-size='20' text-anchor='middle' dy='0.3em' font-family='Inter, sans-serif' font-weight='bold'%3EK%3C/text%3E%3C/svg%3E">
+    
+    <!-- Preload critical fonts -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" as="style">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23000'/%3E%3Ctext x='50%25' y='52%25' font-size='20' text-anchor='middle' dominant-baseline='middle' fill='white' font-family='sans-serif' font-weight='bold'%3EK%3C/text%3E%3C/svg%3E">
+    
+    <!-- Critical CSS inline for faster render -->
+    <style>
+        /* Critical above-the-fold styles */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --color-black: #141C25;
+            --color-gray-900: #344051;
+            --color-gray: #637083;
+            --color-gray-light: #afafaf;
+            --color-text-secondary: #E4E7EC;
+            --color-white: #ffffff;
+            --color-primary: #000000;
+            --color-success: #10B981;
+            --color-warning: #F59E0B;
+            --color-danger: #EF4444;
+        }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--color-white);
+            color: var(--color-black);
+            overflow: hidden;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        .deck-container {
+            height: 100vh;
+            overflow-y: auto;
+            scroll-snap-type: y mandatory;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+        }
+        .slide {
+            min-height: 100vh;
+            scroll-snap-align: start;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem 2rem;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+            opacity: 0;
+        }
+        .slide.active h1 { opacity: 1; }
+    </style>
+    
+    <!-- Load fonts with font-display: swap for better performance -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -15,24 +78,42 @@
             box-sizing: border-box;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        @keyframes fadeInUp {
+            from { 
+                opacity: 0; 
+                transform: translate3d(0, 30px, 0);
+            }
+            to { 
+                opacity: 1; 
+                transform: translate3d(0, 0, 0);
+            }
         }
 
-        @keyframes slideInLeft {
-            from { opacity: 0; transform: translateX(-30px); }
-            to { opacity: 1; transform: translateX(0); }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { 
+                opacity: 0;
+                transform: translate3d(-20px, 0, 0);
+            }
+            to { 
+                opacity: 1;
+                transform: translate3d(0, 0, 0);
+            }
         }
 
         @keyframes scaleIn {
-            from { opacity: 0; transform: scale(0.9); }
-            to { opacity: 1; transform: scale(1); }
-        }
-
-        @keyframes pulseGlow {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.8; }
+            from { 
+                opacity: 0;
+                transform: scale3d(0.95, 0.95, 1);
+            }
+            to { 
+                opacity: 1;
+                transform: scale3d(1, 1, 1);
+            }
         }
 
         :root {
@@ -54,6 +135,8 @@
             color: var(--color-black);
             overflow: hidden;
             line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         .deck-container {
@@ -61,6 +144,7 @@
             overflow-y: auto;
             scroll-snap-type: y mandatory;
             scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
         }
 
         .slide {
@@ -73,33 +157,43 @@
             position: relative;
         }
 
+        /* Optimized animations with will-change and GPU acceleration */
+        .animate-element {
+            opacity: 0;
+            will-change: transform, opacity;
+        }
+
+        .slide.active .animate-element {
+            opacity: 1;
+        }
+
         .slide.active .badge {
-            animation: slideInLeft 0.6s ease-out;
+            animation: slideIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
 
         .slide.active h1, .slide.active h2 {
-            animation: fadeIn 0.8s ease-out 0.2s both;
+            animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
         }
 
-        .slide.active p, .slide.active ul {
-            animation: fadeIn 0.8s ease-out 0.4s both;
+        .slide.active p, .slide.active .feature-list {
+            animation: fadeIn 0.5s ease-out 0.2s forwards;
         }
 
         .slide.active .stat-card {
-            animation: scaleIn 0.6s ease-out;
-            animation-fill-mode: both;
+            animation: scaleIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
 
-        .slide.active .stat-card:nth-child(1) { animation-delay: 0.2s; }
-        .slide.active .stat-card:nth-child(2) { animation-delay: 0.3s; }
-        .slide.active .stat-card:nth-child(3) { animation-delay: 0.4s; }
-        .slide.active .stat-card:nth-child(4) { animation-delay: 0.5s; }
+        .slide.active .stat-card:nth-child(1) { animation-delay: 0.1s; }
+        .slide.active .stat-card:nth-child(2) { animation-delay: 0.15s; }
+        .slide.active .stat-card:nth-child(3) { animation-delay: 0.2s; }
+        .slide.active .stat-card:nth-child(4) { animation-delay: 0.25s; }
 
         .logo {
             width: 60px;
             height: 60px;
             margin-bottom: 2rem;
-            animation: scaleIn 0.8s ease-out;
+            animation: scaleIn 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: transform;
         }
 
         .container {
@@ -115,6 +209,7 @@
             line-height: 1.1;
             margin-bottom: 1.5rem;
             letter-spacing: -0.02em;
+            opacity: 0;
         }
 
         h2 {
@@ -123,6 +218,7 @@
             line-height: 1.2;
             margin-bottom: 1.5rem;
             letter-spacing: -0.01em;
+            opacity: 0;
         }
 
         h3 {
@@ -137,6 +233,7 @@
             line-height: 1.8;
             color: var(--color-gray);
             margin-bottom: 1rem;
+            opacity: 0;
         }
 
         .large-text {
@@ -190,6 +287,7 @@
             font-weight: 600;
             letter-spacing: 0.5px;
             margin-bottom: 1rem;
+            opacity: 0;
         }
 
         /* Lists */
@@ -197,6 +295,7 @@
             list-style: none;
             padding: 0;
             margin: 2rem 0;
+            opacity: 0;
         }
 
         .feature-list li {
@@ -224,6 +323,8 @@
 
         .stat-card {
             text-align: center;
+            opacity: 0;
+            transform: scale(0.95);
         }
 
         .stat-value {
@@ -280,7 +381,7 @@
             background: var(--color-gray-light);
             border-radius: 50%;
             cursor: pointer;
-            transition: all 0.3s;
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
             border: 2px solid transparent;
         }
 
@@ -308,7 +409,8 @@
             height: 100%;
             background: var(--color-primary);
             width: 0;
-            transition: width 0.3s ease;
+            transition: width 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: width;
         }
 
         /* CTA Button */
@@ -321,8 +423,9 @@
             border-radius: 6px;
             font-weight: 600;
             font-size: 1.125rem;
-            transition: all 0.3s ease;
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
             margin-top: 2rem;
+            will-change: transform;
         }
 
         .cta-button:hover {
@@ -695,88 +798,121 @@
     </div>
 
     <script>
-        const deck = document.getElementById('deck');
-        const slides = document.querySelectorAll('.slide');
-        const navDotsContainer = document.getElementById('nav-dots');
-        const progressBar = document.getElementById('progress');
-        let currentSlide = 0;
-
-        // Create navigation dots
-        slides.forEach((_, index) => {
-            const dot = document.createElement('span');
-            dot.className = 'nav-dot';
-            dot.onclick = () => scrollToSlide(index);
-            navDotsContainer.appendChild(dot);
-        });
-
-        const navDots = document.querySelectorAll('.nav-dot');
-
-        function scrollToSlide(index) {
-            slides[index].scrollIntoView({ behavior: 'smooth' });
-        }
-
-        function updateCurrentSlide() {
-            const scrollPosition = deck.scrollTop;
-            const slideHeight = window.innerHeight;
-            currentSlide = Math.round(scrollPosition / slideHeight);
+        // Performance optimized initialization
+        (function() {
+            'use strict';
             
-            // Update navigation dots
-            navDots.forEach((dot, index) => {
-                dot.classList.toggle('active', index === currentSlide);
+            const deck = document.getElementById('deck');
+            const slides = document.querySelectorAll('.slide');
+            const navDotsContainer = document.getElementById('nav-dots');
+            const progressBar = document.getElementById('progress');
+            let currentSlide = 0;
+            let isScrolling = false;
+
+            // Create navigation dots using DocumentFragment for better performance
+            const fragment = document.createDocumentFragment();
+            slides.forEach((_, index) => {
+                const dot = document.createElement('span');
+                dot.className = 'nav-dot';
+                dot.onclick = () => scrollToSlide(index);
+                fragment.appendChild(dot);
             });
-            
-            // Update progress bar
-            const progress = ((currentSlide + 1) / slides.length) * 100;
-            progressBar.style.width = progress + '%';
-        }
+            navDotsContainer.appendChild(fragment);
 
-        // Update on scroll
-        deck.addEventListener('scroll', updateCurrentSlide);
+            const navDots = navDotsContainer.querySelectorAll('.nav-dot');
 
-        // Keyboard navigation
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowDown' || e.key === ' ' || e.key === 'PageDown') {
-                e.preventDefault();
-                if (currentSlide < slides.length - 1) {
-                    scrollToSlide(currentSlide + 1);
-                }
-            } else if (e.key === 'ArrowUp' || e.key === 'PageUp') {
-                e.preventDefault();
-                if (currentSlide > 0) {
-                    scrollToSlide(currentSlide - 1);
-                }
-            } else if (e.key === 'Home') {
-                e.preventDefault();
-                scrollToSlide(0);
-            } else if (e.key === 'End') {
-                e.preventDefault();
-                scrollToSlide(slides.length - 1);
+            function scrollToSlide(index) {
+                slides[index].scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
-        });
 
-        // Initialize
-        updateCurrentSlide();
+            // Debounced scroll handler for better performance
+            function updateCurrentSlide() {
+                if (!isScrolling) {
+                    window.requestAnimationFrame(() => {
+                        const scrollPosition = deck.scrollTop;
+                        const slideHeight = window.innerHeight;
+                        currentSlide = Math.round(scrollPosition / slideHeight);
+                        
+                        // Update navigation dots
+                        navDots.forEach((dot, index) => {
+                            dot.classList.toggle('active', index === currentSlide);
+                        });
+                        
+                        // Update progress bar with transform for better performance
+                        const progress = ((currentSlide + 1) / slides.length) * 100;
+                        progressBar.style.width = progress + '%';
+                        
+                        isScrolling = false;
+                    });
+                    isScrolling = true;
+                }
+            }
 
-        // Intersection Observer for animations
-        const observerOptions = {
-            root: deck,
-            rootMargin: '0px',
-            threshold: 0.5
-        };
+            // Passive scroll listener for better performance
+            deck.addEventListener('scroll', updateCurrentSlide, { passive: true });
 
-        const slideObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                } else {
-                    entry.target.classList.remove('active');
+            // Keyboard navigation with early return for efficiency
+            document.addEventListener('keydown', (e) => {
+                const actions = {
+                    'ArrowDown': () => currentSlide < slides.length - 1 && scrollToSlide(currentSlide + 1),
+                    ' ': () => currentSlide < slides.length - 1 && scrollToSlide(currentSlide + 1),
+                    'PageDown': () => currentSlide < slides.length - 1 && scrollToSlide(currentSlide + 1),
+                    'ArrowUp': () => currentSlide > 0 && scrollToSlide(currentSlide - 1),
+                    'PageUp': () => currentSlide > 0 && scrollToSlide(currentSlide - 1),
+                    'Home': () => scrollToSlide(0),
+                    'End': () => scrollToSlide(slides.length - 1)
+                };
+
+                if (actions[e.key]) {
+                    e.preventDefault();
+                    actions[e.key]();
                 }
             });
-        }, observerOptions);
 
-        slides.forEach(slide => {
-            slideObserver.observe(slide);
-        });
+            // Intersection Observer with better thresholds for smoother animations
+            const observerOptions = {
+                root: deck,
+                rootMargin: '-10% 0px -10% 0px',
+                threshold: [0.1, 0.5, 0.9]
+            };
+
+            const slideObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.intersectionRatio > 0.5) {
+                        if (!entry.target.classList.contains('active')) {
+                            entry.target.classList.add('active');
+                        }
+                    } else if (entry.intersectionRatio < 0.1) {
+                        entry.target.classList.remove('active');
+                    }
+                });
+            }, observerOptions);
+
+            // Observe slides
+            slides.forEach(slide => {
+                slideObserver.observe(slide);
+            });
+
+            // Initialize first slide as active
+            if (slides.length > 0) {
+                slides[0].classList.add('active');
+            }
+
+            // Initialize UI
+            updateCurrentSlide();
+
+            // Preload fonts for better performance
+            if ('fonts' in document) {
+                Promise.all([
+                    document.fonts.load('400 1em Inter'),
+                    document.fonts.load('600 1em Inter'),
+                    document.fonts.load('700 1em Inter'),
+                    document.fonts.load('800 1em Inter')
+                ]).then(() => {
+                    document.body.classList.add('fonts-loaded');
+                });
+            }
+        })();
     </script>
 </body>
 </html>
