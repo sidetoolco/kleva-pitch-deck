@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kleva - AI Workforce for Latin American Finance. $37K MRR, 150K minutes monthly.">
+    <title>Kleva - Investor Pitch Deck</title>
+    
+    <!-- Preload critical fonts -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" as="style">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23000'/%3E%3Ctext x='50%25' y='52%25' font-size='20' text-anchor='middle' dominant-baseline='middle' fill='white' font-family='sans-serif' font-weight='bold'%3EK%3C/text%3E%3C/svg%3E">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Reset and Base */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --color-black: #000000;
+            --color-white: #ffffff;
+            --color-accent: #0066FF;
+            --color-success: #22c55e;
+            --color-danger: #ef4444;
+            --color-gray: #666666;
+            --color-light-gray: #f5f5f5;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--color-white);
+            color: var(--color-black);
+            overflow: hidden;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        /* Container */
+        .deck-container {
+            height: 100vh;
+            overflow-y: auto;
+            scroll-snap-type: y mandatory;
+            scroll-behavior: smooth;
+        }
+        
+        /* Slide Base */
+        .slide {
+            min-height: 100vh;
+            scroll-snap-align: start;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 4rem 2rem;
+            position: relative;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        
+        /* Typography */
+        h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+        
+        h2 {
+            font-size: 3rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 2rem;
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        p {
+            font-size: 1.25rem;
+            line-height: 1.8;
+            color: var(--color-gray);
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            color: var(--color-gray);
+            margin-bottom: 2rem;
+        }
+        
+        /* Components */
+        .metric {
+            text-align: center;
+            padding: 1.5rem;
+        }
+        
+        .metric-value {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--color-black);
+            display: block;
+        }
+        
+        .metric-label {
+            font-size: 1rem;
+            color: var(--color-gray);
+            margin-top: 0.5rem;
+        }
+        
+        .stat-card {
+            background: var(--color-light-gray);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .team-member {
+            text-align: center;
+        }
+        
+        .team-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: var(--color-light-gray);
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            font-size: 1.1rem;
+        }
+        
+        .comparison-table th {
+            background: var(--color-black);
+            color: var(--color-white);
+            padding: 1rem;
+            text-align: left;
+        }
+        
+        .comparison-table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--color-light-gray);
+        }
+        
+        .comparison-table tr.highlight {
+            background: #e6f2ff;
+            font-weight: 600;
+        }
+        
+        .timeline {
+            display: flex;
+            justify-content: space-between;
+            margin: 3rem 0;
+            position: relative;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 30px;
+            left: 10%;
+            right: 10%;
+            height: 2px;
+            background: var(--color-light-gray);
+            z-index: -1;
+        }
+        
+        .timeline-item {
+            text-align: center;
+            flex: 1;
+        }
+        
+        .timeline-dot {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--color-accent);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-weight: bold;
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 40px;
+            background: var(--color-light-gray);
+            border-radius: 20px;
+            overflow: hidden;
+            margin: 1rem 0;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: var(--color-accent);
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 1rem;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .logo-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin: 2rem 0;
+            align-items: center;
+        }
+        
+        .logo-item {
+            height: 80px;
+            background: var(--color-light-gray);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        
+        .cta-button {
+            background: var(--color-black);
+            color: var(--color-white);
+            padding: 1.5rem 3rem;
+            border-radius: 8px;
+            font-size: 1.25rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 2rem;
+        }
+        
+        /* Slide Variants */
+        .slide-dark {
+            background: var(--color-black);
+            color: var(--color-white);
+        }
+        
+        .slide-dark h1, .slide-dark h2, .slide-dark h3 {
+            color: var(--color-white);
+        }
+        
+        .slide-dark p {
+            color: #ccc;
+        }
+        
+        /* Navigation */
+        .nav-dots {
+            position: fixed;
+            right: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 100;
+        }
+        
+        .nav-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(0,0,0,0.2);
+            margin: 8px 0;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .nav-dot.active {
+            background: var(--color-black);
+            transform: scale(1.5);
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .slide.active .animate {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 2rem; }
+            .team-grid { grid-template-columns: 1fr; }
+            .logo-grid { grid-template-columns: 1fr; }
+            .timeline { flex-direction: column; }
+            .nav-dots { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <div class="deck-container" id="deck">
+        
+        <!-- Slide 1: Title with Vision -->
+        <div class="slide slide-dark active">
+            <div class="container">
+                <div style="text-align: center;" class="animate">
+                    <img src="/Users/edescobar/Code/kleva-dd/kleva-pitch-deck/kleva-logo-copy.png" alt="Kleva" style="height: 80px; margin-bottom: 3rem;">
+                    <h1>AI Workforce for<br>Latin American Finance</h1>
+                    <p class="subtitle">Starting with the $67B collections crisis</p>
+                    <div style="display: flex; justify-content: center; gap: 4rem; margin-top: 3rem;">
+                        <div class="metric">
+                            <span class="metric-value">$37K</span>
+                            <span class="metric-label">MRR</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">150K</span>
+                            <span class="metric-label">Minutes/Month</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">3</span>
+                            <span class="metric-label">Enterprise Clients</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2: Team -->
+        <div class="slide">
+            <div class="container">
+                <div style="text-align: center;">
+                    <h2>The Right Team at the Right Time</h2>
+                    <p class="subtitle">AI experts who fell in love with fixing collections</p>
+                    
+                    <div class="team-grid">
+                        <div class="team-member">
+                            <div class="team-photo">👨‍💼</div>
+                            <h3>Ed Escobar</h3>
+                            <p>CEO & Co-founder<br>Built Sidetool AI Agency</p>
+                        </div>
+                        <div class="team-member">
+                            <div class="team-photo">👨‍💻</div>
+                            <h3>Nicolás Mencia</h3>
+                            <p>Collections Expert<br>10 years, ex-MercadoPago</p>
+                        </div>
+                        <div class="team-member">
+                            <div class="team-photo">👥</div>
+                            <h3>7 Engineers</h3>
+                            <p>From Sidetool<br>2 years building AI agents</p>
+                        </div>
+                    </div>
+                    
+                    <div style="background: var(--color-light-gray); padding: 2rem; border-radius: 16px; margin-top: 2rem;">
+                        <p><strong>$100K self-funded</strong> • <strong>20+ enterprise AI implementations</strong> • <strong>Built for McDonald's, solved 94% address accuracy</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: Problem -->
+        <div class="slide">
+            <div class="container">
+                <div style="text-align: center;">
+                    <h2>$67B Collections Crisis in LATAM</h2>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin: 3rem 0;">
+                        <div class="stat-card">
+                            <span class="metric-value">77%</span>
+                            <span class="metric-label">Brazilian families in debt</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="metric-value">60%</span>
+                            <span class="metric-label">LATAM fintech delinquency</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="metric-value">$1.8B</span>
+                            <span class="metric-label">Nubank needs to collect today</span>
+                        </div>
+                    </div>
+                    
+                    <div style="max-width: 800px; margin: 0 auto;">
+                        <h3>The Human Cost</h3>
+                        <p>Maria is a collections agent in Guatemala. She makes 80 calls daily, gets yelled at 40 times, collects from 5. She'll quit in 3 months like everyone before her.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: Current Solutions Fail -->
+        <div class="slide">
+            <div class="container">
+                <div style="text-align: center;">
+                    <h2>Today's Solutions Are Broken</h2>
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; max-width: 900px; margin: 3rem auto;">
+                        <div style="text-align: left;">
+                            <h3 style="color: var(--color-danger);">Without AI</h3>
+                            <ul style="list-style: none; padding: 0; font-size: 1.1rem; line-height: 2;">
+                                <li>✗ 200+ agents per bank</li>
+                                <li>✗ 75-100% annual turnover</li>
+                                <li>✗ $3/minute cost</li>
+                                <li>✗ 20% recovery rate</li>
+                                <li>✗ Excel spreadsheets</li>
+                                <li>✗ 8 hour workday limits</li>
+                            </ul>
+                        </div>
+                        <div style="text-align: left;">
+                            <h3 style="color: var(--color-success);">With Kleva</h3>
+                            <ul style="list-style: none; padding: 0; font-size: 1.1rem; line-height: 2;">
+                                <li>✓ Unlimited AI agents</li>
+                                <li>✓ Zero turnover</li>
+                                <li>✓ $0.17/minute cost</li>
+                                <li>✓ 40% recovery rate</li>
+                                <li>✓ Real-time dashboards</li>
+                                <li>✓ 24/7 operation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: Solution -->
+        <div class="slide slide-dark">
+            <div class="container">
+                <div style="text-align: center;">
+                    <h2>Kleva: AI That Collects Better</h2>
+                    <p class="subtitle">Debtors actually prefer talking to our AI</p>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; margin: 3rem 0;">
+                        <div class="metric">
+                            <span class="metric-value">5,000</span>
+                            <span class="metric-label">Calls/Day</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">20%</span>
+                            <span class="metric-label">Higher Recovery</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">60%</span>
+                            <span class="metric-label">Lower Cost</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">24/7</span>
+                            <span class="metric-label">Availability</span>
+                        </div>
+                    </div>
+                    
+                    <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 16px; margin-top: 2rem;">
+                        <p style="font-size: 1.25rem;">Perfect Spanish & Portuguese • Infinite patience • Never judges • Sub-second responses</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 6: Product Demo -->
+        <div class="slide">
+            <div class="container">
+                <div style="text-align: center;">
+                    <h2>See It In Action</h2>
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin: 3rem 0;">
+                        <div>
+                            <h3>Dashboard View</h3>
+                            <div style="background: var(--color-light-gray); height: 300px; border-radius: 16px; display: flex; align-items: center; justify-content: center;">
+                                <p>Live Collections Dashboard</p>
+                            </div>
+                        </div>
+                        <div>
+                            <h3>Real Call Metrics</h3>
+                            <div style="text-align: left; padding: 2rem;">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 85%;">Contact Rate: 85%</div>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 40%;">Promise to Pay: 40%</div>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 92%;">Satisfaction: 92%</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <p style="font-style: italic;">"The AI was more empathetic than our human agents" - Tito, CEO Vana</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 7: Traction -->
+        <div class="slide">
+            <div class="container">
+                <div style="text-align: center;">
+                    <h2>From $0 to $37K MRR in 3 Months</h2>
+                    
+                    <div style="background: var(--color-light-gray); padding: 3rem; border-radius: 16px; margin: 2rem 0;">
+                        <canvas id="growthChart" style="max-width: 600px; height: 300px; margin: 0 auto;"></canvas>
+                    </div>
+                    
+                    <div class="logo-grid">
+                        <div class="logo-item">Vana<br><small>$17K/mo</small></div>
+                        <div class="logo-item">ADT<br><small>$15K/mo</small></div>
+                        <div class="logo-item">DirecTV<br><small>$5K/mo</small></div>
+                    </div>
+                    
+                    <p style="font-size: 1.5rem; margin-top: 2rem;"><strong>Pipeline: $158K MRR closing September</strong></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 8: Market Opportunity -->
+        <div class="slide">
+            <div class="container">
+                <div style="text-align: center;">
+                    <h2>$67B Market Opportunity</h2>
+                    
+                    <div style="position: relative; max-width: 600px; margin: 3rem auto;">
+                        <svg viewBox="0 0 400 400" style="width: 100%;">
+                            <circle cx="200" cy="200" r="180" fill="#f0f0f0"/>
+                            <circle cx="200" cy="200" r="120" fill="#d0d0d0"/>
+                            <circle cx="200" cy="200" r="60" fill="#a0a0a0"/>
+                            <text x="200" y="200" text-anchor="middle" font-size="20" font-weight="bold">$670M</text>
+                            <text x="200" y="220" text-anchor="middle" font-size="14">SOM (1%)</text>
+                            <text x="200" y="100" text-anchor="middle" font-size="14">SAM: $11B</text>
+                            <text x="200" y="50" text-anchor="middle" font-size="14">TAM: $67B</text>
+                        </svg>
+                    </div>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; max-width: 600px; margin: 0 auto;">
+                        <div class="stat-card">
+                            <span class="metric-value">500M</span>
+                            <span class="metric-label">Delinquent accounts</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="metric-value">23%</span>
+                            <span class="metric-label">Annual growth</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 9: Business Model -->
+        <div class="slide">
+            <div class="container">
+                <div style="text-align: center;">
+                    <h2>Simple, Scalable Unit Economics</h2>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin: 3rem 0;">
+                        <div class="stat-card">
+                            <h3>Pricing</h3>
+                            <span class="metric-value">$0.17</span>
+                            <span class="metric-label">per minute</span>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Gross Margin</h3>
+                            <span class="metric-value">48%</span>
+                            <span class="metric-label">today → 56% at scale</span>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Payback</h3>
+                            <span class="metric-value"><30</span>
+                            <span class="metric-label">days</span>
+                        </div>
+                    </div>
+                    
+                    <table class="comparison-table">
+                        <tr>
+                            <th>Volume Tier</th>
+                            <th>Minutes/Month</th>
+                            <th>Price/Minute</th>
+                            <th>Monthly Revenue</th>
+                        </tr>
+                        <tr>
+                            <td>Starter</td>
+                            <td>0 - 50K</td>
+                            <td>$0.197</td>
+                            <td>$9,850</td>
+                        </tr>
+                        <tr class="highlight">
+                            <td>Growth</td>
+                            <td>50K - 200K</td>
+                            <td>$0.177</td>
+                            <td>$35,400</td>
+                        </tr>
+                        <tr>
+                            <td>Enterprise</td>
+                            <td>200K+</td>
+                            <td>$0.158</td>
+                            <td>$31,600+</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 10: Competitive Positioning -->
+        <div class="slide">
+            <div class="container">
+                <div style="text-align: center;">
+                    <h2>Competitive Positioning</h2>
+                    
+                    <div style="position: relative; max-width: 800px; height: 500px; margin: 2rem auto; background: var(--color-light-gray); border-radius: 16px;">
+                        <svg viewBox="0 0 800 500" style="width: 100%; height: 100%;">
+                            <!-- Axes -->
+                            <line x1="50" y1="450" x2="750" y2="450" stroke="#333" stroke-width="2"/>
+                            <line x1="50" y1="50" x2="50" y2="450" stroke="#333" stroke-width="2"/>
+                            
+                            <!-- Labels -->
+                            <text x="400" y="490" text-anchor="middle" font-size="14">Cost Efficiency →</text>
+                            <text x="20" y="250" text-anchor="middle" font-size="14" transform="rotate(-90 20 250)">Recovery Rate →</text>
+                            
+                            <!-- Competitors -->
+                            <circle cx="200" cy="350" r="40" fill="#ffd4d4" stroke="#ff0000"/>
+                            <text x="200" y="355" text-anchor="middle" font-size="12">Call Centers</text>
+                            
+                            <circle cx="350" cy="300" r="35" fill="#ffe4b5" stroke="#ffa500"/>
+                            <text x="350" y="305" text-anchor="middle" font-size="12">Colektia</text>
+                            
+                            <circle cx="500" cy="280" r="30" fill="#ffffe0" stroke="#ffff00"/>
+                            <text x="500" y="285" text-anchor="middle" font-size="12">Murphy</text>
+                            
+                            <!-- Kleva -->
+                            <circle cx="650" cy="150" r="50" fill="#d4ffd4" stroke="#00ff00" stroke-width="3"/>
+                            <text x="650" y="155" text-anchor="middle" font-size="14" font-weight="bold">KLEVA</text>
+                        </svg>
+                    </div>
+                    
+                    <table class="comparison-table">
+                        <tr>
+                            <th>Company</th>
+                            <th>Channel</th>
+                            <th>Cost/Min</th>
+                            <th>Recovery vs Human</th>
+                        </tr>
+                        <tr>
+                            <td>Call Centers</td>
+                            <td>Voice</td>
+                            <td>$3.00</td>
+                            <td>Baseline</td>
+                        </tr>
+                        <tr>
+                            <td>Colektia</td>
+                            <td>WhatsApp</td>
+                            <td>$1.00</td>
+                            <td>-5%</td>
+                        </tr>
+                        <tr class="highlight">
+                            <td>Kleva</td>
+                            <td>Voice AI</td>
+                            <td>$0.17</td>
+                            <td>+20%</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 11: Go-to-Market -->
+        <div class="slide">
+            <div class="container">
+                <div style="text-align: center;">
+                    <h2>Clear Path to $2M MRR</h2>
+                    
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-dot">Q4'24</div>
+                            <h3>$150K MRR</h3>
+                            <p>Guatemala<br>Ecuador<br>Argentina</p>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot">Q2'25</div>
+                            <h3>$500K MRR</h3>
+                            <p>Mexico<br>Colombia</p>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot">Q4'25</div>
+                            <h3>$1M MRR</h3>
+                            <p>Brazil</p>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot">Q2'26</div>
+                            <h3>$2M MRR</h3>
+                            <p>US Hispanic<br>Market</p>
+                        </div>
+                    </div>
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; max-width: 700px; margin: 2rem auto;">
+                        <div style="background: var(--color-light-gray); padding: 2rem; border-radius: 16px;">
+                            <h3>Direct Sales</h3>
+                            <p>Target top 20 neobanks<br>Land & expand model</p>
+                        </div>
+                        <div style="background: var(--color-light-gray); padding: 2rem; border-radius: 16px;">
+                            <h3>Agency Partners</h3>
+                            <p>300+ collection agencies<br>White-label offering</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 12: Vision -->
+        <div class="slide slide-dark">
+            <div class="container">
+                <div style="text-align: center;">
+                    <h2>The Future: Complete AI Workforce</h2>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin: 3rem 0;">
+                        <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 16px;">
+                            <h3>Year 1</h3>
+                            <p>Master Collections</p>
+                            <ul style="list-style: none; padding: 0; margin-top: 1rem;">
+                                <li>✓ Voice AI agents</li>
+                                <li>✓ 5 countries</li>
+                                <li>✓ 10 enterprises</li>
+                            </ul>
+                        </div>
+                        <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 16px;">
+                            <h3>Year 2</h3>
+                            <p>Expand Use Cases</p>
+                            <ul style="list-style: none; padding: 0; margin-top: 1rem;">
+                                <li>• Dispute resolution</li>
+                                <li>• Fraud detection</li>
+                                <li>• Customer retention</li>
+                            </ul>
+                        </div>
+                        <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 16px;">
+                            <h3>Year 3</h3>
+                            <p>Full AI Back-Office</p>
+                            <ul style="list-style: none; padding: 0; margin-top: 1rem;">
+                                <li>• Credit analysis</li>
+                                <li>• Compliance</li>
+                                <li>• Operations</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <p style="font-size: 1.5rem; margin-top: 3rem;">Every bank in LATAM will run on Kleva infrastructure</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 13: The Ask -->
+        <div class="slide">
+            <div class="container">
+                <div style="text-align: center;">
+                    <h2>$2M Seed Round</h2>
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin: 3rem 0;">
+                        <div>
+                            <h3>Use of Funds</h3>
+                            <div style="text-align: left; padding: 1rem;">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 40%; background: var(--color-accent);">Engineering: 40%</div>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 30%; background: #0099FF;">Sales & Marketing: 30%</div>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 20%; background: #00CCFF;">Infrastructure: 20%</div>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 10%; background: #66E0FF;">Compliance: 10%</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h3>12-Month Milestones</h3>
+                            <div style="text-align: left; background: var(--color-light-gray); padding: 2rem; border-radius: 16px;">
+                                <ul style="list-style: none; padding: 0; line-height: 2;">
+                                    <li>✓ $150K → $500K MRR</li>
+                                    <li>✓ 10 enterprise clients</li>
+                                    <li>✓ 1M minutes/month</li>
+                                    <li>✓ 5 countries operational</li>
+                                    <li>✓ SOC 2 certified</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="background: var(--color-black); color: white; padding: 2rem; border-radius: 16px; margin-top: 2rem;">
+                        <p style="font-size: 1.25rem; color: white;">Join us in transforming Latin American finance</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 14: Contact -->
+        <div class="slide slide-dark">
+            <div class="container">
+                <div style="text-align: center;">
+                    <img src="/Users/edescobar/Code/kleva-dd/kleva-pitch-deck/kleva-logo-copy.png" alt="Kleva" style="height: 80px; margin-bottom: 3rem; filter: invert(1);">
+                    <h1>Let's Build the Future Together</h1>
+                    
+                    <div style="margin: 3rem 0;">
+                        <h3 style="margin-bottom: 2rem;">Ed Escobar</h3>
+                        <p style="font-size: 1.25rem;">CEO & Co-founder</p>
+                        <p style="font-size: 1.25rem; margin: 1rem 0;">
+                            <a href="mailto:ed@kleva.co" style="color: white;">ed@kleva.co</a>
+                        </p>
+                        <p style="font-size: 1.25rem;">
+                            <a href="https://www.linkedin.com/in/edjescobar/" style="color: white;">linkedin.com/in/edjescobar</a>
+                        </p>
+                    </div>
+                    
+                    <div style="display: flex; justify-content: center; gap: 3rem; margin-top: 3rem;">
+                        <a href="https://kleva.co" class="cta-button" style="background: white; color: black;">Visit kleva.co</a>
+                        <a href="https://calendly.com/kleva-demo" class="cta-button" style="background: transparent; border: 2px solid white;">Book a Demo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Navigation Dots -->
+    <div class="nav-dots" id="navDots"></div>
+
+    <script>
+        // Initialize navigation
+        const slides = document.querySelectorAll('.slide');
+        const navDotsContainer = document.getElementById('navDots');
+        const deck = document.getElementById('deck');
+        
+        // Create navigation dots
+        slides.forEach((slide, index) => {
+            const dot = document.createElement('div');
+            dot.className = 'nav-dot';
+            if (index === 0) dot.classList.add('active');
+            dot.onclick = () => scrollToSlide(index);
+            navDotsContainer.appendChild(dot);
+        });
+        
+        const dots = document.querySelectorAll('.nav-dot');
+        
+        // Scroll to slide
+        function scrollToSlide(index) {
+            slides[index].scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        // Update active slide on scroll
+        let isScrolling;
+        deck.addEventListener('scroll', () => {
+            clearTimeout(isScrolling);
+            isScrolling = setTimeout(() => {
+                const scrollPos = deck.scrollTop;
+                const windowHeight = window.innerHeight;
+                const currentSlide = Math.round(scrollPos / windowHeight);
+                
+                slides.forEach((slide, index) => {
+                    slide.classList.toggle('active', index === currentSlide);
+                });
+                
+                dots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === currentSlide);
+                });
+            }, 50);
+        });
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            const currentSlide = Array.from(slides).findIndex(slide => slide.classList.contains('active'));
+            
+            if (e.key === 'ArrowDown' || e.key === 'ArrowRight' || e.key === ' ') {
+                e.preventDefault();
+                if (currentSlide < slides.length - 1) {
+                    scrollToSlide(currentSlide + 1);
+                }
+            } else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
+                e.preventDefault();
+                if (currentSlide > 0) {
+                    scrollToSlide(currentSlide - 1);
+                }
+            }
+        });
+        
+        // Simple growth chart
+        const canvas = document.getElementById('growthChart');
+        if (canvas) {
+            const ctx = canvas.getContext('2d');
+            canvas.width = 600;
+            canvas.height = 300;
+            
+            // Draw axes
+            ctx.strokeStyle = '#333';
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            ctx.moveTo(50, 250);
+            ctx.lineTo(550, 250);
+            ctx.moveTo(50, 50);
+            ctx.lineTo(50, 250);
+            ctx.stroke();
+            
+            // Draw growth line
+            ctx.strokeStyle = '#0066FF';
+            ctx.lineWidth = 3;
+            ctx.beginPath();
+            ctx.moveTo(100, 230);
+            ctx.lineTo(250, 180);
+            ctx.lineTo(400, 100);
+            ctx.lineTo(500, 70);
+            ctx.stroke();
+            
+            // Draw points
+            const points = [[100, 230], [250, 180], [400, 100], [500, 70]];
+            const values = ['$0', '$17K', '$37K', '$158K'];
+            const months = ['Month 1', 'Month 2', 'Month 3', 'Pipeline'];
+            
+            points.forEach((point, i) => {
+                ctx.fillStyle = '#0066FF';
+                ctx.beginPath();
+                ctx.arc(point[0], point[1], 8, 0, Math.PI * 2);
+                ctx.fill();
+                
+                ctx.fillStyle = '#333';
+                ctx.font = 'bold 14px Inter';
+                ctx.textAlign = 'center';
+                ctx.fillText(values[i], point[0], point[1] - 20);
+                ctx.font = '12px Inter';
+                ctx.fillText(months[i], point[0], 270);
+            });
+        }
+    </script>
+</body>
+</html>
