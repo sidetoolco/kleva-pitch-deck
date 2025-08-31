@@ -1,0 +1,34 @@
+{
+  "name": "Kleva Pitch Deck",
+  "short_name": "Kleva",
+  "description": "AI-powered debt collection for Latin America",
+  "start_url": "/",
+  "display": "fullscreen",
+  "orientation": "landscape",
+  "theme_color": "#000000",
+  "background_color": "#ffffff",
+  "icons": [
+    {
+      "src": "/kleva-pitch-deck/kleva-logo-copy.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "finance", "productivity"],
+  "lang": "en-US",
+  "dir": "ltr",
+  "prefer_related_applications": false,
+  "shortcuts": [
+    {
+      "name": "View Traction",
+      "url": "/#traction",
+      "description": "View current traction metrics"
+    },
+    {
+      "name": "Contact",
+      "url": "/#contact",
+      "description": "Get in touch with Kleva team"
+    }
+  ]
+}

@@ -12,6 +12,24 @@
     <meta name="twitter:title" content="Kleva - AI Debt Collection" />
     <meta name="twitter:description" content="Transforming debt collection in Latin America with AI" />
     <title>Kleva - AI Debt Collection for Latin America</title>
+    
+    <!-- PWA Support -->
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="Kleva" />
+    <link rel="apple-touch-icon" href="/kleva-pitch-deck/kleva-logo-copy.png" />
+    
+    <!-- Register Service Worker -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/service-worker.js')
+            .then(registration => console.log('SW registered:', registration))
+            .catch(error => console.log('SW registration failed:', error));
+        });
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>

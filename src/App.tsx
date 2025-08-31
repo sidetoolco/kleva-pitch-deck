@@ -1,4 +1,5 @@
 import React, { Suspense, lazy } from 'react';
+import { usePerformanceMonitor } from './hooks/usePerformanceMonitor';
 import './styles/globals.css';
 
 // Lazy load the pitch deck for better initial load performance
@@ -57,6 +58,9 @@ class ErrorBoundary extends React.Component<
 }
 
 const App: React.FC = () => {
+  // Monitor performance metrics
+  usePerformanceMonitor(true);
+
   return (
     <ErrorBoundary>
       <Suspense fallback={<LoadingFallback />}>
