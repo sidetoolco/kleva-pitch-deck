@@ -131,6 +131,17 @@
             66% { transform: translate(-10px, 10px); }
         }
 
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translateX(100%); opacity: 0; }
+        }
+
         :root {
             --color-black: #141C25;
             --color-gray-900: #344051;
@@ -748,30 +759,84 @@
         <!-- Slide 1: Title -->
         <div class="slide slide-title active">
             <div class="container">
-                <div style="text-align: center;">
-                    <svg class="logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="100" height="100" rx="20" fill="#000000"/>
-                        <text x="50" y="65" font-family="Inter, sans-serif" font-size="55" font-weight="800" fill="white" text-anchor="middle">K</text>
-                    </svg>
-                    <div style="position: relative; display: inline-block; margin-bottom: 2rem;">
-                        <h1 data-animate="fade-up" style="font-size: clamp(4rem, 10vw, 7rem); letter-spacing: -0.04em; margin-bottom: 0;">Kleva</h1>
-                        <div style="position: absolute; top: -30px; right: -40px; width: 120px; height: 120px; background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, transparent 70%); border-radius: 50%; filter: blur(30px); animation: pulse-core 4s ease-in-out infinite;"></div>
-                        <div style="position: absolute; bottom: -30px; left: -40px; width: 100px; height: 100px; background: radial-gradient(circle, rgba(16, 185, 129, 0.15) 0%, transparent 70%); border-radius: 50%; filter: blur(30px); animation: pulse-core 4s ease-in-out infinite 0.5s;"></div>
-                    </div>
-                    <p class="large-text" data-animate="fade-in" data-animate-delay="2" style="font-size: 1.75rem; line-height: 1.4; max-width: 600px; margin: 0 auto 3rem;">AI that collects debt better than humans<br>in Latin America</p>
+                <div style="text-align: center; position: relative;">
                     
-                    <div style="display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 3rem; flex-wrap: wrap;" data-animate="fade-up" data-animate-delay="3">
-                        <div style="padding: 1rem 2rem; background: linear-gradient(135deg, rgba(0,0,0,0.03) 0%, transparent 100%); border-radius: 50px; border: 2px solid rgba(0,0,0,0.08); backdrop-filter: blur(10px);">
-                            <span style="font-size: 1.5rem; font-weight: 700; color: var(--color-black);">$37K</span>
-                            <span style="font-size: 0.9rem; color: var(--color-gray); margin-left: 0.5rem;">MRR</span>
+                    <!-- Background Elements -->
+                    <div style="position: absolute; top: 20%; left: 10%; width: 200px; height: 200px; background: radial-gradient(circle, rgba(190, 121, 255, 0.1) 0%, transparent 70%); border-radius: 50%; filter: blur(40px); animation: float 6s ease-in-out infinite;"></div>
+                    <div style="position: absolute; top: 60%; right: 15%; width: 150px; height: 150px; background: radial-gradient(circle, rgba(16, 185, 129, 0.1) 0%, transparent 70%); border-radius: 50%; filter: blur(40px); animation: float 6s ease-in-out infinite 2s;"></div>
+                    <div style="position: absolute; top: 40%; left: 75%; width: 100px; height: 100px; background: radial-gradient(circle, rgba(245, 158, 11, 0.1) 0%, transparent 70%); border-radius: 50%; filter: blur(30px); animation: float 8s ease-in-out infinite 1s;"></div>
+                    
+                    <!-- Enhanced Logo -->
+                    <div style="margin-bottom: 2rem; position: relative; z-index: 2;">
+                        <div style="display: inline-block; position: relative;">
+                            <svg class="logo" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" style="width: 120px; height: 120px;">
+                                <defs>
+                                    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#be79ff;stop-opacity:1" />
+                                        <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+                                    </linearGradient>
+                                    <filter id="glow">
+                                        <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+                                        <feMerge> 
+                                            <feMergeNode in="coloredBlur"/>
+                                            <feMergeNode in="SourceGraphic"/>
+                                        </feMerge>
+                                    </filter>
+                                </defs>
+                                <rect width="120" height="120" rx="24" fill="url(#logoGradient)" filter="url(#glow)"/>
+                                <text x="60" y="80" font-family="Inter, sans-serif" font-size="60" font-weight="800" fill="white" text-anchor="middle">K</text>
+                                
+                                <!-- Subtle animation rings -->
+                                <circle cx="60" cy="60" r="50" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1" opacity="0.5">
+                                    <animate attributeName="r" values="50;55;50" dur="3s" repeatCount="indefinite"/>
+                                    <animate attributeName="opacity" values="0.5;0.2;0.5" dur="3s" repeatCount="indefinite"/>
+                                </circle>
+                                <circle cx="60" cy="60" r="45" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1" opacity="0.3">
+                                    <animate attributeName="r" values="45;50;45" dur="4s" repeatCount="indefinite"/>
+                                    <animate attributeName="opacity" values="0.3;0.1;0.3" dur="4s" repeatCount="indefinite"/>
+                                </circle>
+                            </svg>
                         </div>
-                        <div style="padding: 1rem 2rem; background: linear-gradient(135deg, rgba(0,0,0,0.03) 0%, transparent 100%); border-radius: 50px; border: 2px solid rgba(0,0,0,0.08); backdrop-filter: blur(10px);">
-                            <span style="font-size: 1.5rem; font-weight: 700; color: var(--color-black);">150K</span>
-                            <span style="font-size: 0.9rem; color: var(--color-gray); margin-left: 0.5rem;">minutes/mo</span>
+                    </div>
+                    
+                    <!-- Enhanced Title -->
+                    <div style="position: relative; display: inline-block; margin-bottom: 2rem; z-index: 2;">
+                        <h1 data-animate="fade-up" style="font-size: clamp(5rem, 12vw, 8rem); letter-spacing: -0.04em; margin-bottom: 0; position: relative;">
+                            Kleva
+                            <div style="position: absolute; inset: 0; background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%); animation: shimmer 3s ease-in-out infinite; pointer-events: none;"></div>
+                        </h1>
+                    </div>
+                    
+                    <!-- Enhanced Tagline -->
+                    <p class="large-text" data-animate="fade-in" data-animate-delay="2" style="font-size: 2rem; line-height: 1.3; max-width: 700px; margin: 0 auto 3rem; position: relative; z-index: 2;">
+                        <span style="background: linear-gradient(135deg, #1e293b 0%, #64748b 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">AI that collects debt better than humans</span><br>
+                        <span style="background: linear-gradient(135deg, #be79ff 0%, #8b5cf6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 600;">in Latin America</span>
+                    </p>
+                    
+                    <!-- Enhanced Metrics -->
+                    <div style="display: flex; justify-content: center; gap: 2rem; margin-bottom: 4rem; flex-wrap: wrap; position: relative; z-index: 2;" data-animate="fade-up" data-animate-delay="3">
+                        <div style="padding: 1.5rem 2.5rem; background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%); border-radius: 20px; border: 2px solid rgba(190, 121, 255, 0.2); backdrop-filter: blur(10px); box-shadow: 0 10px 30px rgba(190, 121, 255, 0.15); position: relative; overflow: hidden;">
+                            <div style="position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, #be79ff, #8b5cf6);"></div>
+                            <div style="text-align: center;">
+                                <span style="display: block; font-size: 2rem; font-weight: 700; color: #be79ff; line-height: 1;">$37K</span>
+                                <span style="font-size: 0.9rem; color: #64748b; font-weight: 500;">Monthly Recurring Revenue</span>
+                            </div>
                         </div>
-                        <div style="padding: 1rem 2rem; background: linear-gradient(135deg, rgba(16,185,129,0.08) 0%, transparent 100%); border-radius: 50px; border: 2px solid rgba(16,185,129,0.2); backdrop-filter: blur(10px);">
-                            <span style="font-size: 1.5rem; font-weight: 700; color: var(--color-success);">20%</span>
-                            <span style="font-size: 0.9rem; color: var(--color-success); margin-left: 0.5rem;">better recovery</span>
+                        
+                        <div style="padding: 1.5rem 2.5rem; background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%); border-radius: 20px; border: 2px solid rgba(16, 185, 129, 0.2); backdrop-filter: blur(10px); box-shadow: 0 10px 30px rgba(16, 185, 129, 0.15); position: relative; overflow: hidden;">
+                            <div style="position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, #10b981, #059669);"></div>
+                            <div style="text-align: center;">
+                                <span style="display: block; font-size: 2rem; font-weight: 700; color: #10b981; line-height: 1;">150K</span>
+                                <span style="font-size: 0.9rem; color: #64748b; font-weight: 500;">Minutes per month</span>
+                            </div>
+                        </div>
+                        
+                        <div style="padding: 1.5rem 2.5rem; background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%); border-radius: 20px; border: 2px solid rgba(245, 158, 11, 0.2); backdrop-filter: blur(10px); box-shadow: 0 10px 30px rgba(245, 158, 11, 0.15); position: relative; overflow: hidden;">
+                            <div style="position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, #f59e0b, #d97706);"></div>
+                            <div style="text-align: center;">
+                                <span style="display: block; font-size: 2rem; font-weight: 700; color: #f59e0b; line-height: 1;">+20%</span>
+                                <span style="font-size: 0.9rem; color: #64748b; font-weight: 500;">Better recovery vs humans</span>
+                            </div>
                         </div>
                     </div>
                     
@@ -1359,41 +1424,73 @@
                     <span class="badge">TRACTION</span>
                     <h2>From $0 to $37K MRR in 3 months</h2>
                     
-                    <!-- Revenue growth chart -->
-                    <div style="margin: 3rem 0;">
-                        <svg width="100%" height="300" viewBox="0 0 700 300" style="max-width: 700px;">
-                            <!-- Grid lines -->
-                            <line x1="50" y1="250" x2="650" y2="250" stroke="#e5e5e5" stroke-width="1"/>
-                            <line x1="50" y1="200" x2="650" y2="200" stroke="#e5e5e5" stroke-width="1"/>
-                            <line x1="50" y1="150" x2="650" y2="150" stroke="#e5e5e5" stroke-width="1"/>
-                            <line x1="50" y1="100" x2="650" y2="100" stroke="#e5e5e5" stroke-width="1"/>
-                            <line x1="50" y1="50" x2="650" y2="50" stroke="#e5e5e5" stroke-width="1"/>
-                            
-                            <!-- Y-axis labels -->
-                            <text x="40" y="255" text-anchor="end" font-size="12">$0</text>
-                            <text x="40" y="205" text-anchor="end" font-size="12">$10K</text>
-                            <text x="40" y="155" text-anchor="end" font-size="12">$20K</text>
-                            <text x="40" y="105" text-anchor="end" font-size="12">$30K</text>
-                            <text x="40" y="55" text-anchor="end" font-size="12">$40K</text>
-                            
-                            <!-- X-axis labels -->
-                            <text x="150" y="280" text-anchor="middle" font-size="12">Jun</text>
-                            <text x="350" y="280" text-anchor="middle" font-size="12">Jul</text>
-                            <text x="550" y="280" text-anchor="middle" font-size="12">Aug</text>
-                            
-                            <!-- Revenue line -->
-                            <polyline points="150,250 350,180 550,95" fill="none" stroke="var(--color-success)" stroke-width="3"/>
-                            
-                            <!-- Data points -->
-                            <circle cx="150" cy="250" r="5" fill="var(--color-success)"/>
-                            <circle cx="350" cy="180" r="5" fill="var(--color-success)"/>
-                            <circle cx="550" cy="95" r="8" fill="var(--color-success)"/>
-                            
-                            <!-- Value labels -->
-                            <text x="150" y="235" text-anchor="middle" font-size="14" font-weight="bold">$0</text>
-                            <text x="350" y="165" text-anchor="middle" font-size="14" font-weight="bold">$15K</text>
-                            <text x="550" y="80" text-anchor="middle" font-size="16" font-weight="bold">$37K</text>
-                        </svg>
+                    <!-- Enhanced Revenue Growth Visualization -->
+                    <div style="margin: 3rem auto; max-width: 800px;">
+                        <div style="background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%); border-radius: 24px; padding: 2.5rem; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border: 1px solid rgba(190, 121, 255, 0.1);">
+                            <svg width="100%" height="320" viewBox="0 0 700 320">
+                                <defs>
+                                    <linearGradient id="revenueGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#10b981;stop-opacity:0.3" />
+                                        <stop offset="100%" style="stop-color:#10b981;stop-opacity:0.05" />
+                                    </linearGradient>
+                                    <filter id="dropShadow">
+                                        <feDropShadow dx="2" dy="2" stdDeviation="3" flood-color="rgba(16,185,129,0.3)"/>
+                                    </filter>
+                                </defs>
+                                
+                                <!-- Grid Background -->
+                                <rect width="700" height="320" fill="url(#grid)" opacity="0.1"/>
+                                
+                                <!-- Enhanced Grid lines -->
+                                <line x1="80" y1="270" x2="620" y2="270" stroke="#e2e8f0" stroke-width="2"/>
+                                <line x1="80" y1="220" x2="620" y2="220" stroke="#e2e8f0" stroke-width="1" opacity="0.5"/>
+                                <line x1="80" y1="170" x2="620" y2="170" stroke="#e2e8f0" stroke-width="1" opacity="0.5"/>
+                                <line x1="80" y1="120" x2="620" y2="120" stroke="#e2e8f0" stroke-width="1" opacity="0.5"/>
+                                <line x1="80" y1="70" x2="620" y2="70" stroke="#e2e8f0" stroke-width="1" opacity="0.5"/>
+                                
+                                <!-- Y-axis -->
+                                <line x1="80" y1="70" x2="80" y2="270" stroke="#94a3b8" stroke-width="2"/>
+                                
+                                <!-- Y-axis labels with better styling -->
+                                <text x="70" y="275" text-anchor="end" font-size="13" font-weight="500" fill="#64748b">$0</text>
+                                <text x="70" y="225" text-anchor="end" font-size="13" font-weight="500" fill="#64748b">$10K</text>
+                                <text x="70" y="175" text-anchor="end" font-size="13" font-weight="500" fill="#64748b">$20K</text>
+                                <text x="70" y="125" text-anchor="end" font-size="13" font-weight="500" fill="#64748b">$30K</text>
+                                <text x="70" y="75" text-anchor="end" font-size="13" font-weight="500" fill="#64748b">$40K</text>
+                                
+                                <!-- X-axis labels with month styling -->
+                                <text x="180" y="300" text-anchor="middle" font-size="14" font-weight="600" fill="#1e293b">June 2024</text>
+                                <text x="350" y="300" text-anchor="middle" font-size="14" font-weight="600" fill="#1e293b">July 2024</text>
+                                <text x="520" y="300" text-anchor="middle" font-size="14" font-weight="600" fill="#1e293b">August 2024</text>
+                                
+                                <!-- Area under curve -->
+                                <polygon points="180,270 350,200 520,115 520,270 180,270" fill="url(#revenueGradient)"/>
+                                
+                                <!-- Enhanced Revenue line -->
+                                <polyline points="180,270 350,200 520,115" fill="none" stroke="#10b981" stroke-width="4" filter="url(#dropShadow)"/>
+                                
+                                <!-- Enhanced Data points -->
+                                <circle cx="180" cy="270" r="8" fill="white" stroke="#10b981" stroke-width="3"/>
+                                <circle cx="350" cy="200" r="8" fill="white" stroke="#10b981" stroke-width="3"/>
+                                <circle cx="520" cy="115" r="12" fill="#10b981" stroke="white" stroke-width="3">
+                                    <animate attributeName="r" values="12;15;12" dur="2s" repeatCount="indefinite"/>
+                                </circle>
+                                
+                                <!-- Value labels with callouts -->
+                                <rect x="160" y="235" width="40" height="25" rx="4" fill="#10b981" opacity="0.9"/>
+                                <text x="180" y="250" text-anchor="middle" font-size="12" font-weight="bold" fill="white">$0</text>
+                                
+                                <rect x="325" y="165" width="50" height="25" rx="4" fill="#10b981" opacity="0.9"/>
+                                <text x="350" y="180" text-anchor="middle" font-size="12" font-weight="bold" fill="white">$15K</text>
+                                
+                                <rect x="490" y="80" width="60" height="25" rx="4" fill="#10b981"/>
+                                <text x="520" y="95" text-anchor="middle" font-size="14" font-weight="bold" fill="white">$37K</text>
+                                
+                                <!-- Growth percentage -->
+                                <text x="435" y="160" text-anchor="middle" font-size="18" font-weight="bold" fill="#059669">+147% growth</text>
+                                
+                            </svg>
+                        </div>
                     </div>
                     
                     <div class="stats-grid">
@@ -2080,33 +2177,38 @@
             <div class="container">
                 <div style="text-align: center;">
                     <span class="badge">THE TEAM</span>
-                    <h2>9 obsessed builders</h2>
+                    <h2>9 obsessed builders from Sidetool</h2>
+                    <p style="font-size: 1.2rem; color: var(--color-gray); margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                        We've been building AI agents for 2+ years. Now we're laser-focused on collections.
+                    </p>
                     
-                    <!-- Team grid with icons -->
-                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; max-width: 900px; margin: 2rem auto;">
-                        <div class="metric-box" style="padding: 1.5rem;">
-                            <div class="icon-box" style="margin: 0 auto 1rem;">
-                                <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-                                    <circle cx="20" cy="12" r="5" stroke="var(--color-primary)" stroke-width="2"/>
-                                    <path d="M10 32C10 26 14 22 20 22C26 22 30 26 30 32" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round"/>
-                                    <path d="M20 20V28M16 24H24" stroke="var(--color-success)" stroke-width="2" stroke-linecap="round"/>
+                    <!-- Enhanced Team grid -->
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; max-width: 1000px; margin: 3rem auto;">
+                        <div style="background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%); border-radius: 20px; padding: 2rem; border: 2px solid rgba(190, 121, 255, 0.1); position: relative; transition: transform 0.3s ease; box-shadow: 0 5px 15px rgba(0,0,0,0.08);">
+                            <div style="position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #be79ff, #8b5cf6); border-radius: 20px 20px 0 0;"></div>
+                            <div style="width: 60px; height: 60px; margin: 0 auto 1rem; background: linear-gradient(135deg, #be79ff 0%, #8b5cf6 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+                                    <circle cx="15" cy="9" r="4" stroke="white" stroke-width="2"/>
+                                    <path d="M7 24C7 19 10 16 15 16C20 16 23 19 23 24" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                                    <path d="M15 15V20M12 17.5H18" stroke="#fbbf24" stroke-width="2" stroke-linecap="round"/>
                                 </svg>
                             </div>
-                            <h4>Ed</h4>
-                            <p style="color: var(--color-primary); font-weight: 600; font-size: 0.9rem;">CEO & Sales Lead</p>
-                            <p style="font-size: 0.85rem; color: var(--color-gray);">Built Sidetool, 20+ companies</p>
+                            <h4 style="font-size: 1.25rem; margin-bottom: 0.5rem; color: #1e293b;">Ed Escobar</h4>
+                            <p style="color: var(--color-primary); font-weight: 600; font-size: 1rem; margin-bottom: 0.5rem;">CEO & Sales Lead</p>
+                            <p style="font-size: 0.9rem; color: var(--color-gray); line-height: 1.4;">Built Sidetool, embedded in 20+ companies</p>
                         </div>
                         
-                        <div class="metric-box" style="padding: 1.5rem;">
-                            <div class="icon-box" style="margin: 0 auto 1rem;">
-                                <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-                                    <rect x="8" y="12" width="24" height="20" rx="2" stroke="var(--color-primary)" stroke-width="2"/>
-                                    <circle cx="20" cy="22" r="5" stroke="var(--color-warning)" stroke-width="2"/>
+                        <div style="background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%); border-radius: 20px; padding: 2rem; border: 2px solid rgba(16, 185, 129, 0.1); position: relative; transition: transform 0.3s ease; box-shadow: 0 5px 15px rgba(0,0,0,0.08);">
+                            <div style="position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #10b981, #059669); border-radius: 20px 20px 0 0;"></div>
+                            <div style="width: 60px; height: 60px; margin: 0 auto 1rem; background: linear-gradient(135deg, #10b981 0%, #059669 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+                                    <rect x="6" y="9" width="18" height="15" rx="1.5" stroke="white" stroke-width="2"/>
+                                    <circle cx="15" cy="16.5" r="3.75" stroke="#fbbf24" stroke-width="2"/>
                                 </svg>
                             </div>
-                            <h4>Nicolás Mencia</h4>
-                            <p style="color: var(--color-primary); font-weight: 600; font-size: 0.9rem;">Collections Expert</p>
-                            <p style="font-size: 0.85rem; color: var(--color-gray);">10 years, ex-MercadoPago</p>
+                            <h4 style="font-size: 1.25rem; margin-bottom: 0.5rem; color: #1e293b;">Nicolás Mencia</h4>
+                            <p style="color: var(--color-primary); font-weight: 600; font-size: 1rem; margin-bottom: 0.5rem;">Collections Expert</p>
+                            <p style="font-size: 0.9rem; color: var(--color-gray); line-height: 1.4;">10 years experience, ex-MercadoPago</p>
                         </div>
                         
                         <div class="metric-box" style="padding: 1.5rem;">
@@ -2358,157 +2460,111 @@
             </div>
         </div>
 
-        <!-- Slide 15: The Ask -->
-        <div class="slide slide-content">
-            <div class="container">
-                <div style="text-align: center;">
-                    <span class="badge">THE ASK</span>
-                    <h2>Join us in transforming collections</h2>
-                    
-                    <!-- Investment Visual -->
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin: 3rem auto; max-width: 900px;">
-                        <!-- What We're Raising -->
-                        <div style="background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border-radius: 20px; padding: 2rem;">
-                            <div style="margin-bottom: 1.5rem;">
-                                <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
-                                    <circle cx="30" cy="30" r="25" fill="#0284c7" opacity="0.2"/>
-                                    <text x="30" y="35" text-anchor="middle" fill="#0284c7" font-size="20" font-weight="bold">$</text>
-                                </svg>
-                            </div>
-                            <h3 style="color: #0284c7; margin-bottom: 1rem;">Raising $2M</h3>
-                            <ul style="list-style: none; padding: 0; text-align: left;">
-                                <li style="margin: 0.75rem 0; color: #334155;">💰 Pre-seed round</li>
-                                <li style="margin: 0.75rem 0; color: #334155;">📊 $10M valuation</li>
-                                <li style="margin: 0.75rem 0; color: #334155;">🎯 18-month runway</li>
-                                <li style="margin: 0.75rem 0; color: #334155;">✅ $500K committed</li>
-                            </ul>
-                        </div>
-                        
-                        <!-- What We'll Do -->
-                        <div style="background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-radius: 20px; padding: 2rem;">
-                            <div style="margin-bottom: 1.5rem;">
-                                <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
-                                    <rect x="15" y="20" width="30" height="20" rx="2" fill="#059669" opacity="0.2"/>
-                                    <path d="M20 30 L25 35 L40 25" stroke="#059669" stroke-width="3" stroke-linecap="round"/>
-                                </svg>
-                            </div>
-                            <h3 style="color: #059669; margin-bottom: 1rem;">Use of Funds</h3>
-                            <ul style="list-style: none; padding: 0; text-align: left;">
-                                <li style="margin: 0.75rem 0; color: #334155;">👥 10 engineers</li>
-                                <li style="margin: 0.75rem 0; color: #334155;">🌎 5 countries</li>
-                                <li style="margin: 0.75rem 0; color: #334155;">🏢 10 enterprise banks</li>
-                                <li style="margin: 0.75rem 0; color: #334155;">📈 $150K MRR target</li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <!-- Timeline -->
-                    <div style="background: linear-gradient(135deg, #fafbfc 0%, #ffffff 100%); border-radius: 20px; padding: 2rem; margin: 2rem auto; max-width: 800px;">
-                        <h3 style="color: var(--color-primary); margin-bottom: 1.5rem;">12-Month Milestones</h3>
-                        <div style="display: flex; justify-content: space-between; position: relative;">
-                            <!-- Timeline line -->
-                            <div style="position: absolute; top: 20px; left: 10%; right: 10%; height: 2px; background: linear-gradient(90deg, #0284c7 0%, #059669 100%);"></div>
-                            
-                            <!-- Q4 2024 -->
-                            <div style="text-align: center; position: relative; z-index: 2;">
-                                <div style="width: 40px; height: 40px; background: white; border: 3px solid #0284c7; border-radius: 50%; margin: 0 auto;"></div>
-                                <p style="font-weight: 600; margin-top: 0.5rem; color: #0284c7;">Q4 2024</p>
-                                <p style="font-size: 0.875rem; color: #64748b;">$50K MRR</p>
-                            </div>
-                            
-                            <!-- Q1 2025 -->
-                            <div style="text-align: center; position: relative; z-index: 2;">
-                                <div style="width: 40px; height: 40px; background: white; border: 3px solid #8b5cf6; border-radius: 50%; margin: 0 auto;"></div>
-                                <p style="font-weight: 600; margin-top: 0.5rem; color: #8b5cf6;">Q1 2025</p>
-                                <p style="font-size: 0.875rem; color: #64748b;">$75K MRR</p>
-                            </div>
-                            
-                            <!-- Q2 2025 -->
-                            <div style="text-align: center; position: relative; z-index: 2;">
-                                <div style="width: 40px; height: 40px; background: white; border: 3px solid #f59e0b; border-radius: 50%; margin: 0 auto;"></div>
-                                <p style="font-weight: 600; margin-top: 0.5rem; color: #f59e0b;">Q2 2025</p>
-                                <p style="font-size: 0.875rem; color: #64748b;">$100K MRR</p>
-                            </div>
-                            
-                            <!-- Q3 2025 -->
-                            <div style="text-align: center; position: relative; z-index: 2;">
-                                <div style="width: 40px; height: 40px; background: white; border: 3px solid #059669; border-radius: 50%; margin: 0 auto;"></div>
-                                <p style="font-weight: 600; margin-top: 0.5rem; color: #059669;">Q3 2025</p>
-                                <p style="font-size: 0.875rem; color: #64748b;">$150K MRR</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Bottom CTA -->
-                    <div style="margin-top: 3rem;">
-                        <p class="large-text" style="margin-bottom: 2rem;">
-                            <span class="highlight">We're building the future of collections.</span><br>
-                            Join us as an investor, partner, or customer.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slide 16: Contact -->
+        <!-- Slide 15: Contact -->
         <div class="slide slide-alt">
             <div class="container">
                 <div style="text-align: center;">
                     <span class="badge">LET'S CONNECT</span>
-                    <h2>Ready to talk?</h2>
+                    <h2>Let's transform collections together</h2>
                     
-                    <!-- Contact Card -->
-                    <div style="background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%); border-radius: 20px; padding: 3rem; margin: 2rem auto; max-width: 500px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-                        <div style="margin-bottom: 2rem;">
-                            <svg width="80" height="80" viewBox="0 0 80 80" fill="none" style="margin: 0 auto;">
-                                <circle cx="40" cy="40" r="35" fill="var(--color-primary)" opacity="0.1"/>
-                                <path d="M40 25c-4.4 0-8 3.6-8 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm0 24c-8.8 0-16 3.6-16 8v4h32v-4c0-4.4-7.2-8-16-8z" fill="var(--color-primary)"/>
-                            </svg>
-                        </div>
-                        <h3 style="font-size: 1.75rem; margin-bottom: 0.5rem;">Ed Escobar</h3>
-                        <p style="color: #64748b; margin-bottom: 2rem;">CEO & Cofounder</p>
+                    <!-- Enhanced Contact Grid -->
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin: 3rem auto; max-width: 1000px; align-items: start;">
                         
-                        <div style="space-y: 1rem;">
-                            <p style="margin: 1rem 0;">
-                                <a href="mailto:ed@kleva.co" style="display: inline-flex; align-items: center; gap: 0.5rem;">
-                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-                                        <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
-                                        <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                        <!-- Contact Card -->
+                        <div style="background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%); border-radius: 24px; padding: 3rem; box-shadow: 0 20px 40px rgba(0,0,0,0.1); border: 1px solid rgba(255,255,255,0.3);">
+                            <div style="margin-bottom: 2rem;">
+                                <div style="width: 100px; height: 100px; margin: 0 auto; background: linear-gradient(135deg, #be79ff 0%, #8b5cf6 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                    <svg width="50" height="50" viewBox="0 0 50 50" fill="none">
+                                        <path d="M25 12c-3.6 0-6.5 2.9-6.5 6.5s2.9 6.5 6.5 6.5 6.5-2.9 6.5-6.5-2.9-6.5-6.5-6.5zm0 20c-7.2 0-13 2.9-13 6.5v3h26v-3c0-3.6-5.8-6.5-13-6.5z" fill="white"/>
                                     </svg>
-                                    ed@kleva.co
-                                </a>
-                            </p>
-                            <p style="margin: 1rem 0;">
-                                <a href="https://linkedin.com/in/edjescobar" style="display: inline-flex; align-items: center; gap: 0.5rem;">
-                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-                                        <path d="M6.29 18.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0020 3.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.073 4.073 0 01.8 7.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 010 16.407a11.616 11.616 0 006.29 1.84"/>
-                                    </svg>
-                                    LinkedIn Profile
-                                </a>
-                            </p>
+                                </div>
+                            </div>
+                            <h3 style="font-size: 2rem; margin-bottom: 0.5rem; color: #1e293b;">Ed Escobar</h3>
+                            <p style="color: #64748b; margin-bottom: 2.5rem; font-size: 1.1rem;">CEO & Cofounder</p>
+                            
+                            <div style="space-y: 1.5rem;">
+                                <div style="margin-bottom: 1.5rem;">
+                                    <a href="mailto:ed@kleva.co" style="display: inline-flex; align-items: center; gap: 1rem; background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border-radius: 12px; padding: 1rem 1.5rem; text-decoration: none; color: #0284c7; font-weight: 500; transition: transform 0.2s; width: 100%;">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                            <polyline points="22,6 12,13 2,6"/>
+                                        </svg>
+                                        ed@kleva.co
+                                    </a>
+                                </div>
+                                <div style="margin-bottom: 1.5rem;">
+                                    <a href="https://linkedin.com/in/edjescobar" style="display: inline-flex; align-items: center; gap: 1rem; background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border-radius: 12px; padding: 1rem 1.5rem; text-decoration: none; color: #0284c7; font-weight: 500; transition: transform 0.2s; width: 100%;">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                                        </svg>
+                                        LinkedIn Profile
+                                    </a>
+                                </div>
+                            </div>
                         </div>
+                        
+                        <!-- Quick Access & Context -->
+                        <div style="background: linear-gradient(135deg, #1e293b 0%, #334155 100%); border-radius: 24px; padding: 3rem; color: white;">
+                            <h3 style="color: #be79ff; font-size: 1.75rem; margin-bottom: 2rem; font-weight: 600;">Quick Access</h3>
+                            
+                            <div style="space-y: 1.5rem;">
+                                <div style="margin-bottom: 2rem;">
+                                    <a href="https://kleva.co" style="display: flex; align-items: center; gap: 1rem; background: rgba(255,255,255,0.1); border-radius: 12px; padding: 1.25rem; text-decoration: none; color: white; font-weight: 500; transition: background 0.2s; backdrop-filter: blur(10px);">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                                            <polyline points="9,22 9,12 15,12 15,22"/>
+                                        </svg>
+                                        <div>
+                                            <div>Website</div>
+                                            <div style="font-size: 0.9rem; opacity: 0.7;">kleva.co</div>
+                                        </div>
+                                    </a>
+                                </div>
+                                
+                                <div style="margin-bottom: 2rem;">
+                                    <a href="https://sdtl.io/46QLbsQ" style="display: flex; align-items: center; gap: 1rem; background: rgba(255,255,255,0.1); border-radius: 12px; padding: 1.25rem; text-decoration: none; color: white; font-weight: 500; transition: background 0.2s; backdrop-filter: blur(10px);">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                            <polyline points="14,2 14,8 20,8"/>
+                                            <line x1="16" y1="13" x2="8" y2="13"/>
+                                            <line x1="16" y1="17" x2="8" y2="17"/>
+                                            <polyline points="10,9 9,9 8,9"/>
+                                        </svg>
+                                        <div>
+                                            <div>Financial Model</div>
+                                            <div style="font-size: 0.9rem; opacity: 0.7;">Unit economics & projections</div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <!-- Context Stats -->
+                            <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; margin-top: 2rem;">
+                                <h4 style="color: #be79ff; margin-bottom: 1rem; font-size: 1.1rem;">Current Traction</h4>
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                                    <div style="text-align: center;">
+                                        <div style="font-size: 1.5rem; font-weight: bold; color: #10b981;">$37K</div>
+                                        <div style="font-size: 0.85rem; opacity: 0.8;">MRR</div>
+                                    </div>
+                                    <div style="text-align: center;">
+                                        <div style="font-size: 1.5rem; font-weight: bold; color: #f59e0b;">150K</div>
+                                        <div style="font-size: 0.85rem; opacity: 0.8;">Minutes/month</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
                     </div>
                     
-                    <!-- Quick Links -->
-                    <div style="display: flex; justify-content: center; gap: 3rem; margin: 2rem 0;">
-                        <a href="https://kleva.co" style="display: flex; align-items: center; gap: 0.5rem;">
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-                                <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/>
-                            </svg>
-                            Website
-                        </a>
-                        <a href="https://sdtl.io/46QLbsQ" style="display: flex; align-items: center; gap: 0.5rem;">
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-                                <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/>
-                                <path fill-rule="evenodd" d="M4 5a2 2 0 012-2 1 1 0 000 2H6a2 2 0 00-2 2v6a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-3a1 1 0 100-2h3a4 4 0 014 4v6a4 4 0 01-4 4H6a4 4 0 01-4-4V7a4 4 0 014-4z" clip-rule="evenodd"/>
-                            </svg>
-                            Financial Model
-                        </a>
+                    <!-- Call to Action -->
+                    <div style="margin-top: 3rem;">
+                        <p style="font-size: 1.3rem; color: #64748b; margin-bottom: 1rem;">
+                            Ready to transform debt collection in Latin America?
+                        </p>
+                        <p style="font-size: 1.1rem; color: #94a3b8;">
+                            Let's discuss how Kleva can help your business or investment portfolio.
+                        </p>
                     </div>
-                    
-                    <a href="https://zcal.co/i/mHSsk_2N" class="cta-button" style="margin-top: 2rem;">
-                        📅 Book a 15-minute intro call
-                    </a>
                 </div>
             </div>
         </div>
