@@ -626,9 +626,150 @@
             color: var(--kleva-gray);
             margin-top: 8px;
         }
+        
+        /* Password Protection Styles */
+        #password-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--kleva-black) 0%, #1a1a1a 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+        
+        #password-screen.hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+        
+        .password-container {
+            text-align: center;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 24px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            max-width: 400px;
+            width: 90%;
+        }
+        
+        .password-logo {
+            width: 80px;
+            height: 80px;
+            background: white;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            font-size: 48px;
+            font-weight: 900;
+            color: var(--kleva-black);
+        }
+        
+        .password-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 10px;
+        }
+        
+        .password-subtitle {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 30px;
+        }
+        
+        #password-input {
+            width: 100%;
+            padding: 16px 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            text-align: center;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        #password-input:focus {
+            outline: none;
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 0 0 2px rgba(0, 211, 127, 0.5);
+        }
+        
+        #password-input::placeholder {
+            color: rgba(255, 255, 255, 0.4);
+        }
+        
+        #password-submit {
+            width: 100%;
+            padding: 16px 20px;
+            font-size: 18px;
+            font-weight: 600;
+            border: none;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--kleva-blue), var(--kleva-green));
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        #password-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 211, 127, 0.3);
+        }
+        
+        #password-submit:active {
+            transform: translateY(0);
+        }
+        
+        .password-error {
+            color: #FF3B30;
+            font-size: 14px;
+            margin-top: 10px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .password-error.show {
+            opacity: 1;
+        }
+        
+        .deck-container {
+            display: none;
+        }
+        
+        .deck-container.authenticated {
+            display: block;
+        }
     </style>
 </head>
 <body>
+    <!-- Password Protection Screen -->
+    <div id="password-screen">
+        <div class="password-container">
+            <div class="password-logo">K</div>
+            <h1 class="password-title">Kleva Pitch Deck</h1>
+            <p class="password-subtitle">Enter password to continue</p>
+            <input 
+                type="password" 
+                id="password-input" 
+                placeholder="Enter password"
+                autocomplete="off"
+            >
+            <button id="password-submit">Access Deck</button>
+            <div class="password-error" id="password-error">Incorrect password. Please try again.</div>
+        </div>
+    </div>
+    
     <div class="deck-container" id="deck">
         
         <!-- Slide 1: Title -->
@@ -1511,6 +1652,66 @@
                 }
             }
         });
+        
+        // Password Protection
+        const PASSWORD = '1Billion';
+        const passwordScreen = document.getElementById('password-screen');
+        const passwordInput = document.getElementById('password-input');
+        const passwordSubmit = document.getElementById('password-submit');
+        const passwordError = document.getElementById('password-error');
+        const deckContainer = document.getElementById('deck');
+        
+        // Check if already authenticated
+        if (sessionStorage.getItem('kleva-authenticated') === 'true') {
+            passwordScreen.classList.add('hidden');
+            deckContainer.classList.add('authenticated');
+        }
+        
+        function checkPassword() {
+            const enteredPassword = passwordInput.value;
+            
+            if (enteredPassword === PASSWORD) {
+                // Correct password
+                sessionStorage.setItem('kleva-authenticated', 'true');
+                passwordScreen.classList.add('hidden');
+                deckContainer.classList.add('authenticated');
+                passwordInput.value = '';
+                passwordError.classList.remove('show');
+            } else {
+                // Wrong password
+                passwordError.classList.add('show');
+                passwordInput.value = '';
+                passwordInput.focus();
+                
+                // Shake animation
+                passwordInput.style.animation = 'shake 0.5s';
+                setTimeout(() => {
+                    passwordInput.style.animation = '';
+                }, 500);
+            }
+        }
+        
+        // Add shake animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes shake {
+                0%, 100% { transform: translateX(0); }
+                10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+                20%, 40%, 60%, 80% { transform: translateX(5px); }
+            }
+        `;
+        document.head.appendChild(style);
+        
+        // Event listeners
+        passwordSubmit.addEventListener('click', checkPassword);
+        passwordInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                checkPassword();
+            }
+        });
+        
+        // Focus password input on load
+        passwordInput.focus();
     </script>
 </body>
 </html>
