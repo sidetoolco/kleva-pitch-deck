@@ -332,8 +332,9 @@
         }
 
         .metric-box {
-            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-            border: 1px solid rgba(0,0,0,0.08);
+            background: var(--color-white);
+            border: 1px solid rgba(0,0,0,0.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
             border-radius: 12px;
             padding: 1.5rem;
             text-align: center;
@@ -492,7 +493,7 @@
 
         /* Slide specific styles */
         .slide-title {
-            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            background: var(--color-white);
             text-align: center;
         }
 
@@ -501,7 +502,7 @@
         }
 
         .slide-alt {
-            background: linear-gradient(135deg, #fafbfc 0%, #ffffff 100%);
+            background: var(--color-white);
         }
 
         /* Badge */
@@ -1540,31 +1541,31 @@
                     <div style="max-width: 800px; margin: 3rem auto;">
                         <!-- Pipeline visualization -->
                         <div style="display: flex; flex-direction: column; gap: 1rem;">
-                            <div style="display: flex; align-items: center; gap: 1rem; padding: 1rem; background: linear-gradient(90deg, rgba(16,185,129,0.1) 0%, transparent 100%); border-radius: 8px;">
+                            <div style="display: flex; align-items: center; gap: 1rem; padding: 1rem; background: var(--color-white); border-radius: 8px; border: 1px solid rgba(0, 0, 0, 0.1); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
                                 <div style="width: 200px; text-align: left; font-weight: 600;">Sancor Seguros</div>
                                 <div style="flex: 1; height: 40px; background: var(--color-success); border-radius: 4px; position: relative;">
                                     <span style="position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); color: white; font-weight: bold;">$45K/mo</span>
                                 </div>
                             </div>
-                            <div style="display: flex; align-items: center; gap: 1rem; padding: 1rem; background: linear-gradient(90deg, rgba(16,185,129,0.1) 0%, transparent 100%); border-radius: 8px;">
+                            <div style="display: flex; align-items: center; gap: 1rem; padding: 1rem; background: var(--color-white); border-radius: 8px; border: 1px solid rgba(0, 0, 0, 0.1); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
                                 <div style="width: 200px; text-align: left; font-weight: 600;">Diners Club</div>
                                 <div style="flex: 1; height: 40px; background: var(--color-success); border-radius: 4px; position: relative; width: 73%;">
                                     <span style="position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); color: white; font-weight: bold;">$33K/mo</span>
                                 </div>
                             </div>
-                            <div style="display: flex; align-items: center; gap: 1rem; padding: 1rem; background: linear-gradient(90deg, rgba(16,185,129,0.1) 0%, transparent 100%); border-radius: 8px;">
+                            <div style="display: flex; align-items: center; gap: 1rem; padding: 1rem; background: var(--color-white); border-radius: 8px; border: 1px solid rgba(0, 0, 0, 0.1); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
                                 <div style="width: 200px; text-align: left; font-weight: 600;">Ficohsa</div>
                                 <div style="flex: 1; height: 40px; background: var(--color-success); border-radius: 4px; position: relative; width: 73%;">
                                     <span style="position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); color: white; font-weight: bold;">$33K/mo</span>
                                 </div>
                             </div>
-                            <div style="display: flex; align-items: center; gap: 1rem; padding: 1rem; background: linear-gradient(90deg, rgba(16,185,129,0.1) 0%, transparent 100%); border-radius: 8px;">
+                            <div style="display: flex; align-items: center; gap: 1rem; padding: 1rem; background: var(--color-white); border-radius: 8px; border: 1px solid rgba(0, 0, 0, 0.1); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
                                 <div style="width: 200px; text-align: left; font-weight: 600;">Banco de Córdoba</div>
                                 <div style="flex: 1; height: 40px; background: var(--color-success); border-radius: 4px; position: relative; width: 67%;">
                                     <span style="position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); color: white; font-weight: bold;">$30K/mo</span>
                                 </div>
                             </div>
-                            <div style="display: flex; align-items: center; gap: 1rem; padding: 1rem; background: linear-gradient(90deg, rgba(16,185,129,0.1) 0%, transparent 100%); border-radius: 8px;">
+                            <div style="display: flex; align-items: center; gap: 1rem; padding: 1rem; background: var(--color-white); border-radius: 8px; border: 1px solid rgba(0, 0, 0, 0.1); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
                                 <div style="width: 200px; text-align: left; font-weight: 600;">Grupo Pichincha</div>
                                 <div style="flex: 1; height: 40px; background: var(--color-success); border-radius: 4px; position: relative; width: 38%;">
                                     <span style="position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); color: white; font-weight: bold;">$17K/mo</span>
@@ -1573,10 +1574,10 @@
                         </div>
                     </div>
                     
-                    <div style="margin-top: 3rem; padding: 2rem; background: linear-gradient(135deg, rgba(16,185,129,0.05) 0%, rgba(16,185,129,0.02) 100%); border-radius: 12px;">
-                        <h3>Total Pipeline Value</h3>
-                        <p class="big-number" style="font-size: 3rem;">$158K</p>
-                        <p>Monthly Recurring Revenue</p>
+                    <div style="margin-top: 3rem; padding: 2rem; background: var(--color-white); border-radius: 12px; border: 1px solid rgba(0, 0, 0, 0.1); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);">
+                        <h3 style="color: var(--color-black);">Total Pipeline Value</h3>
+                        <p class="big-number" style="font-size: 3rem; color: var(--color-black);">$158K</p>
+                        <p style="color: var(--color-gray);">Monthly Recurring Revenue</p>
                     </div>
                 </div>
             </div>
