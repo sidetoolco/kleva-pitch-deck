@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kleva - AI Debt Collection for Latin America</title>
+    <title>Kleva - Investor Pitch Deck</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -11,11 +14,25 @@
             box-sizing: border-box;
         }
 
+        :root {
+            --color-black: #141C25;
+            --color-gray-900: #344051;
+            --color-gray: #637083;
+            --color-gray-light: #afafaf;
+            --color-text-secondary: #E4E7EC;
+            --color-white: #ffffff;
+            --color-primary: #000000;
+            --color-success: #10B981;
+            --color-warning: #F59E0B;
+            --color-danger: #EF4444;
+        }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            background: #141C25;
-            color: white;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--color-white);
+            color: var(--color-black);
             overflow: hidden;
+            line-height: 1.6;
         }
 
         .deck-container {
@@ -27,129 +44,176 @@
 
         .slide {
             min-height: 100vh;
+            scroll-snap-align: start;
             display: flex;
             align-items: center;
             justify-content: center;
-            scroll-snap-align: start;
-            padding: 2rem;
+            padding: 3rem 2rem;
             position: relative;
         }
 
-        .slide-content {
+        .container {
             max-width: 1200px;
+            margin: 0 auto;
             width: 100%;
-            text-align: center;
         }
 
+        /* Typography */
         h1 {
-            font-size: 5rem;
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 1.1;
             margin-bottom: 1.5rem;
-            background: linear-gradient(to right, #BE79FF, #8B5CF6);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            letter-spacing: -0.02em;
         }
 
         h2 {
-            font-size: 3.5rem;
-            margin-bottom: 2rem;
-            color: #BE79FF;
+            font-size: 3rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.01em;
         }
 
         h3 {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-            color: #8B5CF6;
+            font-size: 1.75rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--color-gray-900);
         }
 
         p {
             font-size: 1.25rem;
             line-height: 1.8;
+            color: var(--color-gray);
             margin-bottom: 1rem;
-            color: #E4E7EC;
         }
 
-        .subtitle {
-            font-size: 1.75rem;
-            color: #afafaf;
-            margin-bottom: 2rem;
+        .large-text {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--color-black);
         }
 
         .highlight {
-            color: #BE79FF;
-            font-weight: bold;
-        }
-
-        .warning {
-            color: #F59E0B;
-            font-weight: bold;
+            color: var(--color-primary);
+            font-weight: 700;
         }
 
         .success {
-            color: #10B981;
-            font-weight: bold;
+            color: var(--color-success);
+            font-weight: 600;
+        }
+
+        .warning {
+            color: var(--color-warning);
+            font-weight: 600;
         }
 
         .danger {
-            color: #EF4444;
-            font-weight: bold;
+            color: var(--color-danger);
+            font-weight: 600;
         }
 
-        .list {
+        /* Slide specific styles */
+        .slide-title {
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            text-align: center;
+        }
+
+        .slide-content {
+            background: var(--color-white);
+        }
+
+        .slide-alt {
+            background: linear-gradient(135deg, #fafbfc 0%, #ffffff 100%);
+        }
+
+        /* Badge */
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: var(--color-black);
+            color: var(--color-white);
+            border-radius: 4px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-bottom: 1rem;
+        }
+
+        /* Lists */
+        .feature-list {
             list-style: none;
             padding: 0;
             margin: 2rem 0;
         }
 
-        .list li {
+        .feature-list li {
             font-size: 1.25rem;
             margin: 1rem 0;
-            color: #E4E7EC;
+            color: var(--color-gray-900);
+            display: flex;
+            align-items: flex-start;
         }
 
-        /* Slide backgrounds */
-        .slide-1 { background: linear-gradient(135deg, #141C25 0%, #344051 100%); }
-        .slide-2 { background: #141C25; }
-        .slide-3 { background: #141C25; }
-        .slide-4 { background: #141C25; }
-        .slide-5 { background: linear-gradient(135deg, #344051 0%, #141C25 100%); }
-        .slide-6 { background: #141C25; }
-        .slide-7 { background: linear-gradient(135deg, #141C25 0%, #344051 100%); }
-        .slide-8 { background: #141C25; }
-        .slide-9 { background: #141C25; }
-        .slide-10 { background: linear-gradient(135deg, #344051 0%, #141C25 100%); }
-        .slide-11 { background: #141C25; }
-        .slide-12 { background: linear-gradient(135deg, #141C25 0%, #344051 100%); }
-        .slide-13 { background: #141C25; }
-        .slide-14 { background: linear-gradient(135deg, #344051 0%, #141C25 100%); }
-        .slide-15 { background: linear-gradient(135deg, #141C25 0%, #BE79FF10 100%); }
-
-        .bold {
+        .feature-list li:before {
+            content: "→";
+            margin-right: 1rem;
+            color: var(--color-primary);
             font-weight: bold;
         }
 
-        .large-text {
-            font-size: 2rem;
-            font-weight: bold;
+        /* Stats */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .stat-card {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--color-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: var(--color-gray);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Team */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
             margin: 2rem 0;
         }
 
-        .small-text {
+        .team-member {
+            text-align: center;
+        }
+
+        .team-name {
+            font-weight: 600;
+            color: var(--color-black);
+            margin-bottom: 0.25rem;
+        }
+
+        .team-role {
+            color: var(--color-gray);
             font-size: 0.9rem;
-            color: #afafaf;
         }
 
-        a {
-            color: #BE79FF;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        a:hover {
-            color: #8B5CF6;
-        }
-
-        /* Navigation dots */
+        /* Navigation */
         .nav-dots {
             position: fixed;
             right: 2rem;
@@ -160,254 +224,397 @@
 
         .nav-dot {
             display: block;
-            width: 12px;
-            height: 12px;
-            margin: 8px 0;
-            background: rgba(255, 255, 255, 0.3);
+            width: 10px;
+            height: 10px;
+            margin: 10px 0;
+            background: var(--color-gray-light);
             border-radius: 50%;
             cursor: pointer;
             transition: all 0.3s;
+            border: 2px solid transparent;
         }
 
         .nav-dot.active {
-            background: #BE79FF;
-            transform: scale(1.3);
+            background: var(--color-primary);
+            transform: scale(1.2);
         }
 
-        /* Slide counter */
-        .slide-counter {
+        .nav-dot:hover {
+            border-color: var(--color-primary);
+        }
+
+        /* Progress bar */
+        .progress-bar {
             position: fixed;
-            bottom: 1rem;
-            right: 1rem;
-            color: #afafaf;
-            font-size: 0.9rem;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: rgba(0,0,0,0.05);
             z-index: 100;
         }
 
+        .progress-fill {
+            height: 100%;
+            background: var(--color-primary);
+            width: 0;
+            transition: width 0.3s ease;
+        }
+
+        /* CTA Button */
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--color-black);
+            color: var(--color-white);
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 1.125rem;
+            transition: all 0.3s ease;
+            margin-top: 2rem;
+        }
+
+        .cta-button:hover {
+            background: var(--color-gray-900);
+            transform: translateY(-2px);
+        }
+
+        /* Contact info */
+        .contact-info {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .contact-info a {
+            color: var(--color-primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
         @media (max-width: 768px) {
-            h1 { font-size: 3rem; }
+            h1 { font-size: 2.5rem; }
             h2 { font-size: 2rem; }
-            p, .list li { font-size: 1rem; }
+            p { font-size: 1rem; }
             .nav-dots { display: none; }
+            .stats-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
+    <!-- Progress Bar -->
+    <div class="progress-bar">
+        <div class="progress-fill" id="progress"></div>
+    </div>
+
+    <!-- Navigation Dots -->
+    <div class="nav-dots" id="nav-dots"></div>
+
+    <!-- Deck Container -->
     <div class="deck-container" id="deck">
+        
         <!-- Slide 1: Title -->
-        <div class="slide slide-1">
-            <div class="slide-content">
-                <h1>Kleva</h1>
-                <p class="subtitle">AI that collects debt better than humans in Latin America</p>
+        <div class="slide slide-title">
+            <div class="container">
+                <div style="text-align: center;">
+                    <h1>Kleva</h1>
+                    <p class="large-text">AI that collects debt better than humans in Latin America</p>
+                </div>
             </div>
         </div>
 
         <!-- Slide 2: Quick Intro -->
-        <div class="slide slide-2">
-            <div class="slide-content">
-                <h2>Quick Intro</h2>
-                <ul class="list">
-                    <li>Live with 3 paying clients ($37K MRR)</li>
-                    <li>150,000 minutes of collection calls monthly</li>
-                    <li>Team of 9 from Sidetool (AI agency)</li>
-                    <li>Invested $100K of our own money to build this</li>
-                </ul>
+        <div class="slide slide-content">
+            <div class="container">
+                <div style="text-align: center;">
+                    <span class="badge">QUICK INTRO</span>
+                    <h2>Where we are today</h2>
+                    <ul class="feature-list">
+                        <li>Live with 3 paying clients ($37K MRR)</li>
+                        <li>150,000 minutes of collection calls monthly</li>
+                        <li>Team of 9 from Sidetool (AI agency)</li>
+                        <li>Invested $100K of our own money to build this</li>
+                    </ul>
+                </div>
             </div>
         </div>
 
         <!-- Slide 3: The Problem -->
-        <div class="slide slide-3">
-            <div class="slide-content">
-                <h2>The Problem</h2>
-                <p class="large-text warning">60% of Latin American fintech loans go bad</p>
-                <p>Maria is a collections agent in Guatemala. She makes 80 calls a day. Gets yelled at 40 times. Collects from maybe 5 people. She'll quit in 3 months like everyone before her.</p>
-                <p class="bold">This is happening at every bank in Latin America.</p>
+        <div class="slide slide-alt">
+            <div class="container">
+                <div style="text-align: center;">
+                    <span class="badge">THE PROBLEM</span>
+                    <h2>Collections is broken in Latin America</h2>
+                    <p class="large-text warning">60% of Latin American fintech loans go bad</p>
+                    <p style="max-width: 800px; margin: 2rem auto;">
+                        Maria is a collections agent in Guatemala. She makes 80 calls a day. 
+                        Gets yelled at 40 times. Collects from maybe 5 people. 
+                        She'll quit in 3 months like everyone before her.
+                    </p>
+                    <p class="large-text">This is happening at every bank in Latin America.</p>
+                </div>
             </div>
         </div>
 
-        <!-- Slide 4: How They Solve It Today -->
-        <div class="slide slide-4">
-            <div class="slide-content">
-                <h2>How They Solve It Today</h2>
-                <h3>Banks throw humans at the problem</h3>
-                <ul class="list">
-                    <li>200+ agents at each bank just making calls</li>
-                    <li>75-100% annual turnover</li>
-                    <li>Excel spreadsheets to track everything</li>
-                    <li>Only recovering 20 cents per dollar</li>
-                </ul>
-                <p class="large-text danger">The system is completely broken.</p>
+        <!-- Slide 4: Current Solution -->
+        <div class="slide slide-content">
+            <div class="container">
+                <div style="text-align: center;">
+                    <span class="badge">CURRENT STATE</span>
+                    <h2>Banks throw humans at the problem</h2>
+                    <ul class="feature-list">
+                        <li>200+ agents at each bank just making calls</li>
+                        <li>75-100% annual turnover</li>
+                        <li>Excel spreadsheets to track everything</li>
+                        <li>Only recovering 20 cents per dollar</li>
+                    </ul>
+                    <p class="large-text danger">The system is completely broken.</p>
+                </div>
             </div>
         </div>
 
-        <!-- Slide 5: What If Instead... -->
-        <div class="slide slide-5">
-            <div class="slide-content">
-                <h2>What If Instead...</h2>
-                <h3>What if AI could make those calls?</h3>
-                <p>Never gets tired. Never quits. Works 24/7.<br>
-                And debtors actually prefer talking to it.</p>
-                <p class="large-text highlight">That's Kleva.</p>
+        <!-- Slide 5: What If -->
+        <div class="slide slide-alt">
+            <div class="container">
+                <div style="text-align: center;">
+                    <span class="badge">THE OPPORTUNITY</span>
+                    <h2>What if AI could make those calls?</h2>
+                    <p class="large-text">
+                        Never gets tired. Never quits. Works 24/7.<br>
+                        And debtors actually prefer talking to it.
+                    </p>
+                    <h3 style="margin-top: 3rem; font-size: 2.5rem;">That's Kleva.</h3>
+                </div>
             </div>
         </div>
 
         <!-- Slide 6: Our Solution -->
-        <div class="slide slide-6">
-            <div class="slide-content">
-                <h2>Our Solution</h2>
-                <h3>Kleva: AI Collections Agents</h3>
-                <ul class="list">
-                    <li>Makes 5,000 calls per day</li>
-                    <li>20% higher recovery rates than humans</li>
-                    <li>60% lower cost</li>
-                    <li>Speaks perfect Spanish & Portuguese</li>
-                    <li>Never judges, infinite patience</li>
-                </ul>
-                <p class="small-text">[Screenshot of dashboard showing real-time collections]</p>
+        <div class="slide slide-content">
+            <div class="container">
+                <div style="text-align: center;">
+                    <span class="badge">OUR SOLUTION</span>
+                    <h2>Kleva: AI Collections Agents</h2>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-value">5,000</div>
+                            <div class="stat-label">Calls per day</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">20%</div>
+                            <div class="stat-label">Higher recovery</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">60%</div>
+                            <div class="stat-label">Lower cost</div>
+                        </div>
+                    </div>
+                    <p>Speaks perfect Spanish & Portuguese. Never judges, infinite patience.</p>
+                </div>
             </div>
         </div>
 
         <!-- Slide 7: The Dream -->
-        <div class="slide slide-7">
-            <div class="slide-content">
-                <h2>The Dream</h2>
-                <p>We're building the AI workforce for Latin American finance</p>
-                <p>Start with collections (the hardest problem)<br>
-                Then expand to every repetitive role in banking</p>
-                <p class="large-text highlight">This is a $67B market in LATAM alone.</p>
+        <div class="slide slide-alt">
+            <div class="container">
+                <div style="text-align: center;">
+                    <span class="badge">THE VISION</span>
+                    <h2>The AI workforce for Latin American finance</h2>
+                    <p>Start with collections (the hardest problem)<br>
+                    Then expand to every repetitive role in banking</p>
+                    <div style="margin-top: 3rem;">
+                        <h3 class="highlight" style="font-size: 2.5rem;">$67B market in LATAM alone</h3>
+                    </div>
+                </div>
             </div>
         </div>
 
         <!-- Slide 8: Traction -->
-        <div class="slide slide-8">
-            <div class="slide-content">
-                <h2>Traction</h2>
-                <h3>From $0 to $37K MRR in 3 months</h3>
-                <p class="small-text">[Chart showing growth]</p>
-                <ul class="list">
-                    <li>Vana: $17K/month (microloans)</li>
-                    <li>ADT: $15K/month (security subscriptions)</li>
-                    <li>DirecTV: $5K/month (satellite contracts)</li>
-                </ul>
-                <p class="large-text highlight">Pipeline: $158K MRR closing September</p>
+        <div class="slide slide-content">
+            <div class="container">
+                <div style="text-align: center;">
+                    <span class="badge">TRACTION</span>
+                    <h2>From $0 to $37K MRR in 3 months</h2>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-value">$17K</div>
+                            <div class="stat-label">Vana (microloans)</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">$15K</div>
+                            <div class="stat-label">ADT (security)</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">$5K</div>
+                            <div class="stat-label">DirecTV (satellite)</div>
+                        </div>
+                    </div>
+                    <h3 class="success">Pipeline: $158K MRR closing September</h3>
+                </div>
             </div>
         </div>
 
-        <!-- Slide 9: Why We're Different -->
-        <div class="slide slide-9">
-            <div class="slide-content">
-                <h2>Why We're Different</h2>
-                <h3>Others use chatbots. We make phone calls.</h3>
-                <ul class="list">
-                    <li>Colektia: WhatsApp campaigns only</li>
-                    <li>Traditional call centers: $3/minute with humans</li>
-                    <li class="highlight">Us: $0.17/minute with AI that works better</li>
-                </ul>
-                <p class="bold">We handle the hardest channel (voice) with the best results.</p>
+        <!-- Slide 9: Why Different -->
+        <div class="slide slide-alt">
+            <div class="container">
+                <div style="text-align: center;">
+                    <span class="badge">COMPETITIVE ADVANTAGE</span>
+                    <h2>Others use chatbots. We make phone calls.</h2>
+                    <div style="margin: 3rem 0;">
+                        <p>Colektia: WhatsApp campaigns only</p>
+                        <p>Traditional call centers: $3/minute with humans</p>
+                        <p class="large-text highlight">Us: $0.17/minute with AI that works better</p>
+                    </div>
+                    <p class="large-text">We handle the hardest channel (voice) with the best results.</p>
+                </div>
             </div>
         </div>
 
-        <!-- Slide 10: The Wave We're Riding -->
-        <div class="slide slide-10">
-            <div class="slide-content">
-                <h2>The Wave We're Riding</h2>
-                <h3>Delinquency is exploding globally</h3>
-                <ul class="list">
-                    <li>Brazil: 77.5% of families in debt</li>
-                    <li>Argentina: Personal loans at 4%+ delinquency (9-month high)</li>
-                    <li>US: Even superprime borrowers defaulting 109% more YoY</li>
-                </ul>
-                <p class="large-text highlight">Collections is becoming THE critical function for every lender.</p>
+        <!-- Slide 10: Market Trends -->
+        <div class="slide slide-content">
+            <div class="container">
+                <div style="text-align: center;">
+                    <span class="badge">MARKET DYNAMICS</span>
+                    <h2>Delinquency is exploding globally</h2>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-value">77.5%</div>
+                            <div class="stat-label">Brazilian families in debt</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">4%+</div>
+                            <div class="stat-label">Argentina delinquency</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">109%</div>
+                            <div class="stat-label">US YoY default increase</div>
+                        </div>
+                    </div>
+                    <p class="large-text">Collections is becoming THE critical function for every lender.</p>
+                </div>
             </div>
         </div>
 
-        <!-- Slide 11: Why Now? -->
-        <div class="slide slide-11">
-            <div class="slide-content">
-                <h2>Why Now?</h2>
-                <h3>The perfect storm:</h3>
-                <ul class="list">
-                    <li><span class="success">Tech finally works:</span> GPT-4 speaks perfect Spanish/Portuguese</li>
-                    <li><span class="success">Costs collapsed:</span> What cost $1/minute now costs $0.06</li>
-                    <li><span class="warning">Crisis accelerating:</span> Banks can't hire collectors fast enough</li>
-                    <li><span class="warning">LATAM ready:</span> Lower regulatory barriers than US</li>
-                </ul>
-                <p class="large-text">We couldn't have built this 2 years ago. Now we can.</p>
+        <!-- Slide 11: Why Now -->
+        <div class="slide slide-alt">
+            <div class="container">
+                <div style="text-align: center;">
+                    <span class="badge">TIMING</span>
+                    <h2>The perfect storm</h2>
+                    <ul class="feature-list">
+                        <li><span class="success">Tech finally works:</span> GPT-4 speaks perfect Spanish/Portuguese</li>
+                        <li><span class="success">Costs collapsed:</span> What cost $1/minute now costs $0.06</li>
+                        <li><span class="warning">Crisis accelerating:</span> Banks can't hire collectors fast enough</li>
+                        <li><span class="warning">LATAM ready:</span> Lower regulatory barriers than US</li>
+                    </ul>
+                    <p class="large-text">We couldn't have built this 2 years ago. Now we can.</p>
+                </div>
             </div>
         </div>
 
-        <!-- Slide 12: Why Us? -->
-        <div class="slide slide-12">
-            <div class="slide-content">
-                <h2>Why Us?</h2>
-                <h3>We understand both AI and LATAM</h3>
-                <ul class="list">
-                    <li><span class="bold">Ed:</span> Built Sidetool, embedded in 20+ companies</li>
-                    <li><span class="bold">Nicolás Mencia:</span> 10 years in collections, ex-MercadoPago</li>
-                    <li><span class="bold">Team:</span> 9 engineers who've been building AI agents for 2 years</li>
-                </ul>
-                <p>We're not collections experts who learned AI.<br>
-                We're AI experts who fell in love with solving collections.</p>
+        <!-- Slide 12: Why Us -->
+        <div class="slide slide-content">
+            <div class="container">
+                <div style="text-align: center;">
+                    <span class="badge">THE TEAM</span>
+                    <h2>We understand both AI and LATAM</h2>
+                    <div class="team-grid">
+                        <div class="team-member">
+                            <div class="team-name">Ed Escobar</div>
+                            <div class="team-role">Built Sidetool, embedded in 20+ companies</div>
+                        </div>
+                        <div class="team-member">
+                            <div class="team-name">Nicolás Mencia</div>
+                            <div class="team-role">10 years in collections, ex-MercadoPago</div>
+                        </div>
+                        <div class="team-member">
+                            <div class="team-name">Team</div>
+                            <div class="team-role">9 engineers building AI agents for 2 years</div>
+                        </div>
+                    </div>
+                    <p style="margin-top: 3rem;">We're not collections experts who learned AI.<br>
+                    We're AI experts who fell in love with solving collections.</p>
+                </div>
             </div>
         </div>
 
-        <!-- Slide 13: Next Milestone -->
-        <div class="slide slide-13">
-            <div class="slide-content">
-                <h2>Next Milestone</h2>
-                <h3>With this funding, by December 2025:</h3>
-                <ul class="list">
-                    <li><span class="bold">Revenue:</span> $150K MRR (from $37K today)</li>
-                    <li><span class="bold">Scale:</span> 1M minutes/month</li>
-                    <li><span class="bold">Clients:</span> 10 enterprise banks signed</li>
-                    <li><span class="bold">Geography:</span> Operating in 5 countries</li>
-                    <li><span class="bold">Team:</span> 15 people fully dedicated to Kleva</li>
-                </ul>
+        <!-- Slide 13: Milestones -->
+        <div class="slide slide-alt">
+            <div class="container">
+                <div style="text-align: center;">
+                    <span class="badge">NEXT MILESTONE</span>
+                    <h2>With this funding, by December 2025:</h2>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-value">$150K</div>
+                            <div class="stat-label">MRR (from $37K)</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">1M</div>
+                            <div class="stat-label">Minutes/month</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">10</div>
+                            <div class="stat-label">Enterprise banks</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">5</div>
+                            <div class="stat-label">Countries</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <!-- Slide 14: The Bigger Vision -->
-        <div class="slide slide-14">
-            <div class="slide-content">
-                <h2>The Bigger Vision</h2>
-                <ul class="list">
-                    <li><span class="bold">Year 1:</span> Master collections</li>
-                    <li><span class="bold">Year 2:</span> Expand to dispute resolution, fraud detection</li>
-                    <li><span class="bold">Year 3:</span> Full AI workforce for finance</li>
-                </ul>
-                <p>Every bank in LATAM will use Kleva agents.<br>
-                Then we go to the US with proven results.</p>
-                <p class="highlight">We handle the AI complexity. Banks focus on lending.</p>
+        <!-- Slide 14: Vision -->
+        <div class="slide slide-content">
+            <div class="container">
+                <div style="text-align: center;">
+                    <span class="badge">THE BIGGER VISION</span>
+                    <h2>The roadmap to dominate LATAM finance</h2>
+                    <ul class="feature-list">
+                        <li><strong>Year 1:</strong> Master collections</li>
+                        <li><strong>Year 2:</strong> Expand to dispute resolution, fraud detection</li>
+                        <li><strong>Year 3:</strong> Full AI workforce for finance</li>
+                    </ul>
+                    <p class="large-text">Every bank in LATAM will use Kleva agents.<br>
+                    Then we go to the US with proven results.</p>
+                    <p style="margin-top: 2rem;">We handle the AI complexity. Banks focus on lending.</p>
+                </div>
             </div>
         </div>
 
         <!-- Slide 15: Contact -->
-        <div class="slide slide-15">
-            <div class="slide-content">
-                <h2>Contact</h2>
-                <p class="subtitle">Let's fix collections in Latin America together</p>
-                <h3>Ed Escobar</h3>
-                <p>CEO & Cofounder</p>
-                <p><a href="mailto:ed@kleva.co">ed@kleva.co</a></p>
-                <p><a href="https://linkedin.com/in/edjescobar">LinkedIn</a></p>
-                <br><br>
-                <p>Website: <a href="https://kleva.co">kleva.co</a></p>
-                <p>Financial Model: <a href="https://sdtl.io/46QLbsQ">sdtl.io/46QLbsQ</a></p>
+        <div class="slide slide-alt">
+            <div class="container">
+                <div style="text-align: center;">
+                    <span class="badge">LET'S CONNECT</span>
+                    <h2>Let's fix collections in Latin America together</h2>
+                    <div class="contact-info">
+                        <h3>Ed Escobar</h3>
+                        <p>CEO & Cofounder</p>
+                        <p><a href="mailto:ed@kleva.co">ed@kleva.co</a></p>
+                        <p><a href="https://linkedin.com/in/edjescobar">LinkedIn</a></p>
+                        <div style="margin-top: 3rem;">
+                            <p>Website: <a href="https://kleva.co">kleva.co</a></p>
+                            <p>Financial Model: <a href="https://sdtl.io/46QLbsQ">sdtl.io/46QLbsQ</a></p>
+                        </div>
+                    </div>
+                    <a href="https://zcal.co/i/mHSsk_2N" class="cta-button">Book a 15-minute intro call</a>
+                </div>
             </div>
         </div>
+
     </div>
-
-    <!-- Navigation dots -->
-    <div class="nav-dots" id="nav-dots"></div>
-
-    <!-- Slide counter -->
-    <div class="slide-counter" id="slide-counter">1 / 15</div>
 
     <script>
         const deck = document.getElementById('deck');
         const slides = document.querySelectorAll('.slide');
         const navDotsContainer = document.getElementById('nav-dots');
-        const slideCounter = document.getElementById('slide-counter');
+        const progressBar = document.getElementById('progress');
         let currentSlide = 0;
 
         // Create navigation dots
@@ -434,8 +641,9 @@
                 dot.classList.toggle('active', index === currentSlide);
             });
             
-            // Update slide counter
-            slideCounter.textContent = `${currentSlide + 1} / ${slides.length}`;
+            // Update progress bar
+            const progress = ((currentSlide + 1) / slides.length) * 100;
+            progressBar.style.width = progress + '%';
         }
 
         // Update on scroll
