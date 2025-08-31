@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kleva - Investor Pitch Deck</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext x='50%25' y='50%25' font-size='20' text-anchor='middle' dy='0.3em' font-family='Inter, sans-serif' font-weight='bold'%3EK%3C/text%3E%3C/svg%3E">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -12,6 +13,26 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-30px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes scaleIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
         }
 
         :root {
@@ -50,6 +71,35 @@
             justify-content: center;
             padding: 3rem 2rem;
             position: relative;
+        }
+
+        .slide.active .badge {
+            animation: slideInLeft 0.6s ease-out;
+        }
+
+        .slide.active h1, .slide.active h2 {
+            animation: fadeIn 0.8s ease-out 0.2s both;
+        }
+
+        .slide.active p, .slide.active ul {
+            animation: fadeIn 0.8s ease-out 0.4s both;
+        }
+
+        .slide.active .stat-card {
+            animation: scaleIn 0.6s ease-out;
+            animation-fill-mode: both;
+        }
+
+        .slide.active .stat-card:nth-child(1) { animation-delay: 0.2s; }
+        .slide.active .stat-card:nth-child(2) { animation-delay: 0.3s; }
+        .slide.active .stat-card:nth-child(3) { animation-delay: 0.4s; }
+        .slide.active .stat-card:nth-child(4) { animation-delay: 0.5s; }
+
+        .logo {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 2rem;
+            animation: scaleIn 0.8s ease-out;
         }
 
         .container {
@@ -278,6 +328,7 @@
         .cta-button:hover {
             background: var(--color-gray-900);
             transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
         }
 
         /* Contact info */
@@ -318,9 +369,13 @@
     <div class="deck-container" id="deck">
         
         <!-- Slide 1: Title -->
-        <div class="slide slide-title">
+        <div class="slide slide-title active">
             <div class="container">
                 <div style="text-align: center;">
+                    <svg class="logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="100" height="100" rx="20" fill="#000000"/>
+                        <text x="50" y="65" font-family="Inter, sans-serif" font-size="55" font-weight="800" fill="white" text-anchor="middle">K</text>
+                    </svg>
                     <h1>Kleva</h1>
                     <p class="large-text">AI that collects debt better than humans in Latin America</p>
                 </div>
@@ -332,12 +387,13 @@
             <div class="container">
                 <div style="text-align: center;">
                     <span class="badge">QUICK INTRO</span>
-                    <h2>Where we are today</h2>
+                    <h2>The Discovery</h2>
+                    <p style="max-width: 800px; margin: 0 auto 2rem;">We started Sidetool as an AI agency. While working with McDonald's, we met Tito from Vana (microloans in Guatemala). He had 200 people just making collection calls all day.</p>
                     <ul class="feature-list">
-                        <li>Live with 3 paying clients ($37K MRR)</li>
-                        <li>150,000 minutes of collection calls monthly</li>
-                        <li>Team of 9 from Sidetool (AI agency)</li>
-                        <li>Invested $100K of our own money to build this</li>
+                        <li>3 months with Vana: 20% higher recovery, 60% lower costs</li>
+                        <li>Now at $37K MRR with 3 paying clients</li>
+                        <li>Pipeline to reach $150K+ by December 2025</li>
+                        <li>Invested $100K of Sidetool's revenue to build Kleva</li>
                     </ul>
                 </div>
             </div>
@@ -349,13 +405,12 @@
                 <div style="text-align: center;">
                     <span class="badge">THE PROBLEM</span>
                     <h2>Collections is broken in Latin America</h2>
-                    <p class="large-text warning">60% of Latin American fintech loans go bad</p>
+                    <p class="large-text warning">77% of Brazilian families are in debt</p>
                     <p style="max-width: 800px; margin: 2rem auto;">
-                        Maria is a collections agent in Guatemala. She makes 80 calls a day. 
-                        Gets yelled at 40 times. Collects from maybe 5 people. 
-                        She'll quit in 3 months like everyone before her.
+                        <strong>Without Kleva:</strong> Maria makes 80 calls. Gets yelled at 40 times. Collects from maybe 5 people. Quits in 3 months.<br><br>
+                        <strong>With Kleva:</strong> Ana sees Kleva made 5,000 calls overnight. Collected from 500 people. She reviews tricky cases and goes home feeling accomplished.
                     </p>
-                    <p class="large-text">This is happening at every bank in Latin America.</p>
+                    <p class="large-text">60% of fintech loans go bad. The system is failing.</p>
                 </div>
             </div>
         </div>
@@ -365,14 +420,14 @@
             <div class="container">
                 <div style="text-align: center;">
                     <span class="badge">CURRENT STATE</span>
-                    <h2>Banks throw humans at the problem</h2>
+                    <h2>The daily reality</h2>
                     <ul class="feature-list">
-                        <li>200+ agents at each bank just making calls</li>
-                        <li>75-100% annual turnover</li>
-                        <li>Excel spreadsheets to track everything</li>
-                        <li>Only recovering 20 cents per dollar</li>
+                        <li>Collections agents quit every 3 months</li>
+                        <li>Argentina: Personal loan delinquency hit 4%+ (9-month high)</li>
+                        <li>Banks still use Excel to track everything</li>
+                        <li>Delinquency rising faster than banks can hire</li>
                     </ul>
-                    <p class="large-text danger">The system is completely broken.</p>
+                    <p class="large-text danger">Personnel costs are unsustainable.</p>
                 </div>
             </div>
         </div>
@@ -382,10 +437,13 @@
             <div class="container">
                 <div style="text-align: center;">
                     <span class="badge">THE OPPORTUNITY</span>
-                    <h2>What if AI could make those calls?</h2>
+                    <h2>The Surprise</h2>
                     <p class="large-text">
-                        Never gets tired. Never quits. Works 24/7.<br>
-                        And debtors actually prefer talking to it.
+                        We thought we'd just save money. But our AI was actually <strong>better</strong> at collecting.
+                    </p>
+                    <p style="margin: 2rem auto; max-width: 600px;">
+                        Debtors preferred our AI. They opened up more. They paid more often.<br>
+                        Why? Our AI doesn't judge. It has infinite patience.
                     </p>
                     <h3 style="margin-top: 3rem; font-size: 2.5rem;">That's Kleva.</h3>
                 </div>
@@ -397,22 +455,22 @@
             <div class="container">
                 <div style="text-align: center;">
                     <span class="badge">OUR SOLUTION</span>
-                    <h2>Kleva: AI Collections Agents</h2>
+                    <h2>How It Works</h2>
                     <div class="stats-grid">
                         <div class="stat-card">
-                            <div class="stat-value">5,000</div>
-                            <div class="stat-label">Calls per day</div>
+                            <div class="stat-value">Week 1</div>
+                            <div class="stat-label">Integration & Setup</div>
                         </div>
                         <div class="stat-card">
-                            <div class="stat-value">20%</div>
-                            <div class="stat-label">Higher recovery</div>
+                            <div class="stat-value">Week 2</div>
+                            <div class="stat-label">Training & Compliance</div>
                         </div>
                         <div class="stat-card">
-                            <div class="stat-value">60%</div>
-                            <div class="stat-label">Lower cost</div>
+                            <div class="stat-value">Week 3</div>
+                            <div class="stat-label">Go Live & Scale</div>
                         </div>
                     </div>
-                    <p>Speaks perfect Spanish & Portuguese. Never judges, infinite patience.</p>
+                    <p>Start with 100 calls/day, scale to full volume within days.</p>
                 </div>
             </div>
         </div>
@@ -422,12 +480,15 @@
             <div class="container">
                 <div style="text-align: center;">
                     <span class="badge">THE VISION</span>
-                    <h2>The AI workforce for Latin American finance</h2>
-                    <p>Start with collections (the hardest problem)<br>
-                    Then expand to every repetitive role in banking</p>
-                    <div style="margin-top: 3rem;">
-                        <h3 class="highlight" style="font-size: 2.5rem;">$67B market in LATAM alone</h3>
-                    </div>
+                    <h2>What We're Building</h2>
+                    <p>End-to-end intelligence platform for collections:</p>
+                    <ul class="feature-list" style="text-align: left; max-width: 700px; margin: 2rem auto;">
+                        <li>Ingest data from any source</li>
+                        <li>Intelligent scoring & behavioral archetypes</li>
+                        <li>Dynamic engagement across all channels</li>
+                        <li>Continuous learning from every interaction</li>
+                    </ul>
+                    <p class="large-text highlight">Then expand: dispute resolution, fraud detection, customer retention</p>
                 </div>
             </div>
         </div>
@@ -437,22 +498,27 @@
             <div class="container">
                 <div style="text-align: center;">
                     <span class="badge">TRACTION</span>
-                    <h2>From $0 to $37K MRR in 3 months</h2>
+                    <h2>The Numbers</h2>
                     <div class="stats-grid">
                         <div class="stat-card">
-                            <div class="stat-value">$17K</div>
-                            <div class="stat-label">Vana (microloans)</div>
+                            <div class="stat-value">$37K</div>
+                            <div class="stat-label">Current MRR</div>
                         </div>
                         <div class="stat-card">
-                            <div class="stat-value">$15K</div>
-                            <div class="stat-label">ADT (security)</div>
+                            <div class="stat-value">$150K</div>
+                            <div class="stat-label">December 2025</div>
                         </div>
                         <div class="stat-card">
-                            <div class="stat-value">$5K</div>
-                            <div class="stat-label">DirecTV (satellite)</div>
+                            <div class="stat-value">150K</div>
+                            <div class="stat-label">Minutes/month</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">900K</div>
+                            <div class="stat-label">Dec minutes</div>
                         </div>
                     </div>
-                    <h3 class="success">Pipeline: $158K MRR closing September</h3>
+                    <p><strong>Live clients:</strong> Vana ($17K), ADT ($15K scaling to $167K), DirecTV ($5K scaling to $25K)</p>
+                    <h3 class="success">Closing Q3: $158K from 5 enterprise deals</h3>
                 </div>
             </div>
         </div>
@@ -462,13 +528,15 @@
             <div class="container">
                 <div style="text-align: center;">
                     <span class="badge">COMPETITIVE ADVANTAGE</span>
-                    <h2>Others use chatbots. We make phone calls.</h2>
-                    <div style="margin: 3rem 0;">
-                        <p>Colektia: WhatsApp campaigns only</p>
-                        <p>Traditional call centers: $3/minute with humans</p>
-                        <p class="large-text highlight">Us: $0.17/minute with AI that works better</p>
-                    </div>
-                    <p class="large-text">We handle the hardest channel (voice) with the best results.</p>
+                    <h2>Our Competitive Advantages</h2>
+                    <p class="large-text">We get smarter every day</p>
+                    <ul class="feature-list" style="text-align: left; max-width: 700px; margin: 2rem auto;">
+                        <li>150K minutes today → 10M by 2026</li>
+                        <li>Every call teaches us what works</li>
+                        <li>Network effect: every client improves the system</li>
+                        <li>We understand LATAM nuances ("pisto" vs "lana")</li>
+                    </ul>
+                    <p><strong>Tiered pricing:</strong> $0.158-0.197/minute based on volume</p>
                 </div>
             </div>
         </div>
@@ -478,7 +546,7 @@
             <div class="container">
                 <div style="text-align: center;">
                     <span class="badge">MARKET DYNAMICS</span>
-                    <h2>Delinquency is exploding globally</h2>
+                    <h2>Why Right Now</h2>
                     <div class="stats-grid">
                         <div class="stat-card">
                             <div class="stat-value">77.5%</div>
@@ -490,10 +558,14 @@
                         </div>
                         <div class="stat-card">
                             <div class="stat-value">109%</div>
-                            <div class="stat-label">US YoY default increase</div>
+                            <div class="stat-label">US superprime defaults YoY</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">6M</div>
+                            <div class="stat-label">Americans overdue on loans</div>
                         </div>
                     </div>
-                    <p class="large-text">Collections is becoming THE critical function for every lender.</p>
+                    <p class="large-text">Banks can't hire collectors fast enough. Traditional methods are unsustainable.</p>
                 </div>
             </div>
         </div>
@@ -503,14 +575,14 @@
             <div class="container">
                 <div style="text-align: center;">
                     <span class="badge">TIMING</span>
-                    <h2>The perfect storm</h2>
+                    <h2>Why LATAM First</h2>
                     <ul class="feature-list">
-                        <li><span class="success">Tech finally works:</span> GPT-4 speaks perfect Spanish/Portuguese</li>
-                        <li><span class="success">Costs collapsed:</span> What cost $1/minute now costs $0.06</li>
-                        <li><span class="warning">Crisis accelerating:</span> Banks can't hire collectors fast enough</li>
-                        <li><span class="warning">LATAM ready:</span> Lower regulatory barriers than US</li>
+                        <li><span class="success">Urgent need:</span> 30% of Brazilian families heading to default</li>
+                        <li><span class="success">Lower barriers:</span> No state-by-state licensing like US</li>
+                        <li><span class="success">Tech ready:</span> Voice synthesis costs dropped 95%</li>
+                        <li><span class="warning">Perfect timing:</span> WhatsApp integration now possible</li>
                     </ul>
-                    <p class="large-text">We couldn't have built this 2 years ago. Now we can.</p>
+                    <p class="large-text">Build proof at scale in LATAM, then enter US with millions of successful calls.</p>
                 </div>
             </div>
         </div>
@@ -520,23 +592,35 @@
             <div class="container">
                 <div style="text-align: center;">
                     <span class="badge">THE TEAM</span>
-                    <h2>We understand both AI and LATAM</h2>
+                    <h2>The Team</h2>
+                    <p style="margin-bottom: 2rem;">We have a team obsessed with the details that matter:</p>
                     <div class="team-grid">
                         <div class="team-member">
                             <div class="team-name">Ed Escobar</div>
-                            <div class="team-role">Built Sidetool, embedded in 20+ companies</div>
+                            <div class="team-role">CEO, Sales Lead</div>
                         </div>
                         <div class="team-member">
                             <div class="team-name">Nicolás Mencia</div>
-                            <div class="team-role">10 years in collections, ex-MercadoPago</div>
+                            <div class="team-role">Collections Expert, ex-MercadoPago</div>
                         </div>
                         <div class="team-member">
-                            <div class="team-name">Team</div>
-                            <div class="team-role">9 engineers building AI agents for 2 years</div>
+                            <div class="team-name">JM</div>
+                            <div class="team-role">Success Lead, ex-Sirena</div>
+                        </div>
+                        <div class="team-member">
+                            <div class="team-name">Santi</div>
+                            <div class="team-role">Lead Dev, AI Infrastructure</div>
+                        </div>
+                        <div class="team-member">
+                            <div class="team-name">Os</div>
+                            <div class="team-role">Telephony Infrastructure</div>
+                        </div>
+                        <div class="team-member">
+                            <div class="team-name">Gonza, Lila, Juli, Muni</div>
+                            <div class="team-role">Product, Engineering, Quality</div>
                         </div>
                     </div>
-                    <p style="margin-top: 3rem;">We're not collections experts who learned AI.<br>
-                    We're AI experts who fell in love with solving collections.</p>
+                    <p style="margin-top: 2rem;">We're AI experts who fell in love with solving collections.</p>
                 </div>
             </div>
         </div>
@@ -546,7 +630,7 @@
             <div class="container">
                 <div style="text-align: center;">
                     <span class="badge">NEXT MILESTONE</span>
-                    <h2>With this funding, by December 2025:</h2>
+                    <h2>Our Immediate Priorities</h2>
                     <div class="stats-grid">
                         <div class="stat-card">
                             <div class="stat-value">$150K</div>
@@ -574,14 +658,14 @@
             <div class="container">
                 <div style="text-align: center;">
                     <span class="badge">THE BIGGER VISION</span>
-                    <h2>The roadmap to dominate LATAM finance</h2>
+                    <h2>How We'll Grow</h2>
                     <ul class="feature-list">
-                        <li><strong>Year 1:</strong> Master collections</li>
-                        <li><strong>Year 2:</strong> Expand to dispute resolution, fraud detection</li>
-                        <li><strong>Year 3:</strong> Full AI workforce for finance</li>
+                        <li><strong>First 6 months:</strong> Guatemala, Ecuador, Argentina → $150K MRR</li>
+                        <li><strong>Months 7-12:</strong> Mexico & Colombia → $500K MRR</li>
+                        <li><strong>Year 2:</strong> Brazil (biggest opportunity) → $2M MRR</li>
+                        <li><strong>Then US:</strong> Enter with proven results & SOC 2 certification</li>
                     </ul>
-                    <p class="large-text">Every bank in LATAM will use Kleva agents.<br>
-                    Then we go to the US with proven results.</p>
+                    <p class="large-text">Need ~40 enterprise clients at $50K average to hit $2M</p>
                     <p style="margin-top: 2rem;">We handle the AI complexity. Banks focus on lending.</p>
                 </div>
             </div>
@@ -672,6 +756,27 @@
 
         // Initialize
         updateCurrentSlide();
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            root: deck,
+            rootMargin: '0px',
+            threshold: 0.5
+        };
+
+        const slideObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                } else {
+                    entry.target.classList.remove('active');
+                }
+            });
+        }, observerOptions);
+
+        slides.forEach(slide => {
+            slideObserver.observe(slide);
+        });
     </script>
 </body>
 </html>
