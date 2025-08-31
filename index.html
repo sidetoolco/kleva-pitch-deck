@@ -297,12 +297,16 @@
 
         /* Typography */
         h1 {
-            font-size: 4rem;
+            font-size: clamp(3rem, 7vw, 5rem);
             font-weight: 800;
             line-height: 1.1;
-            margin-bottom: 1.5rem;
-            letter-spacing: -0.02em;
+            margin-bottom: 2rem;
+            letter-spacing: -0.03em;
             opacity: 0;
+            background: linear-gradient(135deg, var(--color-black) 0%, var(--color-gray-900) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .icon-box {
@@ -361,13 +365,15 @@
         }
 
         .big-number {
-            font-size: 5rem;
+            font-size: clamp(3rem, 8vw, 5rem);
             font-weight: 800;
             line-height: 1;
             background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-gray-900) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.03em;
         }
 
         .timeline-visual {
@@ -422,11 +428,11 @@
         }
 
         h2 {
-            font-size: 3rem;
+            font-size: clamp(2rem, 5vw, 3rem);
             font-weight: 700;
             line-height: 1.2;
-            margin-bottom: 1.5rem;
-            letter-spacing: -0.01em;
+            margin-bottom: 2rem;
+            letter-spacing: -0.02em;
             opacity: 0;
         }
 
@@ -488,15 +494,34 @@
         /* Badge */
         .badge {
             display: inline-block;
-            padding: 0.25rem 0.75rem;
-            background: var(--color-black);
+            padding: 0.5rem 1.25rem;
+            background: linear-gradient(135deg, var(--color-black) 0%, var(--color-gray-900) 100%);
             color: var(--color-white);
-            border-radius: 4px;
-            font-size: 0.875rem;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            margin-bottom: 1rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
             opacity: 0;
+            box-shadow: var(--shadow-md);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .badge::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.6s ease;
+        }
+        
+        .badge:hover::after {
+            left: 100%;
         }
 
         /* Lists */
@@ -728,8 +753,27 @@
                         <rect width="100" height="100" rx="20" fill="#000000"/>
                         <text x="50" y="65" font-family="Inter, sans-serif" font-size="55" font-weight="800" fill="white" text-anchor="middle">K</text>
                     </svg>
-                    <h1 data-animate="fade-up">Kleva</h1>
-                    <p class="large-text" data-animate="fade-in" data-animate-delay="2">AI that collects debt better than humans in Latin America</p>
+                    <div style="position: relative; display: inline-block; margin-bottom: 2rem;">
+                        <h1 data-animate="fade-up" style="font-size: clamp(4rem, 10vw, 7rem); letter-spacing: -0.04em; margin-bottom: 0;">Kleva</h1>
+                        <div style="position: absolute; top: -30px; right: -40px; width: 120px; height: 120px; background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, transparent 70%); border-radius: 50%; filter: blur(30px); animation: pulse-core 4s ease-in-out infinite;"></div>
+                        <div style="position: absolute; bottom: -30px; left: -40px; width: 100px; height: 100px; background: radial-gradient(circle, rgba(16, 185, 129, 0.15) 0%, transparent 70%); border-radius: 50%; filter: blur(30px); animation: pulse-core 4s ease-in-out infinite 0.5s;"></div>
+                    </div>
+                    <p class="large-text" data-animate="fade-in" data-animate-delay="2" style="font-size: 1.75rem; line-height: 1.4; max-width: 600px; margin: 0 auto 3rem;">AI that collects debt better than humans<br>in Latin America</p>
+                    
+                    <div style="display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 3rem; flex-wrap: wrap;" data-animate="fade-up" data-animate-delay="3">
+                        <div style="padding: 1rem 2rem; background: linear-gradient(135deg, rgba(0,0,0,0.03) 0%, transparent 100%); border-radius: 50px; border: 2px solid rgba(0,0,0,0.08); backdrop-filter: blur(10px);">
+                            <span style="font-size: 1.5rem; font-weight: 700; color: var(--color-black);">$37K</span>
+                            <span style="font-size: 0.9rem; color: var(--color-gray); margin-left: 0.5rem;">MRR</span>
+                        </div>
+                        <div style="padding: 1rem 2rem; background: linear-gradient(135deg, rgba(0,0,0,0.03) 0%, transparent 100%); border-radius: 50px; border: 2px solid rgba(0,0,0,0.08); backdrop-filter: blur(10px);">
+                            <span style="font-size: 1.5rem; font-weight: 700; color: var(--color-black);">150K</span>
+                            <span style="font-size: 0.9rem; color: var(--color-gray); margin-left: 0.5rem;">minutes/mo</span>
+                        </div>
+                        <div style="padding: 1rem 2rem; background: linear-gradient(135deg, rgba(16,185,129,0.08) 0%, transparent 100%); border-radius: 50px; border: 2px solid rgba(16,185,129,0.2); backdrop-filter: blur(10px);">
+                            <span style="font-size: 1.5rem; font-weight: 700; color: var(--color-success);">20%</span>
+                            <span style="font-size: 0.9rem; color: var(--color-success); margin-left: 0.5rem;">better recovery</span>
+                        </div>
+                    </div>
                     
                     <!-- Add geometric animation like Kleva hero -->
                     <div class="hero-visual" data-animate="scale" data-animate-delay="3">
