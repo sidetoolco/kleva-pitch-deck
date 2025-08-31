@@ -305,6 +305,122 @@
             opacity: 0;
         }
 
+        .icon-box {
+            display: inline-flex;
+            width: 80px;
+            height: 80px;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.1) 100%);
+            border-radius: 20px;
+            margin-bottom: 1.5rem;
+        }
+
+        .metric-box {
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            border: 1px solid rgba(0,0,0,0.08);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .metric-box:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+        }
+
+        .visual-divider {
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--color-primary) 0%, transparent 100%);
+            margin: 2rem auto;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .comparison-card {
+            padding: 2rem;
+            border-radius: 12px;
+            position: relative;
+        }
+
+        .comparison-card.negative {
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0.05) 0%, rgba(239, 68, 68, 0.02) 100%);
+            border: 1px solid rgba(239, 68, 68, 0.2);
+        }
+
+        .comparison-card.positive {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.05) 0%, rgba(16, 185, 129, 0.02) 100%);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+        }
+
+        .big-number {
+            font-size: 5rem;
+            font-weight: 800;
+            line-height: 1;
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-gray-900) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .timeline-visual {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 3rem 0;
+            position: relative;
+        }
+
+        .timeline-visual::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--color-success) 0%, var(--color-primary) 100%);
+            z-index: 0;
+        }
+
+        .timeline-step {
+            background: white;
+            border: 3px solid var(--color-primary);
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            z-index: 1;
+            position: relative;
+        }
+
+        .icon-feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .icon-feature-icon {
+            flex-shrink: 0;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0,0,0,0.05);
+            border-radius: 12px;
+        }
+
         h2 {
             font-size: 3rem;
             font-weight: 700;
@@ -650,56 +766,142 @@
             <div class="container">
                 <div style="text-align: center;">
                     <span class="badge">THE DISCOVERY</span>
-                    <h2>How we found the problem</h2>
-                    <p style="max-width: 900px; margin: 0 auto 2rem;">We started Sidetool as an AI agency. We embedded in companies to understand their problems and build solutions.</p>
-                    <p style="max-width: 900px; margin: 0 auto 2rem;">While working with McDonald's on ordering systems, we met Tito from Vana, a microloan company in Guatemala. He had a different problem: <strong>"More than half my company, 200 people, just make collection calls all day."</strong></p>
-                    <p style="max-width: 900px; margin: 0 auto 2rem;">This was different from other AI applications. Collections is simple: you either collect the money or you don't. The results are measurable.</p>
-                    <div class="stats-grid" style="margin-top: 2rem;">
+                    <h2>From McDonald's to Collections</h2>
+                    
+                    <div class="timeline-visual">
+                        <div class="timeline-step">1</div>
+                        <div class="timeline-step">2</div>
+                        <div class="timeline-step">3</div>
+                    </div>
+                    
+                    <div class="stats-grid">
                         <div class="stat-card">
-                            <div class="stat-value">3 months</div>
-                            <div class="stat-label">With Vana</div>
+                            <div class="icon-box">
+                                <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                                    <path d="M20 10C20 10 16 2 10 2C4 2 0 6 0 12C0 18 10 28 20 38C30 28 40 18 40 12C40 6 36 2 30 2C24 2 20 10 20 10Z" fill="var(--color-danger)" opacity="0.2"/>
+                                    <path d="M8 20H32M8 14H32M14 26H26" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                            </div>
+                            <h3>Started Sidetool</h3>
+                            <p>AI agency embedding in companies</p>
                         </div>
                         <div class="stat-card">
-                            <div class="stat-value">20%</div>
-                            <div class="stat-label">Higher recovery</div>
+                            <div class="icon-box">
+                                <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                                    <rect x="8" y="12" width="24" height="20" rx="2" stroke="var(--color-primary)" stroke-width="2"/>
+                                    <path d="M16 20L24 20M16 24L24 24" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round"/>
+                                    <circle cx="20" cy="8" r="3" fill="var(--color-warning)"/>
+                                </svg>
+                            </div>
+                            <h3>Met Tito from Vana</h3>
+                            <p>"200 people just make calls all day"</p>
                         </div>
                         <div class="stat-card">
-                            <div class="stat-value">60%</div>
-                            <div class="stat-label">Lower costs</div>
+                            <div class="icon-box">
+                                <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                                    <path d="M20 4L26 16L38 18L29 27L31 39L20 33L9 39L11 27L2 18L14 16L20 4Z" fill="var(--color-success)" opacity="0.2"/>
+                                    <path d="M16 20L18 22L24 16" stroke="var(--color-success)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <h3>Built AI Solution</h3>
+                            <p>20% better recovery at 60% less cost</p>
                         </div>
+                    </div>
+                    
+                    <div class="visual-divider"></div>
+                    
+                    <p class="large-text">Collections is simple: <strong>you either collect or you don't.</strong></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: The Problem Part 1 -->
+        <div class="slide slide-alt">
+            <div class="container">
+                <div style="text-align: center;">
+                    <span class="badge">THE PROBLEM</span>
+                    <h2>People hate collections jobs</h2>
+                    
+                    <div class="stats-grid">
+                        <div class="metric-box">
+                            <div class="big-number">3</div>
+                            <p>months average tenure</p>
+                            <p class="small-text">Agents quit from burnout</p>
+                        </div>
+                        <div class="metric-box">
+                            <div class="big-number">40</div>
+                            <p>verbal abuses per day</p>
+                            <p class="small-text">Per agent, every single day</p>
+                        </div>
+                        <div class="metric-box">
+                            <div class="big-number">75%</div>
+                            <p>annual turnover rate</p>
+                            <p class="small-text">Industry average in LATAM</p>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 3rem;">
+                        <svg width="600" height="200" viewBox="0 0 600 200" style="max-width: 100%;">
+                            <rect x="50" y="50" width="500" height="100" fill="rgba(239,68,68,0.1)" rx="8"/>
+                            <rect x="50" y="50" width="125" height="100" fill="rgba(239,68,68,0.3)" rx="8"/>
+                            <text x="300" y="30" text-anchor="middle" font-size="16" font-weight="600">Employee Lifecycle (months)</text>
+                            <text x="50" y="180" text-anchor="start" font-size="14">0</text>
+                            <text x="175" y="180" text-anchor="middle" font-size="14">3</text>
+                            <text x="300" y="180" text-anchor="middle" font-size="14">6</text>
+                            <text x="425" y="180" text-anchor="middle" font-size="14">9</text>
+                            <text x="550" y="180" text-anchor="end" font-size="14">12</text>
+                            <text x="112" y="105" text-anchor="middle" font-size="18" font-weight="bold" fill="white">QUIT</text>
+                        </svg>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Slide 3: The Problem -->
-        <div class="slide slide-alt">
+        <!-- Slide 3b: The Scale -->
+        <div class="slide slide-content">
             <div class="container">
                 <div style="text-align: center;">
                     <span class="badge">THE PROBLEM</span>
-                    <h2>Collections is broken in Latin America</h2>
-                    <div style="text-align: left; max-width: 900px; margin: 0 auto;">
-                        <h3 style="margin: 2rem 0 1rem;">People hate this job:</h3>
-                        <ul class="feature-list">
-                            <li>Collections agents quit every 3 months</li>
-                            <li>They get yelled at all day</li>
-                            <li>Extreme burnout rates</li>
-                        </ul>
-                        
-                        <h3 style="margin: 2rem 0 1rem;">The scale is staggering and growing:</h3>
-                        <ul class="feature-list">
-                            <li>77% of Brazilian families are in debt (30% heading to default)</li>
-                            <li>60% of fintech loans go bad</li>
-                            <li>Argentina: Personal loan delinquency hit 4%+ (highest in 9 months)</li>
-                            <li>Most banks still use Excel to track everything</li>
-                        </ul>
-                        
-                        <h3 style="margin: 2rem 0 1rem;">The system is failing:</h3>
-                        <ul class="feature-list">
-                            <li>Personnel costs are unsustainable</li>
-                            <li>Delinquency rising faster than banks can hire collectors</li>
-                        </ul>
+                    <h2>The scale is staggering</h2>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="icon-box">
+                                <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                                    <circle cx="20" cy="20" r="18" stroke="var(--color-warning)" stroke-width="2"/>
+                                    <path d="M20 8V20L28 28" stroke="var(--color-warning)" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                            </div>
+                            <div class="stat-value">77%</div>
+                            <div class="stat-label">Brazilian families in debt</div>
+                            <p class="small-text">30% heading to default</p>
+                        </div>
+                        <div class="stat-card">
+                            <div class="icon-box">
+                                <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                                    <path d="M8 32L16 24L24 28L32 8" stroke="var(--color-danger)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <circle cx="32" cy="8" r="3" fill="var(--color-danger)"/>
+                                </svg>
+                            </div>
+                            <div class="stat-value">60%</div>
+                            <div class="stat-label">Fintech loans go bad</div>
+                            <p class="small-text">Across Latin America</p>
+                        </div>
+                        <div class="stat-card">
+                            <div class="icon-box">
+                                <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                                    <rect x="8" y="16" width="24" height="16" rx="2" stroke="var(--color-gray)" stroke-width="2"/>
+                                    <path d="M12 8H28" stroke="var(--color-gray)" stroke-width="2" stroke-linecap="round"/>
+                                    <path d="M16 4H24" stroke="var(--color-gray)" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                            </div>
+                            <div class="stat-value">Excel</div>
+                            <div class="stat-label">Still tracking everything</div>
+                            <p class="small-text">Most banks in 2025</p>
+                        </div>
                     </div>
+                    
+                    <p class="large-text danger" style="margin-top: 3rem;">Delinquency rising faster than banks can hire</p>
                 </div>
             </div>
         </div>
@@ -709,16 +911,65 @@
             <div class="container">
                 <div style="text-align: center;">
                     <span class="badge">THE DAILY REALITY</span>
-                    <h2>Two different worlds</h2>
-                    <div style="max-width: 900px; margin: 0 auto;">
-                        <div style="text-align: left; margin: 2rem 0; padding: 2rem; background: rgba(239, 68, 68, 0.05); border-radius: 8px;">
-                            <h3 class="danger">Without Kleva:</h3>
-                            <p>Maria shows up at 8 AM. Makes 80 calls. Faces verbal abuse 40 times. Maybe collects from 5 people. Goes home exhausted. Quits in 3 months.</p>
+                    <h2>A day in collections</h2>
+                    
+                    <div class="comparison-grid">
+                        <div class="comparison-card negative">
+                            <h3 class="danger">😔 Without Kleva</h3>
+                            <div class="timeline-visual" style="flex-direction: column; align-items: flex-start;">
+                                <div class="icon-feature">
+                                    <span style="font-weight: bold;">8 AM</span>
+                                    <p>Maria arrives at work</p>
+                                </div>
+                                <div class="icon-feature">
+                                    <span style="font-weight: bold;">9 AM</span>
+                                    <p>Starts making calls</p>
+                                </div>
+                                <div class="icon-feature">
+                                    <span style="font-weight: bold;">12 PM</span>
+                                    <p>40 calls, 20 insults received</p>
+                                </div>
+                                <div class="icon-feature">
+                                    <span style="font-weight: bold;">5 PM</span>
+                                    <p>80 calls total, collected from 5</p>
+                                </div>
+                                <div class="icon-feature">
+                                    <span style="font-weight: bold;">6 PM</span>
+                                    <p>Goes home exhausted</p>
+                                </div>
+                            </div>
+                            <div style="margin-top: 2rem; padding: 1rem; background: rgba(239,68,68,0.1); border-radius: 8px;">
+                                <p class="large-text">Quits in 3 months</p>
+                            </div>
                         </div>
                         
-                        <div style="text-align: left; margin: 2rem 0; padding: 2rem; background: rgba(16, 185, 129, 0.05); border-radius: 8px;">
-                            <h3 class="success">With Kleva:</h3>
-                            <p>Ana shows up at 8 AM. Sees Kleva made 5,000 calls overnight. Collected from 500 people. She reviews the tricky cases, adjusts the scripts, helps her small team handle escalations. Goes home feeling like she actually accomplished something.</p>
+                        <div class="comparison-card positive">
+                            <h3 class="success">😊 With Kleva</h3>
+                            <div class="timeline-visual" style="flex-direction: column; align-items: flex-start;">
+                                <div class="icon-feature">
+                                    <span style="font-weight: bold;">8 AM</span>
+                                    <p>Ana checks overnight results</p>
+                                </div>
+                                <div class="icon-feature">
+                                    <span style="font-weight: bold;">8:30 AM</span>
+                                    <p>5,000 calls made by AI</p>
+                                </div>
+                                <div class="icon-feature">
+                                    <span style="font-weight: bold;">9 AM</span>
+                                    <p>500 successful collections</p>
+                                </div>
+                                <div class="icon-feature">
+                                    <span style="font-weight: bold;">12 PM</span>
+                                    <p>Reviews edge cases, optimizes</p>
+                                </div>
+                                <div class="icon-feature">
+                                    <span style="font-weight: bold;">5 PM</span>
+                                    <p>Handles escalations strategically</p>
+                                </div>
+                            </div>
+                            <div style="margin-top: 2rem; padding: 1rem; background: rgba(16,185,129,0.1); border-radius: 8px;">
+                                <p class="large-text">Feels accomplished</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -799,89 +1050,199 @@
             <div class="container">
                 <div style="text-align: center;">
                     <span class="badge">WHAT WE'RE BUILDING</span>
-                    <h2>End-to-end intelligence platform</h2>
-                    <p style="max-width: 800px; margin: 0 auto 2rem;">Our roadmap:</p>
+                    <h2>Intelligence Platform Roadmap</h2>
                     
-                    <div style="text-align: left; max-width: 900px; margin: 0 auto;">
-                        <div style="margin: 1.5rem 0;">
-                            <h3 style="color: var(--color-primary); font-size: 1.25rem;">1. Ingest & Normalize</h3>
-                            <p>We take data from any source (core banking systems, CRMs, spreadsheets) and unify it for consistent analytics and engagement.</p>
+                    <div style="position: relative; max-width: 900px; margin: 3rem auto;">
+                        <!-- Circular flow diagram -->
+                        <svg width="100%" height="400" viewBox="0 0 800 400">
+                            <!-- Center circle -->
+                            <circle cx="400" cy="200" r="60" fill="var(--color-primary)" opacity="0.1"/>
+                            <text x="400" y="210" text-anchor="middle" font-size="18" font-weight="bold">KLEVA AI</text>
+                            
+                            <!-- Phase 1 -->
+                            <circle cx="200" cy="100" r="50" fill="rgba(16,185,129,0.1)" stroke="var(--color-success)" stroke-width="2"/>
+                            <text x="200" y="105" text-anchor="middle" font-size="14" font-weight="600">1. INGEST</text>
+                            
+                            <!-- Phase 2 -->
+                            <circle cx="600" cy="100" r="50" fill="rgba(16,185,129,0.1)" stroke="var(--color-success)" stroke-width="2"/>
+                            <text x="600" y="105" text-anchor="middle" font-size="14" font-weight="600">2. SCORE</text>
+                            
+                            <!-- Phase 3 -->
+                            <circle cx="650" cy="300" r="50" fill="rgba(245,158,11,0.1)" stroke="var(--color-warning)" stroke-width="2"/>
+                            <text x="650" y="305" text-anchor="middle" font-size="14" font-weight="600">3. PROFILE</text>
+                            
+                            <!-- Phase 4 -->
+                            <circle cx="400" cy="350" r="50" fill="rgba(245,158,11,0.1)" stroke="var(--color-warning)" stroke-width="2"/>
+                            <text x="400" y="355" text-anchor="middle" font-size="14" font-weight="600">4. ENGAGE</text>
+                            
+                            <!-- Phase 5 -->
+                            <circle cx="150" cy="300" r="50" fill="rgba(139,92,246,0.1)" stroke="#8B5CF6" stroke-width="2"/>
+                            <text x="150" y="305" text-anchor="middle" font-size="14" font-weight="600">5. LEARN</text>
+                            
+                            <!-- Connecting arrows -->
+                            <path d="M 250 120 Q 400 50 550 120" stroke="var(--color-gray)" stroke-width="1" fill="none" marker-end="url(#arrowhead)"/>
+                            <path d="M 620 150 Q 680 200 630 250" stroke="var(--color-gray)" stroke-width="1" fill="none" marker-end="url(#arrowhead)"/>
+                            <path d="M 600 320 Q 500 370 450 350" stroke="var(--color-gray)" stroke-width="1" fill="none" marker-end="url(#arrowhead)"/>
+                            <path d="M 350 330 Q 250 350 200 300" stroke="var(--color-gray)" stroke-width="1" fill="none" marker-end="url(#arrowhead)"/>
+                            <path d="M 150 250 Q 100 150 180 120" stroke="var(--color-gray)" stroke-width="1" fill="none" marker-end="url(#arrowhead)"/>
+                            
+                            <!-- Arrow marker definition -->
+                            <defs>
+                                <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                                    <polygon points="0 0, 10 3.5, 0 7" fill="var(--color-gray)"/>
+                                </marker>
+                            </defs>
+                        </svg>
+                    </div>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-value">Any Source</div>
+                            <div class="stat-label">Data ingestion</div>
                         </div>
-                        
-                        <div style="margin: 1.5rem 0;">
-                            <h3 style="color: var(--color-primary); font-size: 1.25rem;">2. Intelligent Scoring</h3>
-                            <p>We generate propensity scores that predict who will pay, when they'll pay, and through which channel, driving smarter segmentation.</p>
+                        <div class="stat-card">
+                            <div class="stat-value">Real-time</div>
+                            <div class="stat-label">Adaptation</div>
                         </div>
-                        
-                        <div style="margin: 1.5rem 0;">
-                            <h3 style="color: var(--color-primary); font-size: 1.25rem;">3. Behavioral Archetypes</h3>
-                            <p>We assign psychological profiles based on behavior. Someone struggling with medical bills gets empathy. Someone gaming the system gets firmness.</p>
-                        </div>
-                        
-                        <div style="margin: 1.5rem 0;">
-                            <h3 style="color: var(--color-primary); font-size: 1.25rem;">4. Dynamic Engagement Journeys</h3>
-                            <p>We deploy personalized outreach sequences that evolve in real-time. Not just calls, but coordinated campaigns across WhatsApp, SMS, email, and voice.</p>
-                        </div>
-                        
-                        <div style="margin: 1.5rem 0;">
-                            <h3 style="color: var(--color-primary); font-size: 1.25rem;">5. Continuous Learning</h3>
-                            <p>Every interaction feeds back into the system. What worked? What didn't? The platform gets smarter with every conversation.</p>
+                        <div class="stat-card">
+                            <div class="stat-value">Multi-channel</div>
+                            <div class="stat-label">Engagement</div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Slide 8: The Numbers -->
+        <!-- Slide 8a: Current Traction -->
         <div class="slide slide-content">
             <div class="container">
                 <div style="text-align: center;">
-                    <span class="badge">THE NUMBERS</span>
-                    <h2>Current Traction & Pipeline</h2>
+                    <span class="badge">TRACTION</span>
+                    <h2>From $0 to $37K MRR in 3 months</h2>
                     
-                    <table style="width: 100%; max-width: 600px; margin: 2rem auto; border-collapse: collapse;">
-                        <tr style="border-bottom: 2px solid var(--color-gray-light);">
-                            <th style="text-align: left; padding: 1rem;">What</th>
-                            <th style="text-align: center; padding: 1rem;">Today</th>
-                            <th style="text-align: center; padding: 1rem;">December</th>
-                            <th style="text-align: center; padding: 1rem;">Growth</th>
-                        </tr>
-                        <tr>
-                            <td style="padding: 1rem;">Monthly Revenue</td>
-                            <td style="text-align: center; padding: 1rem;">$37K</td>
-                            <td style="text-align: center; padding: 1rem;">$150K</td>
-                            <td style="text-align: center; padding: 1rem; color: var(--color-success);">4x</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 1rem;">Call Minutes</td>
-                            <td style="text-align: center; padding: 1rem;">150K</td>
-                            <td style="text-align: center; padding: 1rem;">900K</td>
-                            <td style="text-align: center; padding: 1rem; color: var(--color-success);">6x</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 1rem;">Profit Margin</td>
-                            <td style="text-align: center; padding: 1rem; color: var(--color-danger);">-74%</td>
-                            <td style="text-align: center; padding: 1rem; color: var(--color-success);">+22%</td>
-                            <td style="text-align: center; padding: 1rem; color: var(--color-success);">Profitable</td>
-                        </tr>
-                    </table>
+                    <!-- Revenue growth chart -->
+                    <div style="margin: 3rem 0;">
+                        <svg width="100%" height="300" viewBox="0 0 700 300" style="max-width: 700px;">
+                            <!-- Grid lines -->
+                            <line x1="50" y1="250" x2="650" y2="250" stroke="#e5e5e5" stroke-width="1"/>
+                            <line x1="50" y1="200" x2="650" y2="200" stroke="#e5e5e5" stroke-width="1"/>
+                            <line x1="50" y1="150" x2="650" y2="150" stroke="#e5e5e5" stroke-width="1"/>
+                            <line x1="50" y1="100" x2="650" y2="100" stroke="#e5e5e5" stroke-width="1"/>
+                            <line x1="50" y1="50" x2="650" y2="50" stroke="#e5e5e5" stroke-width="1"/>
+                            
+                            <!-- Y-axis labels -->
+                            <text x="40" y="255" text-anchor="end" font-size="12">$0</text>
+                            <text x="40" y="205" text-anchor="end" font-size="12">$10K</text>
+                            <text x="40" y="155" text-anchor="end" font-size="12">$20K</text>
+                            <text x="40" y="105" text-anchor="end" font-size="12">$30K</text>
+                            <text x="40" y="55" text-anchor="end" font-size="12">$40K</text>
+                            
+                            <!-- X-axis labels -->
+                            <text x="150" y="280" text-anchor="middle" font-size="12">Jun</text>
+                            <text x="350" y="280" text-anchor="middle" font-size="12">Jul</text>
+                            <text x="550" y="280" text-anchor="middle" font-size="12">Aug</text>
+                            
+                            <!-- Revenue line -->
+                            <polyline points="150,250 350,180 550,95" fill="none" stroke="var(--color-success)" stroke-width="3"/>
+                            
+                            <!-- Data points -->
+                            <circle cx="150" cy="250" r="5" fill="var(--color-success)"/>
+                            <circle cx="350" cy="180" r="5" fill="var(--color-success)"/>
+                            <circle cx="550" cy="95" r="8" fill="var(--color-success)"/>
+                            
+                            <!-- Value labels -->
+                            <text x="150" y="235" text-anchor="middle" font-size="14" font-weight="bold">$0</text>
+                            <text x="350" y="165" text-anchor="middle" font-size="14" font-weight="bold">$15K</text>
+                            <text x="550" y="80" text-anchor="middle" font-size="16" font-weight="bold">$37K</text>
+                        </svg>
+                    </div>
                     
-                    <div style="text-align: left; max-width: 800px; margin: 2rem auto;">
-                        <h3>Already using Kleva:</h3>
-                        <ul class="feature-list">
-                            <li><strong>Vana (microloans):</strong> $17K/month - fully deployed</li>
-                            <li><strong>ADT (security):</strong> $15K/month - scaling to 1M calls ($167K potential)</li>
-                            <li><strong>DirecTV (satellite):</strong> $5K/month - pilot scaling to 120-150K minutes ($20-25K potential)</li>
-                        </ul>
-                        
-                        <h3 style="margin-top: 2rem;">Closing Q3 2025 (September):</h3>
-                        <ul class="feature-list">
-                            <li>Diners Club Ecuador: $33K/month</li>
-                            <li>Grupo Pichincha (Ecuador): $17K/month</li>
-                            <li>Ficohsa (Guatemala): $33K/month</li>
-                            <li>Banco de Córdoba (Argentina): $30K/month</li>
-                            <li>Sancor Seguros (Argentina): $45K/month</li>
-                        </ul>
+                    <div class="stats-grid">
+                        <div class="metric-box">
+                            <div class="icon-box">
+                                <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                                    <rect x="8" y="12" width="24" height="20" rx="2" stroke="var(--color-primary)" stroke-width="2"/>
+                                    <circle cx="20" cy="22" r="5" stroke="var(--color-success)" stroke-width="2"/>
+                                </svg>
+                            </div>
+                            <h3>Vana</h3>
+                            <div class="stat-value">$17K</div>
+                            <p>Microloans, Guatemala</p>
+                        </div>
+                        <div class="metric-box">
+                            <div class="icon-box">
+                                <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                                    <path d="M20 8L25 18L35 20L27 27L29 37L20 32L11 37L13 27L5 20L15 18L20 8Z" stroke="var(--color-primary)" stroke-width="2" fill="none"/>
+                                </svg>
+                            </div>
+                            <h3>ADT</h3>
+                            <div class="stat-value">$15K</div>
+                            <p>Security subscriptions</p>
+                        </div>
+                        <div class="metric-box">
+                            <div class="icon-box">
+                                <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                                    <circle cx="20" cy="20" r="15" stroke="var(--color-primary)" stroke-width="2"/>
+                                    <path d="M20 20L28 12" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round"/>
+                                    <circle cx="20" cy="20" r="3" fill="var(--color-primary)"/>
+                                </svg>
+                            </div>
+                            <h3>DirecTV</h3>
+                            <div class="stat-value">$5K</div>
+                            <p>Satellite contracts</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 8b: Pipeline -->
+        <div class="slide slide-alt">
+            <div class="container">
+                <div style="text-align: center;">
+                    <span class="badge">PIPELINE</span>
+                    <h2>$158K MRR closing September</h2>
+                    
+                    <div style="max-width: 800px; margin: 3rem auto;">
+                        <!-- Pipeline visualization -->
+                        <div style="display: flex; flex-direction: column; gap: 1rem;">
+                            <div style="display: flex; align-items: center; gap: 1rem; padding: 1rem; background: linear-gradient(90deg, rgba(16,185,129,0.1) 0%, transparent 100%); border-radius: 8px;">
+                                <div style="width: 200px; text-align: left; font-weight: 600;">Sancor Seguros</div>
+                                <div style="flex: 1; height: 40px; background: var(--color-success); border-radius: 4px; position: relative;">
+                                    <span style="position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); color: white; font-weight: bold;">$45K/mo</span>
+                                </div>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 1rem; padding: 1rem; background: linear-gradient(90deg, rgba(16,185,129,0.1) 0%, transparent 100%); border-radius: 8px;">
+                                <div style="width: 200px; text-align: left; font-weight: 600;">Diners Club</div>
+                                <div style="flex: 1; height: 40px; background: var(--color-success); border-radius: 4px; position: relative; width: 73%;">
+                                    <span style="position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); color: white; font-weight: bold;">$33K/mo</span>
+                                </div>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 1rem; padding: 1rem; background: linear-gradient(90deg, rgba(16,185,129,0.1) 0%, transparent 100%); border-radius: 8px;">
+                                <div style="width: 200px; text-align: left; font-weight: 600;">Ficohsa</div>
+                                <div style="flex: 1; height: 40px; background: var(--color-success); border-radius: 4px; position: relative; width: 73%;">
+                                    <span style="position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); color: white; font-weight: bold;">$33K/mo</span>
+                                </div>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 1rem; padding: 1rem; background: linear-gradient(90deg, rgba(16,185,129,0.1) 0%, transparent 100%); border-radius: 8px;">
+                                <div style="width: 200px; text-align: left; font-weight: 600;">Banco de Córdoba</div>
+                                <div style="flex: 1; height: 40px; background: var(--color-success); border-radius: 4px; position: relative; width: 67%;">
+                                    <span style="position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); color: white; font-weight: bold;">$30K/mo</span>
+                                </div>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 1rem; padding: 1rem; background: linear-gradient(90deg, rgba(16,185,129,0.1) 0%, transparent 100%); border-radius: 8px;">
+                                <div style="width: 200px; text-align: left; font-weight: 600;">Grupo Pichincha</div>
+                                <div style="flex: 1; height: 40px; background: var(--color-success); border-radius: 4px; position: relative; width: 38%;">
+                                    <span style="position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); color: white; font-weight: bold;">$17K/mo</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 3rem; padding: 2rem; background: linear-gradient(135deg, rgba(16,185,129,0.05) 0%, rgba(16,185,129,0.02) 100%); border-radius: 12px;">
+                        <h3>Total Pipeline Value</h3>
+                        <p class="big-number" style="font-size: 3rem;">$158K</p>
+                        <p>Monthly Recurring Revenue</p>
                     </div>
                 </div>
             </div>
@@ -931,37 +1292,138 @@
             </div>
         </div>
 
-        <!-- Slide 10: Why Right Now -->
+        <!-- Slide 10a: Why Right Now - Crisis -->
         <div class="slide slide-content">
             <div class="container">
                 <div style="text-align: center;">
                     <span class="badge">WHY RIGHT NOW</span>
-                    <h2>Delinquency is surging everywhere</h2>
+                    <h2>Global debt crisis accelerating</h2>
                     
-                    <div style="text-align: left; max-width: 900px; margin: 0 auto;">
-                        <p style="margin-bottom: 2rem;"><strong>The consumer debt crisis is getting worse, not better.</strong> This is a structural shift that makes our solution essential.</p>
-                        
-                        <ul class="feature-list">
-                            <li><strong>Argentina:</strong> Personal loan delinquency exceeds 4% (9-month high). Credit card arrears near 5%. Over half of households spend 40-60% of income on debt payments.</li>
-                            <li><strong>Brazil:</strong> 77.5% of families in debt. Nearly 30% projected to default by year-end. This represents tens of millions of accounts needing collection.</li>
-                            <li><strong>United States:</strong> 4.4% of consumer debt delinquent and rising. Even superprime borrowers (credit scores 781-850) saw 109% year-over-year rise in delinquencies. Student loan defaults at 5-year high with 6 million Americans significantly overdue.</li>
-                        </ul>
-                        
-                        <h3 style="margin-top: 2rem;">Why this creates opportunity:</h3>
-                        <ul class="feature-list">
-                            <li>Banks can't hire enough collectors to handle growing volumes</li>
-                            <li>Rising delinquency means collections is becoming core to profitability</li>
-                            <li>Traditional methods (human agents at $3/minute) are unsustainable at this scale</li>
-                            <li>Every percentage point increase in delinquency = millions more accounts needing collection</li>
-                        </ul>
-                        
-                        <h3 style="margin-top: 2rem;">The tech finally works:</h3>
-                        <ul class="feature-list">
-                            <li>AI can actually hold conversations in Spanish and Portuguese</li>
-                            <li>Voice synthesis sounds natural</li>
-                            <li>Costs dropped 95% in two years</li>
-                            <li>WhatsApp integration enables reaching consumers where they communicate</li>
-                        </ul>
+                    <!-- World map visualization -->
+                    <div style="margin: 2rem 0;">
+                        <svg width="100%" height="400" viewBox="0 0 800 400" style="max-width: 800px;">
+                            <!-- Brazil -->
+                            <circle cx="300" cy="250" r="80" fill="var(--color-danger)" opacity="0.3"/>
+                            <text x="300" y="250" text-anchor="middle" font-weight="bold" font-size="16">BRAZIL</text>
+                            <text x="300" y="270" text-anchor="middle" font-size="24" font-weight="bold">77.5%</text>
+                            <text x="300" y="290" text-anchor="middle" font-size="12">families in debt</text>
+                            
+                            <!-- Argentina -->
+                            <circle cx="250" cy="320" r="50" fill="var(--color-warning)" opacity="0.3"/>
+                            <text x="250" y="320" text-anchor="middle" font-weight="bold" font-size="14">ARG</text>
+                            <text x="250" y="335" text-anchor="middle" font-size="18" font-weight="bold">4%+</text>
+                            
+                            <!-- USA -->
+                            <circle cx="150" cy="150" r="70" fill="var(--color-warning)" opacity="0.3"/>
+                            <text x="150" y="150" text-anchor="middle" font-weight="bold" font-size="16">USA</text>
+                            <text x="150" y="170" text-anchor="middle" font-size="20" font-weight="bold">109%</text>
+                            <text x="150" y="185" text-anchor="middle" font-size="10">YoY increase</text>
+                            
+                            <!-- Mexico -->
+                            <circle cx="100" cy="230" r="40" fill="var(--color-success)" opacity="0.2"/>
+                            <text x="100" y="235" text-anchor="middle" font-weight="bold" font-size="12">MEX</text>
+                            
+                            <!-- Colombia -->
+                            <circle cx="200" cy="200" r="35" fill="var(--color-success)" opacity="0.2"/>
+                            <text x="200" y="205" text-anchor="middle" font-weight="bold" font-size="12">COL</text>
+                            
+                            <!-- Connection lines -->
+                            <line x1="150" y1="200" x2="200" y2="200" stroke="var(--color-gray)" stroke-width="1" opacity="0.5"/>
+                            <line x1="200" y1="220" x2="250" y2="270" stroke="var(--color-gray)" stroke-width="1" opacity="0.5"/>
+                            <line x1="250" y1="280" x2="280" y2="250" stroke="var(--color-gray)" stroke-width="1" opacity="0.5"/>
+                        </svg>
+                    </div>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-value danger">Crisis</div>
+                            <div class="stat-label">Structural shift</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value warning">6M</div>
+                            <div class="stat-label">Americans overdue</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value danger">30%</div>
+                            <div class="stat-label">Brazil defaults coming</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 10b: Why Right Now - Tech -->
+        <div class="slide slide-alt">
+            <div class="container">
+                <div style="text-align: center;">
+                    <span class="badge">WHY RIGHT NOW</span>
+                    <h2>The tech finally works</h2>
+                    
+                    <!-- Cost reduction chart -->
+                    <div style="margin: 3rem 0;">
+                        <svg width="100%" height="300" viewBox="0 0 700 300" style="max-width: 700px;">
+                            <!-- Y-axis -->
+                            <line x1="50" y1="50" x2="50" y2="250" stroke="var(--color-gray)" stroke-width="2"/>
+                            <!-- X-axis -->
+                            <line x1="50" y1="250" x2="650" y2="250" stroke="var(--color-gray)" stroke-width="2"/>
+                            
+                            <!-- Cost bars -->
+                            <rect x="150" y="50" width="100" height="200" fill="var(--color-danger)" opacity="0.3"/>
+                            <rect x="450" y="230" width="100" height="20" fill="var(--color-success)" opacity="0.5"/>
+                            
+                            <!-- Labels -->
+                            <text x="200" y="40" text-anchor="middle" font-size="24" font-weight="bold">$3.00</text>
+                            <text x="200" y="270" text-anchor="middle" font-size="14">2023</text>
+                            <text x="200" y="285" text-anchor="middle" font-size="12">Human agents</text>
+                            
+                            <text x="500" y="220" text-anchor="middle" font-size="24" font-weight="bold">$0.17</text>
+                            <text x="500" y="270" text-anchor="middle" font-size="14">2025</text>
+                            <text x="500" y="285" text-anchor="middle" font-size="12">Kleva AI</text>
+                            
+                            <!-- Arrow showing reduction -->
+                            <path d="M 250 100 Q 350 150 450 200" stroke="var(--color-success)" stroke-width="3" fill="none" marker-end="url(#greenarrow)"/>
+                            <text x="350" y="140" text-anchor="middle" font-size="28" font-weight="bold" fill="var(--color-success)">-95%</text>
+                            
+                            <defs>
+                                <marker id="greenarrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                                    <polygon points="0 0, 10 3, 0 6" fill="var(--color-success)"/>
+                                </marker>
+                            </defs>
+                        </svg>
+                    </div>
+                    
+                    <div class="stats-grid">
+                        <div class="metric-box">
+                            <div class="icon-box">
+                                <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                                    <circle cx="20" cy="20" r="15" stroke="var(--color-success)" stroke-width="2"/>
+                                    <path d="M15 20L18 23L25 16" stroke="var(--color-success)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <h3>Natural Spanish & Portuguese</h3>
+                            <p>AI speaks like natives</p>
+                        </div>
+                        <div class="metric-box">
+                            <div class="icon-box">
+                                <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                                    <path d="M10 25C10 25 15 30 20 30C25 30 30 25 30 25" stroke="var(--color-success)" stroke-width="2" stroke-linecap="round"/>
+                                    <circle cx="15" cy="15" r="2" fill="var(--color-success)"/>
+                                    <circle cx="25" cy="15" r="2" fill="var(--color-success)"/>
+                                </svg>
+                            </div>
+                            <h3>Voice sounds human</h3>
+                            <p>Debtors can't tell it's AI</p>
+                        </div>
+                        <div class="metric-box">
+                            <div class="icon-box">
+                                <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                                    <rect x="10" y="8" width="20" height="24" rx="3" stroke="var(--color-success)" stroke-width="2"/>
+                                    <path d="M15 28L20 23L25 28" stroke="var(--color-success)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <h3>WhatsApp ready</h3>
+                            <p>Meet debtors where they are</p>
+                        </div>
                     </div>
                 </div>
             </div>
