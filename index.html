@@ -984,22 +984,70 @@
                     <h2>AI was actually better</h2>
                     <p style="max-width: 800px; margin: 2rem auto;">We thought we'd just save Vana money. But our AI was actually better at collecting than humans.</p>
                     
-                    <div class="stats-grid" style="margin: 2rem 0;">
-                        <div class="stat-card">
-                            <div class="stat-value">20%</div>
+                    <!-- Comparison Visual -->
+                    <div style="display: grid; grid-template-columns: 1fr auto 1fr; gap: 2rem; margin: 3rem auto; max-width: 900px;">
+                        <!-- Human Agent -->
+                        <div style="background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%); border-radius: 20px; padding: 2rem; position: relative;">
+                            <div style="text-align: center; margin-bottom: 1.5rem;">
+                                <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+                                    <circle cx="40" cy="40" r="35" fill="#dc2626" opacity="0.1"/>
+                                    <path d="M40 20c-5.5 0-10 4.5-10 10s4.5 10 10 10 10-4.5 10-10-4.5-10-10-10zm0 30c-11 0-20 4.5-20 10v5h40v-5c0-5.5-9-10-20-10z" fill="#dc2626"/>
+                                </svg>
+                            </div>
+                            <h4 style="color: #dc2626; margin-bottom: 1rem;">Human Agent</h4>
+                            <ul style="list-style: none; padding: 0; text-align: left;">
+                                <li style="margin: 0.5rem 0; color: #7f1d1d;">❌ Gets tired</li>
+                                <li style="margin: 0.5rem 0; color: #7f1d1d;">❌ Gets angry</li>
+                                <li style="margin: 0.5rem 0; color: #7f1d1d;">❌ Judges debtors</li>
+                                <li style="margin: 0.5rem 0; color: #7f1d1d;">❌ Works 8 hours</li>
+                                <li style="margin: 0.5rem 0; color: #7f1d1d;">❌ Costs more</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- VS Badge -->
+                        <div style="display: flex; align-items: center; justify-content: center;">
+                            <div style="background: var(--color-black); color: white; padding: 0.75rem 1.5rem; border-radius: 50px; font-weight: 700; font-size: 1.25rem;">VS</div>
+                        </div>
+                        
+                        <!-- Kleva AI -->
+                        <div style="background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%); border-radius: 20px; padding: 2rem; position: relative;">
+                            <div style="text-align: center; margin-bottom: 1.5rem;">
+                                <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+                                    <circle cx="40" cy="40" r="35" fill="#059669" opacity="0.1"/>
+                                    <rect x="25" y="20" width="30" height="25" rx="3" fill="#059669"/>
+                                    <circle cx="33" cy="30" r="3" fill="white"/>
+                                    <circle cx="47" cy="30" r="3" fill="white"/>
+                                    <path d="M35 37h10" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                                    <rect x="20" y="50" width="40" height="10" rx="2" fill="#059669" opacity="0.5"/>
+                                    <rect x="30" y="55" width="20" height="2" fill="#059669"/>
+                                </svg>
+                            </div>
+                            <h4 style="color: #059669; margin-bottom: 1rem;">Kleva AI</h4>
+                            <ul style="list-style: none; padding: 0; text-align: left;">
+                                <li style="margin: 0.5rem 0; color: #14532d;">✅ Never tired</li>
+                                <li style="margin: 0.5rem 0; color: #14532d;">✅ Always patient</li>
+                                <li style="margin: 0.5rem 0; color: #14532d;">✅ Never judges</li>
+                                <li style="margin: 0.5rem 0; color: #14532d;">✅ Works 24/7</li>
+                                <li style="margin: 0.5rem 0; color: #14532d;">✅ 60% cheaper</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Bottom Stats -->
+                    <div class="stats-grid" style="margin: 3rem auto 2rem; max-width: 600px;">
+                        <div class="stat-card" style="background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%);">
+                            <div class="stat-value" style="color: #059669;">20%</div>
                             <div class="stat-label">More money collected</div>
                         </div>
-                        <div class="stat-card">
-                            <div class="stat-value">60%</div>
+                        <div class="stat-card" style="background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);">
+                            <div class="stat-value" style="color: #2563eb;">60%</div>
                             <div class="stat-label">Less cost</div>
                         </div>
                     </div>
                     
-                    <p style="max-width: 800px; margin: 2rem auto;">
-                        But here's what surprised us: <strong>debtors preferred our AI.</strong> They opened up more. They paid more often.
-                    </p>
-                    <p style="max-width: 800px; margin: 2rem auto;">
-                        Why? Our AI doesn't judge. It doesn't get angry. It has infinite patience.
+                    <p class="large-text" style="margin-top: 2rem;">
+                        <span class="highlight">Debtors actually preferred our AI</span><br>
+                        They opened up more. They paid more often.
                     </p>
                 </div>
             </div>
@@ -1011,35 +1059,93 @@
                 <div style="text-align: center;">
                     <span class="badge">HOW IT WORKS</span>
                     <h2>Getting Kleva live is straightforward</h2>
-                    <p style="max-width: 800px; margin: 0 auto 2rem;">We're developing this process with our early clients:</p>
+                    <p style="max-width: 800px; margin: 0 auto 3rem;">We've perfected this process with our early clients:</p>
                     
-                    <div style="text-align: left; max-width: 800px; margin: 0 auto;">
-                        <div style="margin: 2rem 0;">
-                            <h3 style="color: var(--color-primary);">Week 1: Integration</h3>
-                            <ul class="feature-list">
-                                <li>Connect to your core system</li>
-                                <li>Import debtor data and payment history</li>
-                                <li>Set up telephony infrastructure</li>
-                            </ul>
+                    <!-- Timeline Visual -->
+                    <div style="position: relative; max-width: 900px; margin: 0 auto;">
+                        <!-- Timeline Line -->
+                        <div style="position: absolute; left: 50%; top: 0; bottom: 0; width: 2px; background: linear-gradient(180deg, var(--color-primary) 0%, var(--color-primary) 100%); transform: translateX(-50%);"></div>
+                        
+                        <!-- Week 1 -->
+                        <div style="display: flex; align-items: center; margin-bottom: 3rem;">
+                            <div style="flex: 1; text-align: right; padding-right: 3rem;">
+                                <div class="timeline-card" style="background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border-radius: 15px; padding: 1.5rem; display: inline-block; text-align: left;">
+                                    <h3 style="color: #0284c7; margin-bottom: 1rem; font-size: 1.5rem;">Week 1: Integration</h3>
+                                    <ul style="list-style: none; padding: 0;">
+                                        <li style="margin: 0.5rem 0; color: #334155;">🔌 Connect to your core system</li>
+                                        <li style="margin: 0.5rem 0; color: #334155;">📊 Import debtor data</li>
+                                        <li style="margin: 0.5rem 0; color: #334155;">📞 Set up telephony</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div style="position: relative; z-index: 2;">
+                                <div style="width: 60px; height: 60px; background: white; border: 4px solid var(--color-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--color-primary); font-size: 1.5rem;">1</div>
+                            </div>
+                            <div style="flex: 1; padding-left: 3rem;">
+                                <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+                                    <rect x="15" y="25" width="50" height="30" rx="3" fill="#0284c7" opacity="0.2"/>
+                                    <rect x="25" y="35" width="30" height="2" fill="#0284c7"/>
+                                    <rect x="25" y="43" width="20" height="2" fill="#0284c7"/>
+                                    <circle cx="60" cy="20" r="8" fill="#10b981"/>
+                                    <path d="M57 20l2 2 4-4" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                            </div>
                         </div>
                         
-                        <div style="margin: 2rem 0;">
-                            <h3 style="color: var(--color-primary);">Week 2: Training</h3>
-                            <ul class="feature-list">
-                                <li>Customize scripts based on your brand voice</li>
-                                <li>Configure compliance rules for your country</li>
-                                <li>Test with your team on real scenarios</li>
-                            </ul>
+                        <!-- Week 2 -->
+                        <div style="display: flex; align-items: center; margin-bottom: 3rem;">
+                            <div style="flex: 1; padding-right: 3rem; text-align: right;">
+                                <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+                                    <circle cx="40" cy="40" r="25" fill="#8b5cf6" opacity="0.2"/>
+                                    <path d="M35 30h10v20h-10z" fill="#8b5cf6"/>
+                                    <path d="M30 35h20v10h-20z" fill="#8b5cf6" opacity="0.5"/>
+                                    <circle cx="40" cy="25" r="3" fill="#8b5cf6"/>
+                                </svg>
+                            </div>
+                            <div style="position: relative; z-index: 2;">
+                                <div style="width: 60px; height: 60px; background: white; border: 4px solid var(--color-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--color-primary); font-size: 1.5rem;">2</div>
+                            </div>
+                            <div style="flex: 1; text-align: left; padding-left: 3rem;">
+                                <div class="timeline-card" style="background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%); border-radius: 15px; padding: 1.5rem; display: inline-block;">
+                                    <h3 style="color: #8b5cf6; margin-bottom: 1rem; font-size: 1.5rem;">Week 2: Training</h3>
+                                    <ul style="list-style: none; padding: 0;">
+                                        <li style="margin: 0.5rem 0; color: #334155;">🎯 Customize scripts</li>
+                                        <li style="margin: 0.5rem 0; color: #334155;">⚖️ Configure compliance</li>
+                                        <li style="margin: 0.5rem 0; color: #334155;">🧪 Test real scenarios</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                         
-                        <div style="margin: 2rem 0;">
-                            <h3 style="color: var(--color-primary);">Week 3: Go Live</h3>
-                            <ul class="feature-list">
-                                <li>Start with 100 calls/day pilot</li>
-                                <li>Monitor and optimize in real-time</li>
-                                <li>Scale to full volume within days</li>
-                            </ul>
+                        <!-- Week 3 -->
+                        <div style="display: flex; align-items: center;">
+                            <div style="flex: 1; text-align: right; padding-right: 3rem;">
+                                <div class="timeline-card" style="background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-radius: 15px; padding: 1.5rem; display: inline-block; text-align: left;">
+                                    <h3 style="color: #059669; margin-bottom: 1rem; font-size: 1.5rem;">Week 3: Go Live</h3>
+                                    <ul style="list-style: none; padding: 0;">
+                                        <li style="margin: 0.5rem 0; color: #334155;">🚀 100 calls/day pilot</li>
+                                        <li style="margin: 0.5rem 0; color: #334155;">📈 Real-time optimization</li>
+                                        <li style="margin: 0.5rem 0; color: #334155;">⚡ Scale to full volume</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div style="position: relative; z-index: 2;">
+                                <div style="width: 60px; height: 60px; background: white; border: 4px solid var(--color-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--color-primary); font-size: 1.5rem;">3</div>
+                            </div>
+                            <div style="flex: 1; padding-left: 3rem;">
+                                <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+                                    <path d="M20 50 L30 30 L40 40 L50 20 L60 35" stroke="#059669" stroke-width="3" fill="none" stroke-linecap="round"/>
+                                    <circle cx="60" cy="35" r="5" fill="#059669"/>
+                                    <path d="M60 35 L65 30 L70 35" stroke="#059669" stroke-width="2" fill="none" stroke-linecap="round"/>
+                                </svg>
+                            </div>
                         </div>
+                    </div>
+                    
+                    <div style="margin-top: 3rem; padding: 1.5rem; background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border-radius: 15px; max-width: 600px; margin-left: auto; margin-right: auto;">
+                        <p style="font-size: 1.25rem; font-weight: 600; color: #0284c7; margin: 0;">
+                            🎯 3 weeks from signing to collecting
+                        </p>
                     </div>
                 </div>
             </div>
@@ -1253,40 +1359,84 @@
             <div class="container">
                 <div style="text-align: center;">
                     <span class="badge">UNIT ECONOMICS</span>
-                    <h2>Our pricing model</h2>
+                    <h2>Simple, scalable pricing</h2>
                     
-                    <div style="text-align: left; max-width: 800px; margin: 0 auto;">
-                        <h3>Tiered pricing based on volume:</h3>
-                        <ul class="feature-list">
-                            <li>40K minutes: $0.197/minute</li>
-                            <li>90K minutes: $0.184/minute</li>
-                            <li>200K minutes: $0.171/minute</li>
-                            <li>500K minutes: $0.158/minute</li>
-                        </ul>
-                        <p style="margin-top: 1rem;">Clients buy minute packages</p>
-                        
-                        <h3 style="margin-top: 2rem;">Early Unit Economics:</h3>
-                        
-                        <div style="margin: 1rem 0;">
-                            <h4 style="color: var(--color-success);">What we know:</h4>
-                            <ul class="feature-list">
-                                <li>Zero churn so far (only 3 months of client data)</li>
-                                <li>Payback period: Under 1 month (clients pay $15-50K/month)</li>
-                                <li>Gross margins: 48% today</li>
-                            </ul>
+                    <!-- Pricing tiers visualization -->
+                    <div style="margin: 3rem auto; max-width: 800px;">
+                        <svg width="100%" height="250" viewBox="0 0 800 250">
+                            <!-- Tier boxes -->
+                            <rect x="50" y="50" width="150" height="150" fill="rgba(0,0,0,0.05)" stroke="var(--color-gray)" stroke-width="2" rx="8"/>
+                            <rect x="230" y="40" width="150" height="160" fill="rgba(0,0,0,0.08)" stroke="var(--color-gray-900)" stroke-width="2" rx="8"/>
+                            <rect x="410" y="30" width="150" height="170" fill="rgba(16,185,129,0.1)" stroke="var(--color-success)" stroke-width="2" rx="8"/>
+                            <rect x="590" y="20" width="150" height="180" fill="rgba(16,185,129,0.15)" stroke="var(--color-success)" stroke-width="3" rx="8"/>
+                            
+                            <!-- Tier labels -->
+                            <text x="125" y="90" text-anchor="middle" font-size="14" font-weight="600">STARTER</text>
+                            <text x="125" y="120" text-anchor="middle" font-size="24" font-weight="bold">$0.197</text>
+                            <text x="125" y="140" text-anchor="middle" font-size="12">/minute</text>
+                            <text x="125" y="170" text-anchor="middle" font-size="14" fill="var(--color-gray)">40K min</text>
+                            
+                            <text x="305" y="80" text-anchor="middle" font-size="14" font-weight="600">GROWTH</text>
+                            <text x="305" y="110" text-anchor="middle" font-size="24" font-weight="bold">$0.184</text>
+                            <text x="305" y="130" text-anchor="middle" font-size="12">/minute</text>
+                            <text x="305" y="160" text-anchor="middle" font-size="14" fill="var(--color-gray)">90K min</text>
+                            
+                            <text x="485" y="70" text-anchor="middle" font-size="14" font-weight="600">SCALE</text>
+                            <text x="485" y="100" text-anchor="middle" font-size="24" font-weight="bold">$0.171</text>
+                            <text x="485" y="120" text-anchor="middle" font-size="12">/minute</text>
+                            <text x="485" y="150" text-anchor="middle" font-size="14" fill="var(--color-gray)">200K min</text>
+                            
+                            <text x="665" y="60" text-anchor="middle" font-size="14" font-weight="600">ENTERPRISE</text>
+                            <text x="665" y="90" text-anchor="middle" font-size="24" font-weight="bold">$0.158</text>
+                            <text x="665" y="110" text-anchor="middle" font-size="12">/minute</text>
+                            <text x="665" y="140" text-anchor="middle" font-size="14" fill="var(--color-success)">500K min</text>
+                            <text x="665" y="165" text-anchor="middle" font-size="12" fill="var(--color-success)">Best value</text>
+                        </svg>
+                    </div>
+                    
+                    <!-- Metrics grid -->
+                    <div class="stats-grid">
+                        <div class="metric-box">
+                            <div class="icon-box" style="background: linear-gradient(135deg, rgba(16,185,129,0.1) 0%, rgba(16,185,129,0.2) 100%);">
+                                <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                                    <path d="M20 10V30M10 20H30" stroke="var(--color-success)" stroke-width="3" stroke-linecap="round"/>
+                                    <circle cx="20" cy="20" r="18" stroke="var(--color-success)" stroke-width="2"/>
+                                </svg>
+                            </div>
+                            <h3 style="color: var(--color-success);">What we know</h3>
+                            <div style="text-align: left; margin-top: 1rem;">
+                                <p style="margin: 0.5rem 0;">✓ Zero churn (3 months)</p>
+                                <p style="margin: 0.5rem 0;">✓ <1 month payback</p>
+                                <p style="margin: 0.5rem 0;">✓ 48% gross margins</p>
+                            </div>
                         </div>
                         
-                        <div style="margin: 1rem 0;">
-                            <h4 style="color: var(--color-warning);">What we're still figuring out:</h4>
-                            <ul class="feature-list">
-                                <li>True CAC (so far just founder time)</li>
-                                <li>Actual LTV (too early to know retention patterns)</li>
-                                <li>Long-term churn rates</li>
-                                <li>How sticky the product really is</li>
-                            </ul>
+                        <div class="metric-box">
+                            <div class="icon-box" style="background: linear-gradient(135deg, rgba(245,158,11,0.1) 0%, rgba(245,158,11,0.2) 100%);">
+                                <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                                    <circle cx="20" cy="20" r="18" stroke="var(--color-warning)" stroke-width="2"/>
+                                    <path d="M20 12V20M20 28V28" stroke="var(--color-warning)" stroke-width="3" stroke-linecap="round"/>
+                                </svg>
+                            </div>
+                            <h3 style="color: var(--color-warning);">Still learning</h3>
+                            <div style="text-align: left; margin-top: 1rem;">
+                                <p style="margin: 0.5rem 0;">? True CAC</p>
+                                <p style="margin: 0.5rem 0;">? Long-term LTV</p>
+                                <p style="margin: 0.5rem 0;">? Retention patterns</p>
+                            </div>
                         </div>
                         
-                        <p style="margin-top: 2rem; font-style: italic;">We need 12+ months of data to understand our real unit economics.</p>
+                        <div class="metric-box">
+                            <div class="icon-box">
+                                <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                                    <circle cx="20" cy="20" r="18" stroke="var(--color-primary)" stroke-width="2"/>
+                                    <path d="M20 10V20L28 28" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                            </div>
+                            <h3>Timeline</h3>
+                            <p class="large-text">12 months</p>
+                            <p>to understand real unit economics</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1429,52 +1579,133 @@
             </div>
         </div>
 
-        <!-- Slide 11: Growth Strategy -->
+        <!-- Slide 11a: Growth Strategy - Geographic -->
         <div class="slide slide-alt">
             <div class="container">
                 <div style="text-align: center;">
                     <span class="badge">GROWTH STRATEGY</span>
-                    <h2>How We'll Grow</h2>
+                    <h2>Path to $2M MRR</h2>
                     
-                    <div style="text-align: left; max-width: 800px; margin: 0 auto;">
-                        <div style="margin: 2rem 0;">
-                            <h3>First 6 months:</h3>
-                            <ul class="feature-list">
-                                <li>Close the deals we have</li>
-                                <li>Solid presence in Guatemala, Ecuador, and Argentina</li>
-                                <li>Hit $150K+ monthly revenue</li>
-                            </ul>
+                    <!-- Growth timeline visualization -->
+                    <div style="margin: 3rem auto; max-width: 900px;">
+                        <svg width="100%" height="400" viewBox="0 0 900 400">
+                            <!-- Timeline base -->
+                            <line x1="100" y1="300" x2="800" y2="300" stroke="var(--color-gray)" stroke-width="2"/>
+                            
+                            <!-- Phase 1 -->
+                            <g transform="translate(150, 200)">
+                                <circle cx="0" cy="100" r="40" fill="var(--color-success)" opacity="0.2"/>
+                                <circle cx="0" cy="100" r="8" fill="var(--color-success)"/>
+                                <rect x="-60" y="-60" width="120" height="120" fill="white" stroke="var(--color-success)" stroke-width="2" rx="8"/>
+                                <text x="0" y="-30" text-anchor="middle" font-size="12" font-weight="600">MONTHS 1-6</text>
+                                <text x="0" y="-10" text-anchor="middle" font-size="20" font-weight="bold">$150K</text>
+                                <text x="0" y="10" text-anchor="middle" font-size="10">Guatemala</text>
+                                <text x="0" y="25" text-anchor="middle" font-size="10">Ecuador</text>
+                                <text x="0" y="40" text-anchor="middle" font-size="10">Argentina</text>
+                            </g>
+                            
+                            <!-- Phase 2 -->
+                            <g transform="translate(400, 200)">
+                                <circle cx="0" cy="100" r="50" fill="var(--color-warning)" opacity="0.2"/>
+                                <circle cx="0" cy="100" r="8" fill="var(--color-warning)"/>
+                                <rect x="-70" y="-70" width="140" height="140" fill="white" stroke="var(--color-warning)" stroke-width="2" rx="8"/>
+                                <text x="0" y="-40" text-anchor="middle" font-size="12" font-weight="600">MONTHS 7-12</text>
+                                <text x="0" y="-20" text-anchor="middle" font-size="24" font-weight="bold">$500K</text>
+                                <text x="0" y="5" text-anchor="middle" font-size="11">+ Mexico</text>
+                                <text x="0" y="22" text-anchor="middle" font-size="11">+ Colombia</text>
+                                <text x="0" y="40" text-anchor="middle" font-size="10" fill="var(--color-gray)">46% CC growth</text>
+                            </g>
+                            
+                            <!-- Phase 3 -->
+                            <g transform="translate(650, 200)">
+                                <circle cx="0" cy="100" r="60" fill="var(--color-primary)" opacity="0.1"/>
+                                <circle cx="0" cy="100" r="8" fill="var(--color-primary)"/>
+                                <rect x="-80" y="-80" width="160" height="160" fill="white" stroke="var(--color-primary)" stroke-width="3" rx="8"/>
+                                <text x="0" y="-50" text-anchor="middle" font-size="12" font-weight="600">YEAR 2</text>
+                                <text x="0" y="-25" text-anchor="middle" font-size="28" font-weight="bold">$2M</text>
+                                <text x="0" y="0" text-anchor="middle" font-size="12" font-weight="600">+ Brazil</text>
+                                <text x="0" y="20" text-anchor="middle" font-size="10" fill="var(--color-gray)">77% families</text>
+                                <text x="0" y="35" text-anchor="middle" font-size="10" fill="var(--color-gray)">in debt</text>
+                            </g>
+                            
+                            <!-- Arrows -->
+                            <path d="M 230 300 L 320 300" stroke="var(--color-success)" stroke-width="3" marker-end="url(#arrowgreen)"/>
+                            <path d="M 480 300 L 570 300" stroke="var(--color-warning)" stroke-width="3" marker-end="url(#arrowyellow)"/>
+                            
+                            <defs>
+                                <marker id="arrowgreen" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+                                    <polygon points="0 0, 10 3, 0 6" fill="var(--color-success)"/>
+                                </marker>
+                                <marker id="arrowyellow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+                                    <polygon points="0 0, 10 3, 0 6" fill="var(--color-warning)"/>
+                                </marker>
+                            </defs>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 11b: Growth Math -->
+        <div class="slide slide-content">
+            <div class="container">
+                <div style="text-align: center;">
+                    <span class="badge">GROWTH STRATEGY</span>
+                    <h2>The math to $2M MRR</h2>
+                    
+                    <div style="max-width: 800px; margin: 3rem auto;">
+                        <!-- Visual equation -->
+                        <div style="display: flex; justify-content: space-around; align-items: center; margin: 2rem 0;">
+                            <div class="metric-box" style="flex: 1; margin: 0 1rem;">
+                                <h3>Option A</h3>
+                                <div class="big-number" style="font-size: 3rem;">40</div>
+                                <p>Enterprise clients</p>
+                                <p style="color: var(--color-gray);">@ $50K average</p>
+                            </div>
+                            
+                            <div style="font-size: 3rem; color: var(--color-gray);">OR</div>
+                            
+                            <div class="metric-box" style="flex: 1; margin: 0 1rem;">
+                                <h3>Option B</h3>
+                                <div class="big-number" style="font-size: 3rem;">20</div>
+                                <p>Large clients</p>
+                                <p style="color: var(--color-gray);">@ $100K average</p>
+                            </div>
                         </div>
                         
-                        <div style="margin: 2rem 0;">
-                            <h3>Months 7-12:</h3>
-                            <ul class="feature-list">
-                                <li>Mexico (huge market, credit cards growing 46% per year)</li>
-                                <li>Colombia (hundreds of fintechs)</li>
-                                <li>Hit $500K monthly revenue</li>
-                            </ul>
+                        <!-- Market share visualization -->
+                        <div style="margin: 3rem 0; padding: 2rem; background: linear-gradient(135deg, rgba(16,185,129,0.05) 0%, rgba(16,185,129,0.02) 100%); border-radius: 12px;">
+                            <h3>Market Penetration Required</h3>
+                            <div style="position: relative; height: 60px; background: rgba(0,0,0,0.1); border-radius: 30px; margin: 2rem 0;">
+                                <div style="position: absolute; left: 0; top: 0; height: 100%; width: 0.5%; background: var(--color-success); border-radius: 30px;"></div>
+                                <span style="position: absolute; left: 2%; top: 50%; transform: translateY(-50%); font-weight: bold;">0.5%</span>
+                                <span style="position: absolute; right: 2%; top: 50%; transform: translateY(-50%); color: var(--color-gray);">Total LATAM market</span>
+                            </div>
+                            <p class="large-text">We need just <strong>0.5% market share</strong> to hit $2M MRR</p>
                         </div>
                         
-                        <div style="margin: 2rem 0;">
-                            <h3>Year 2:</h3>
-                            <ul class="feature-list">
-                                <li>Brazil (biggest opportunity: 77% of families in debt)</li>
-                                <li>Traditional banks ready to modernize</li>
-                                <li>$2M monthly revenue</li>
-                            </ul>
-                        </div>
-                        
-                        <div style="margin: 2rem 0; padding: 1.5rem; background: rgba(0,0,0,0.05); border-radius: 8px;">
-                            <h3>How do we get to $2M MRR:</h3>
-                            <ul class="feature-list">
-                                <li>Live today: 3 clients = $37K MRR</li>
-                                <li>Closing Q4: 5 clients = $158K MRR</li>
-                                <li>Need ~40 enterprise clients at $50K average</li>
-                                <li>OR 20 large clients at $100K average</li>
-                                <li>ADT alone can scale to $167K (1M calls)</li>
-                                <li>Each bank has 50K-500K delinquent accounts</li>
-                                <li>Would need roughly 0.5% market share to hit targets</li>
-                            </ul>
+                        <!-- Proof points -->
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <div class="icon-box">
+                                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                                        <path d="M8 32L32 8" stroke="var(--color-success)" stroke-width="3" stroke-linecap="round"/>
+                                        <circle cx="32" cy="8" r="4" fill="var(--color-success)"/>
+                                    </svg>
+                                </div>
+                                <p><strong>ADT alone</strong></p>
+                                <p>Can scale to $167K</p>
+                            </div>
+                            <div class="stat-card">
+                                <div class="icon-box">
+                                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                                        <rect x="8" y="12" width="24" height="20" rx="2" stroke="var(--color-primary)" stroke-width="2"/>
+                                        <path d="M16 20H24M16 24H24" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round"/>
+                                    </svg>
+                                </div>
+                                <p><strong>Each bank has</strong></p>
+                                <p>50K-500K accounts</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1486,54 +1717,122 @@
             <div class="container">
                 <div style="text-align: center;">
                     <span class="badge">THE TEAM</span>
-                    <h2>Team obsessed with the details</h2>
+                    <h2>9 obsessed builders</h2>
                     
-                    <div style="text-align: left; max-width: 900px; margin: 0 auto;">
-                        <div style="margin: 1.5rem 0;">
-                            <h3 style="color: var(--color-primary); display: inline;">Gonza (Product Lead):</h3>
-                            <p style="display: inline;"> Lives in customer data, ensuring we add value every single day. Technical background means he understands both the business and the tech.</p>
+                    <!-- Team grid with icons -->
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; max-width: 900px; margin: 2rem auto;">
+                        <div class="metric-box" style="padding: 1.5rem;">
+                            <div class="icon-box" style="margin: 0 auto 1rem;">
+                                <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                                    <circle cx="20" cy="12" r="5" stroke="var(--color-primary)" stroke-width="2"/>
+                                    <path d="M10 32C10 26 14 22 20 22C26 22 30 26 30 32" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round"/>
+                                    <path d="M20 20V28M16 24H24" stroke="var(--color-success)" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                            </div>
+                            <h4>Ed</h4>
+                            <p style="color: var(--color-primary); font-weight: 600; font-size: 0.9rem;">CEO & Sales Lead</p>
+                            <p style="font-size: 0.85rem; color: var(--color-gray);">Built Sidetool, 20+ companies</p>
                         </div>
                         
-                        <div style="margin: 1.5rem 0;">
-                            <h3 style="color: var(--color-primary); display: inline;">Santi (Lead Dev):</h3>
-                            <p style="display: inline;"> Has spent countless hours perfecting our orchestrator. Obsesses over prompt engineering, latency reduction, RAG implementation. Makes conversations feel natural, not robotic.</p>
+                        <div class="metric-box" style="padding: 1.5rem;">
+                            <div class="icon-box" style="margin: 0 auto 1rem;">
+                                <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                                    <rect x="8" y="12" width="24" height="20" rx="2" stroke="var(--color-primary)" stroke-width="2"/>
+                                    <circle cx="20" cy="22" r="5" stroke="var(--color-warning)" stroke-width="2"/>
+                                </svg>
+                            </div>
+                            <h4>Nicolás Mencia</h4>
+                            <p style="color: var(--color-primary); font-weight: 600; font-size: 0.9rem;">Collections Expert</p>
+                            <p style="font-size: 0.85rem; color: var(--color-gray);">10 years, ex-MercadoPago</p>
                         </div>
                         
-                        <div style="margin: 1.5rem 0;">
-                            <h3 style="color: var(--color-primary); display: inline;">Lila (Full Stack Dev):</h3>
-                            <p style="display: inline;"> When McDonald's needed address accuracy in LATAM (where Google Maps only achieves 70%), Lila built a solution with 94% accuracy in one weekend.</p>
+                        <div class="metric-box" style="padding: 1.5rem;">
+                            <div class="icon-box" style="margin: 0 auto 1rem;">
+                                <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                                    <path d="M12 28L20 20L28 28M12 20L20 12L28 20" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <h4>JM</h4>
+                            <p style="color: var(--color-primary); font-weight: 600; font-size: 0.9rem;">Success Lead</p>
+                            <p style="font-size: 0.85rem; color: var(--color-gray);">Ex-Sirena, operations expert</p>
                         </div>
                         
-                        <div style="margin: 1.5rem 0;">
-                            <h3 style="color: var(--color-primary); display: inline;">Os (Telephony Infrastructure):</h3>
-                            <p style="display: inline;"> Built multi-instance Asterisk systems handling thousands of simultaneous calls without breaking a sweat.</p>
+                        <div class="metric-box" style="padding: 1.5rem;">
+                            <div class="icon-box" style="margin: 0 auto 1rem;">
+                                <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                                    <rect x="10" y="10" width="20" height="20" rx="2" stroke="var(--color-primary)" stroke-width="2"/>
+                                    <path d="M15 20L18 23L25 16" stroke="var(--color-success)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <h4>Gonza</h4>
+                            <p style="color: var(--color-primary); font-weight: 600; font-size: 0.9rem;">Product Lead</p>
+                            <p style="font-size: 0.85rem; color: var(--color-gray);">Lives in customer data</p>
                         </div>
                         
-                        <div style="margin: 1.5rem 0;">
-                            <h3 style="color: var(--color-primary); display: inline;">Juli (Quality & AI Supervisor):</h3>
-                            <p style="display: inline;"> Reviews every call, catches edge cases, and is building an AI supervisor that automatically grades calls and suggests improvements.</p>
+                        <div class="metric-box" style="padding: 1.5rem;">
+                            <div class="icon-box" style="margin: 0 auto 1rem;">
+                                <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                                    <path d="M8 16H32M8 24H32M16 8V32M24 8V32" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                            </div>
+                            <h4>Santi</h4>
+                            <p style="color: var(--color-primary); font-weight: 600; font-size: 0.9rem;">Lead Dev</p>
+                            <p style="font-size: 0.85rem; color: var(--color-gray);">AI orchestrator architect</p>
                         </div>
                         
-                        <div style="margin: 1.5rem 0;">
-                            <h3 style="color: var(--color-primary); display: inline;">Muni (Frontend):</h3>
-                            <p style="display: inline;"> Creates the dashboards our clients love: clean, intuitive interfaces that make complex data actionable.</p>
+                        <div class="metric-box" style="padding: 1.5rem;">
+                            <div class="icon-box" style="margin: 0 auto 1rem;">
+                                <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                                    <circle cx="12" cy="20" r="3" fill="var(--color-primary)"/>
+                                    <circle cx="20" cy="12" r="3" fill="var(--color-primary)"/>
+                                    <circle cx="28" cy="20" r="3" fill="var(--color-primary)"/>
+                                    <circle cx="20" cy="28" r="3" fill="var(--color-primary)"/>
+                                    <path d="M12 20L20 12L28 20L20 28L12 20" stroke="var(--color-primary)" stroke-width="1"/>
+                                </svg>
+                            </div>
+                            <h4>Lila</h4>
+                            <p style="color: var(--color-primary); font-weight: 600; font-size: 0.9rem;">Full Stack Dev</p>
+                            <p style="font-size: 0.85rem; color: var(--color-gray);">94% accuracy in one weekend</p>
                         </div>
                         
-                        <div style="margin: 1.5rem 0;">
-                            <h3 style="color: var(--color-primary); display: inline;">Ed (Sales Lead):</h3>
-                            <p style="display: inline;"> Leading the company and driving our revenue growth. Building the sales engine to scale from dozens to hundreds of clients.</p>
+                        <div class="metric-box" style="padding: 1.5rem;">
+                            <div class="icon-box" style="margin: 0 auto 1rem;">
+                                <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                                    <path d="M20 8C20 8 10 15 10 20C10 25 15 32 20 32C25 32 30 25 30 20C30 15 20 8 20 8Z" stroke="var(--color-primary)" stroke-width="2"/>
+                                    <circle cx="20" cy="20" r="3" fill="var(--color-primary)"/>
+                                </svg>
+                            </div>
+                            <h4>Os</h4>
+                            <p style="color: var(--color-primary); font-weight: 600; font-size: 0.9rem;">Telephony Infra</p>
+                            <p style="font-size: 0.85rem; color: var(--color-gray);">1000s concurrent calls</p>
                         </div>
                         
-                        <div style="margin: 1.5rem 0;">
-                            <h3 style="color: var(--color-primary); display: inline;">JM (Success Lead):</h3>
-                            <p style="display: inline;"> Runs operations and customer success. Deep experience from Sirena (WhatsApp CRM). Gets customers to their "wow moment" in days, not months.</p>
+                        <div class="metric-box" style="padding: 1.5rem;">
+                            <div class="icon-box" style="margin: 0 auto 1rem;">
+                                <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                                    <circle cx="20" cy="20" r="12" stroke="var(--color-primary)" stroke-width="2"/>
+                                    <path d="M20 14V20L24 24" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                            </div>
+                            <h4>Juli</h4>
+                            <p style="color: var(--color-primary); font-weight: 600; font-size: 0.9rem;">Quality & AI</p>
+                            <p style="font-size: 0.85rem; color: var(--color-gray);">Reviews every call</p>
                         </div>
                         
-                        <div style="margin: 1.5rem 0;">
-                            <h3 style="color: var(--color-primary); display: inline;">Nicolás Mencia (Collections Expert):</h3>
-                            <p style="display: inline;"> 10+ years in collections, most recently at MercadoPago. Brings deep industry knowledge and credibility.</p>
+                        <div class="metric-box" style="padding: 1.5rem;">
+                            <div class="icon-box" style="margin: 0 auto 1rem;">
+                                <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                                    <rect x="8" y="10" width="24" height="20" rx="2" stroke="var(--color-primary)" stroke-width="2"/>
+                                    <path d="M8 16H32" stroke="var(--color-primary)" stroke-width="2"/>
+                                </svg>
+                            </div>
+                            <h4>Muni</h4>
+                            <p style="color: var(--color-primary); font-weight: 600; font-size: 0.9rem;">Frontend</p>
+                            <p style="font-size: 0.85rem; color: var(--color-gray);">Clean dashboards</p>
                         </div>
                     </div>
+                    
+                    <p class="large-text" style="margin-top: 2rem;">AI experts who fell in love with solving collections</p>
                 </div>
             </div>
         </div>
@@ -1543,42 +1842,88 @@
             <div class="container">
                 <div style="text-align: center;">
                     <span class="badge">IMMEDIATE PRIORITIES</span>
-                    <h2>To scale from $37K to $150K+ MRR</h2>
+                    <h2>3 critical investments</h2>
                     
-                    <div style="text-align: left; max-width: 900px; margin: 0 auto;">
-                        <div style="margin: 2rem 0;">
-                            <h3>1. Specialized Agent Development</h3>
-                            <p>Creating bucket-specific agents for different delinquency stages:</p>
-                            <ul class="feature-list">
-                                <li>Pre-mora (preventive outreach)</li>
-                                <li>1-8 days (gentle reminders)</li>
-                                <li>8-15 days (negotiation focus)</li>
-                                <li>15-30 days (settlement options)</li>
-                                <li>30+ days (hardship programs)</li>
-                            </ul>
-                            <p style="margin-top: 1rem;">Country-specific conversation flows (Brazilian Portuguese vs. Mexican Spanish vs. Argentine Spanish)</p>
+                    <!-- Priority cards with visual hierarchy -->
+                    <div style="max-width: 900px; margin: 2rem auto;">
+                        <!-- Priority 1 -->
+                        <div style="display: flex; align-items: flex-start; margin: 2rem 0; padding: 2rem; background: linear-gradient(135deg, rgba(139,92,246,0.05) 0%, transparent 100%); border-radius: 12px; border-left: 4px solid #8B5CF6;">
+                            <div style="font-size: 3rem; font-weight: 800; color: #8B5CF6; margin-right: 2rem;">1</div>
+                            <div style="flex: 1;">
+                                <h3 style="margin-bottom: 1rem;">Specialized Agent Development</h3>
+                                <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                                    <div style="padding: 0.5rem 1rem; background: white; border-radius: 20px; font-size: 0.9rem;">
+                                        <span style="color: var(--color-success);">●</span> Pre-mora
+                                    </div>
+                                    <div style="padding: 0.5rem 1rem; background: white; border-radius: 20px; font-size: 0.9rem;">
+                                        <span style="color: var(--color-success);">●</span> 1-8 days
+                                    </div>
+                                    <div style="padding: 0.5rem 1rem; background: white; border-radius: 20px; font-size: 0.9rem;">
+                                        <span style="color: var(--color-warning);">●</span> 8-15 days
+                                    </div>
+                                    <div style="padding: 0.5rem 1rem; background: white; border-radius: 20px; font-size: 0.9rem;">
+                                        <span style="color: var(--color-warning);">●</span> 15-30 days
+                                    </div>
+                                    <div style="padding: 0.5rem 1rem; background: white; border-radius: 20px; font-size: 0.9rem;">
+                                        <span style="color: var(--color-danger);">●</span> 30+ days
+                                    </div>
+                                </div>
+                                <p style="margin-top: 1rem; color: var(--color-gray);">+ Country-specific flows (PT-BR, ES-MX, ES-AR)</p>
+                            </div>
                         </div>
                         
-                        <div style="margin: 2rem 0;">
-                            <h3>2. Compliance & Distribution</h3>
-                            <ul class="feature-list">
-                                <li>SOC 2 and ISO 27001 certifications (already working with Strike.sh)</li>
-                                <li>Country-specific regulatory frameworks for each market</li>
-                                <li>NMLS licensing for U.S. market entry</li>
-                            </ul>
+                        <!-- Priority 2 -->
+                        <div style="display: flex; align-items: flex-start; margin: 2rem 0; padding: 2rem; background: linear-gradient(135deg, rgba(16,185,129,0.05) 0%, transparent 100%); border-radius: 12px; border-left: 4px solid var(--color-success);">
+                            <div style="font-size: 3rem; font-weight: 800; color: var(--color-success); margin-right: 2rem;">2</div>
+                            <div style="flex: 1;">
+                                <h3 style="margin-bottom: 1rem;">Compliance & Certifications</h3>
+                                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;">
+                                    <div style="text-align: center; padding: 1rem; background: white; border-radius: 8px;">
+                                        <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">🔒</div>
+                                        <p style="font-weight: 600; font-size: 0.9rem;">SOC 2</p>
+                                        <p style="font-size: 0.8rem; color: var(--color-success);">In progress</p>
+                                    </div>
+                                    <div style="text-align: center; padding: 1rem; background: white; border-radius: 8px;">
+                                        <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">🛡️</div>
+                                        <p style="font-weight: 600; font-size: 0.9rem;">ISO 27001</p>
+                                        <p style="font-size: 0.8rem; color: var(--color-success);">With Strike.sh</p>
+                                    </div>
+                                    <div style="text-align: center; padding: 1rem; background: white; border-radius: 8px;">
+                                        <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">🇺🇸</div>
+                                        <p style="font-weight: 600; font-size: 0.9rem;">NMLS</p>
+                                        <p style="font-size: 0.8rem; color: var(--color-warning);">Q1 2026</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         
-                        <div style="margin: 2rem 0;">
-                            <h3>3. Telephony Infrastructure at Scale</h3>
-                            <ul class="feature-list">
-                                <li>Building redundant systems to handle millions of concurrent calls</li>
-                                <li>Multi-provider architecture for 99.9% uptime across LATAM's challenging networks</li>
-                            </ul>
+                        <!-- Priority 3 -->
+                        <div style="display: flex; align-items: flex-start; margin: 2rem 0; padding: 2rem; background: linear-gradient(135deg, rgba(245,158,11,0.05) 0%, transparent 100%); border-radius: 12px; border-left: 4px solid var(--color-warning);">
+                            <div style="font-size: 3rem; font-weight: 800; color: var(--color-warning); margin-right: 2rem;">3</div>
+                            <div style="flex: 1;">
+                                <h3 style="margin-bottom: 1rem;">Telephony at Scale</h3>
+                                <div style="display: flex; justify-content: space-around; margin-top: 1rem;">
+                                    <div style="text-align: center;">
+                                        <div class="big-number" style="font-size: 2rem;">1M+</div>
+                                        <p style="font-size: 0.9rem;">Concurrent calls</p>
+                                    </div>
+                                    <div style="text-align: center;">
+                                        <div class="big-number" style="font-size: 2rem;">99.9%</div>
+                                        <p style="font-size: 0.9rem;">Uptime SLA</p>
+                                    </div>
+                                    <div style="text-align: center;">
+                                        <div class="big-number" style="font-size: 2rem;">Multi</div>
+                                        <p style="font-size: 0.9rem;">Provider redundancy</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        
-                        <p style="margin-top: 2rem; padding: 1rem; background: rgba(16, 185, 129, 0.1); border-radius: 8px;">
-                            <strong>Why this matters:</strong> We believe these investments could reduce our onboarding time from 4 weeks to 1 week, helping us launch new clients faster.
-                        </p>
+                    </div>
+                    
+                    <!-- Impact banner -->
+                    <div style="margin: 3rem auto; max-width: 700px; padding: 2rem; background: linear-gradient(135deg, rgba(16,185,129,0.1) 0%, rgba(16,185,129,0.05) 100%); border-radius: 12px; border: 2px solid var(--color-success);">
+                        <h3 style="color: var(--color-success);">Impact</h3>
+                        <p class="large-text">Reduce onboarding from <span style="text-decoration: line-through;">4 weeks</span> to <strong>1 week</strong></p>
                     </div>
                 </div>
             </div>
@@ -1627,23 +1972,157 @@
             </div>
         </div>
 
-        <!-- Slide 15: Contact -->
+        <!-- Slide 15: The Ask -->
+        <div class="slide slide-content">
+            <div class="container">
+                <div style="text-align: center;">
+                    <span class="badge">THE ASK</span>
+                    <h2>Join us in transforming collections</h2>
+                    
+                    <!-- Investment Visual -->
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin: 3rem auto; max-width: 900px;">
+                        <!-- What We're Raising -->
+                        <div style="background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border-radius: 20px; padding: 2rem;">
+                            <div style="margin-bottom: 1.5rem;">
+                                <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+                                    <circle cx="30" cy="30" r="25" fill="#0284c7" opacity="0.2"/>
+                                    <text x="30" y="35" text-anchor="middle" fill="#0284c7" font-size="20" font-weight="bold">$</text>
+                                </svg>
+                            </div>
+                            <h3 style="color: #0284c7; margin-bottom: 1rem;">Raising $2M</h3>
+                            <ul style="list-style: none; padding: 0; text-align: left;">
+                                <li style="margin: 0.75rem 0; color: #334155;">💰 Pre-seed round</li>
+                                <li style="margin: 0.75rem 0; color: #334155;">📊 $10M valuation</li>
+                                <li style="margin: 0.75rem 0; color: #334155;">🎯 18-month runway</li>
+                                <li style="margin: 0.75rem 0; color: #334155;">✅ $500K committed</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- What We'll Do -->
+                        <div style="background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-radius: 20px; padding: 2rem;">
+                            <div style="margin-bottom: 1.5rem;">
+                                <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+                                    <rect x="15" y="20" width="30" height="20" rx="2" fill="#059669" opacity="0.2"/>
+                                    <path d="M20 30 L25 35 L40 25" stroke="#059669" stroke-width="3" stroke-linecap="round"/>
+                                </svg>
+                            </div>
+                            <h3 style="color: #059669; margin-bottom: 1rem;">Use of Funds</h3>
+                            <ul style="list-style: none; padding: 0; text-align: left;">
+                                <li style="margin: 0.75rem 0; color: #334155;">👥 10 engineers</li>
+                                <li style="margin: 0.75rem 0; color: #334155;">🌎 5 countries</li>
+                                <li style="margin: 0.75rem 0; color: #334155;">🏢 10 enterprise banks</li>
+                                <li style="margin: 0.75rem 0; color: #334155;">📈 $150K MRR target</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Timeline -->
+                    <div style="background: linear-gradient(135deg, #fafbfc 0%, #ffffff 100%); border-radius: 20px; padding: 2rem; margin: 2rem auto; max-width: 800px;">
+                        <h3 style="color: var(--color-primary); margin-bottom: 1.5rem;">12-Month Milestones</h3>
+                        <div style="display: flex; justify-content: space-between; position: relative;">
+                            <!-- Timeline line -->
+                            <div style="position: absolute; top: 20px; left: 10%; right: 10%; height: 2px; background: linear-gradient(90deg, #0284c7 0%, #059669 100%);"></div>
+                            
+                            <!-- Q4 2024 -->
+                            <div style="text-align: center; position: relative; z-index: 2;">
+                                <div style="width: 40px; height: 40px; background: white; border: 3px solid #0284c7; border-radius: 50%; margin: 0 auto;"></div>
+                                <p style="font-weight: 600; margin-top: 0.5rem; color: #0284c7;">Q4 2024</p>
+                                <p style="font-size: 0.875rem; color: #64748b;">$50K MRR</p>
+                            </div>
+                            
+                            <!-- Q1 2025 -->
+                            <div style="text-align: center; position: relative; z-index: 2;">
+                                <div style="width: 40px; height: 40px; background: white; border: 3px solid #8b5cf6; border-radius: 50%; margin: 0 auto;"></div>
+                                <p style="font-weight: 600; margin-top: 0.5rem; color: #8b5cf6;">Q1 2025</p>
+                                <p style="font-size: 0.875rem; color: #64748b;">$75K MRR</p>
+                            </div>
+                            
+                            <!-- Q2 2025 -->
+                            <div style="text-align: center; position: relative; z-index: 2;">
+                                <div style="width: 40px; height: 40px; background: white; border: 3px solid #f59e0b; border-radius: 50%; margin: 0 auto;"></div>
+                                <p style="font-weight: 600; margin-top: 0.5rem; color: #f59e0b;">Q2 2025</p>
+                                <p style="font-size: 0.875rem; color: #64748b;">$100K MRR</p>
+                            </div>
+                            
+                            <!-- Q3 2025 -->
+                            <div style="text-align: center; position: relative; z-index: 2;">
+                                <div style="width: 40px; height: 40px; background: white; border: 3px solid #059669; border-radius: 50%; margin: 0 auto;"></div>
+                                <p style="font-weight: 600; margin-top: 0.5rem; color: #059669;">Q3 2025</p>
+                                <p style="font-size: 0.875rem; color: #64748b;">$150K MRR</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Bottom CTA -->
+                    <div style="margin-top: 3rem;">
+                        <p class="large-text" style="margin-bottom: 2rem;">
+                            <span class="highlight">We're building the future of collections.</span><br>
+                            Join us as an investor, partner, or customer.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 16: Contact -->
         <div class="slide slide-alt">
             <div class="container">
                 <div style="text-align: center;">
                     <span class="badge">LET'S CONNECT</span>
-                    <h2>Let's fix collections in Latin America together</h2>
-                    <div class="contact-info">
-                        <h3>Ed Escobar</h3>
-                        <p>CEO & Cofounder</p>
-                        <p><a href="mailto:ed@kleva.co">ed@kleva.co</a></p>
-                        <p><a href="https://linkedin.com/in/edjescobar">LinkedIn</a></p>
-                        <div style="margin-top: 3rem;">
-                            <p>Website: <a href="https://kleva.co">kleva.co</a></p>
-                            <p>Financial Model: <a href="https://sdtl.io/46QLbsQ">sdtl.io/46QLbsQ</a></p>
+                    <h2>Ready to talk?</h2>
+                    
+                    <!-- Contact Card -->
+                    <div style="background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%); border-radius: 20px; padding: 3rem; margin: 2rem auto; max-width: 500px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                        <div style="margin-bottom: 2rem;">
+                            <svg width="80" height="80" viewBox="0 0 80 80" fill="none" style="margin: 0 auto;">
+                                <circle cx="40" cy="40" r="35" fill="var(--color-primary)" opacity="0.1"/>
+                                <path d="M40 25c-4.4 0-8 3.6-8 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm0 24c-8.8 0-16 3.6-16 8v4h32v-4c0-4.4-7.2-8-16-8z" fill="var(--color-primary)"/>
+                            </svg>
+                        </div>
+                        <h3 style="font-size: 1.75rem; margin-bottom: 0.5rem;">Ed Escobar</h3>
+                        <p style="color: #64748b; margin-bottom: 2rem;">CEO & Cofounder</p>
+                        
+                        <div style="space-y: 1rem;">
+                            <p style="margin: 1rem 0;">
+                                <a href="mailto:ed@kleva.co" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                                        <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                                        <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                                    </svg>
+                                    ed@kleva.co
+                                </a>
+                            </p>
+                            <p style="margin: 1rem 0;">
+                                <a href="https://linkedin.com/in/edjescobar" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                                        <path d="M6.29 18.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0020 3.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.073 4.073 0 01.8 7.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 010 16.407a11.616 11.616 0 006.29 1.84"/>
+                                    </svg>
+                                    LinkedIn Profile
+                                </a>
+                            </p>
                         </div>
                     </div>
-                    <a href="https://zcal.co/i/mHSsk_2N" class="cta-button">Book a 15-minute intro call</a>
+                    
+                    <!-- Quick Links -->
+                    <div style="display: flex; justify-content: center; gap: 3rem; margin: 2rem 0;">
+                        <a href="https://kleva.co" style="display: flex; align-items: center; gap: 0.5rem;">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/>
+                            </svg>
+                            Website
+                        </a>
+                        <a href="https://sdtl.io/46QLbsQ" style="display: flex; align-items: center; gap: 0.5rem;">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/>
+                                <path fill-rule="evenodd" d="M4 5a2 2 0 012-2 1 1 0 000 2H6a2 2 0 00-2 2v6a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-3a1 1 0 100-2h3a4 4 0 014 4v6a4 4 0 01-4 4H6a4 4 0 01-4-4V7a4 4 0 014-4z" clip-rule="evenodd"/>
+                            </svg>
+                            Financial Model
+                        </a>
+                    </div>
+                    
+                    <a href="https://zcal.co/i/mHSsk_2N" class="cta-button" style="margin-top: 2rem;">
+                        📅 Book a 15-minute intro call
+                    </a>
                 </div>
             </div>
         </div>
