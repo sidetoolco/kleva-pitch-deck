@@ -19,16 +19,16 @@
         /* Critical above-the-fold styles */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
-            --color-black: #141C25;
-            --color-gray-900: #344051;
-            --color-gray: #637083;
-            --color-gray-light: #afafaf;
-            --color-text-secondary: #E4E7EC;
+            --color-black: #000000;
+            --color-gray-900: #1a1a1a;
+            --color-gray: #666666;
+            --color-gray-light: #999999;
+            --color-text-secondary: #333333;
             --color-white: #ffffff;
             --color-primary: #000000;
-            --color-success: #10B981;
-            --color-warning: #F59E0B;
-            --color-danger: #EF4444;
+            --color-success: #22c55e;
+            --color-warning: #f59e0b;
+            --color-danger: #ef4444;
         }
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -143,16 +143,16 @@
         }
 
         :root {
-            --color-black: #141C25;
-            --color-gray-900: #344051;
-            --color-gray: #637083;
-            --color-gray-light: #afafaf;
-            --color-text-secondary: #E4E7EC;
+            --color-black: #000000;
+            --color-gray-900: #1a1a1a;
+            --color-gray: #666666;
+            --color-gray-light: #999999;
+            --color-text-secondary: #333333;
             --color-white: #ffffff;
             --color-primary: #000000;
-            --color-success: #10B981;
-            --color-warning: #F59E0B;
-            --color-danger: #EF4444;
+            --color-success: #22c55e;
+            --color-warning: #f59e0b;
+            --color-danger: #ef4444;
         }
 
         body {
@@ -761,10 +761,6 @@
             <div class="container">
                 <div style="text-align: center; position: relative;">
                     
-                    <!-- Background Elements -->
-                    <div style="position: absolute; top: 20%; left: 10%; width: 200px; height: 200px; background: radial-gradient(circle, rgba(190, 121, 255, 0.1) 0%, transparent 70%); border-radius: 50%; filter: blur(40px); animation: float 6s ease-in-out infinite;"></div>
-                    <div style="position: absolute; top: 60%; right: 15%; width: 150px; height: 150px; background: radial-gradient(circle, rgba(16, 185, 129, 0.1) 0%, transparent 70%); border-radius: 50%; filter: blur(40px); animation: float 6s ease-in-out infinite 2s;"></div>
-                    <div style="position: absolute; top: 40%; left: 75%; width: 100px; height: 100px; background: radial-gradient(circle, rgba(245, 158, 11, 0.1) 0%, transparent 70%); border-radius: 50%; filter: blur(30px); animation: float 8s ease-in-out infinite 1s;"></div>
                     
                     <!-- Enhanced Logo -->
                     <div style="margin-bottom: 2rem; position: relative; z-index: 2;">
@@ -801,41 +797,37 @@
                     
                     <!-- Enhanced Title -->
                     <div style="position: relative; display: inline-block; margin-bottom: 2rem; z-index: 2;">
-                        <h1 data-animate="fade-up" style="font-size: clamp(5rem, 12vw, 8rem); letter-spacing: -0.04em; margin-bottom: 0; position: relative;">
+                        <h1 data-animate="fade-up" style="font-size: clamp(5rem, 12vw, 8rem); letter-spacing: -0.04em; margin-bottom: 0; position: relative; color: var(--color-black); font-weight: 800;">
                             Kleva
-                            <div style="position: absolute; inset: 0; background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%); animation: shimmer 3s ease-in-out infinite; pointer-events: none;"></div>
                         </h1>
                     </div>
                     
                     <!-- Enhanced Tagline -->
                     <p class="large-text" data-animate="fade-in" data-animate-delay="2" style="font-size: 2rem; line-height: 1.3; max-width: 700px; margin: 0 auto 3rem; position: relative; z-index: 2;">
-                        <span style="background: linear-gradient(135deg, #1e293b 0%, #64748b 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">AI that collects debt better than humans</span><br>
-                        <span style="background: linear-gradient(135deg, #be79ff 0%, #8b5cf6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 600;">in Latin America</span>
+                        <span style="color: var(--color-gray);">AI that collects debt better than humans</span><br>
+                        <span style="color: var(--color-black); font-weight: 600;">in Latin America</span>
                     </p>
                     
                     <!-- Enhanced Metrics -->
                     <div style="display: flex; justify-content: center; gap: 2rem; margin-bottom: 4rem; flex-wrap: wrap; position: relative; z-index: 2;" data-animate="fade-up" data-animate-delay="3">
-                        <div style="padding: 1.5rem 2.5rem; background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%); border-radius: 20px; border: 2px solid rgba(190, 121, 255, 0.2); backdrop-filter: blur(10px); box-shadow: 0 10px 30px rgba(190, 121, 255, 0.15); position: relative; overflow: hidden;">
-                            <div style="position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, #be79ff, #8b5cf6);"></div>
+                        <div style="padding: 1.5rem 2.5rem; background: var(--color-white); border-radius: 12px; border: 1px solid rgba(0, 0, 0, 0.1); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);">
                             <div style="text-align: center;">
-                                <span style="display: block; font-size: 2rem; font-weight: 700; color: #be79ff; line-height: 1;">$37K</span>
-                                <span style="font-size: 0.9rem; color: #64748b; font-weight: 500;">Monthly Recurring Revenue</span>
+                                <span style="display: block; font-size: 2rem; font-weight: 700; color: var(--color-black); line-height: 1;">$37K</span>
+                                <span style="font-size: 0.9rem; color: var(--color-gray); font-weight: 500;">Monthly Recurring Revenue</span>
                             </div>
                         </div>
                         
-                        <div style="padding: 1.5rem 2.5rem; background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%); border-radius: 20px; border: 2px solid rgba(16, 185, 129, 0.2); backdrop-filter: blur(10px); box-shadow: 0 10px 30px rgba(16, 185, 129, 0.15); position: relative; overflow: hidden;">
-                            <div style="position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, #10b981, #059669);"></div>
+                        <div style="padding: 1.5rem 2.5rem; background: var(--color-white); border-radius: 12px; border: 1px solid rgba(0, 0, 0, 0.1); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);">
                             <div style="text-align: center;">
-                                <span style="display: block; font-size: 2rem; font-weight: 700; color: #10b981; line-height: 1;">150K</span>
-                                <span style="font-size: 0.9rem; color: #64748b; font-weight: 500;">Minutes per month</span>
+                                <span style="display: block; font-size: 2rem; font-weight: 700; color: var(--color-black); line-height: 1;">150K</span>
+                                <span style="font-size: 0.9rem; color: var(--color-gray); font-weight: 500;">Minutes per month</span>
                             </div>
                         </div>
                         
-                        <div style="padding: 1.5rem 2.5rem; background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%); border-radius: 20px; border: 2px solid rgba(245, 158, 11, 0.2); backdrop-filter: blur(10px); box-shadow: 0 10px 30px rgba(245, 158, 11, 0.15); position: relative; overflow: hidden;">
-                            <div style="position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, #f59e0b, #d97706);"></div>
+                        <div style="padding: 1.5rem 2.5rem; background: var(--color-white); border-radius: 12px; border: 1px solid rgba(0, 0, 0, 0.1); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);">
                             <div style="text-align: center;">
-                                <span style="display: block; font-size: 2rem; font-weight: 700; color: #f59e0b; line-height: 1;">+20%</span>
-                                <span style="font-size: 0.9rem; color: #64748b; font-weight: 500;">Better recovery vs humans</span>
+                                <span style="display: block; font-size: 2rem; font-weight: 700; color: var(--color-black); line-height: 1;">+20%</span>
+                                <span style="font-size: 0.9rem; color: var(--color-gray); font-weight: 500;">Better recovery vs humans</span>
                             </div>
                         </div>
                     </div>
@@ -879,17 +871,17 @@
                     
                     <!-- Compact Crisis Visualization -->
                     <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin: 1.5rem auto; max-width: 800px;">
-                        <div style="background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%); border-radius: 12px; padding: 1.5rem; border: 2px solid #ef4444;">
-                            <div style="font-size: 2rem; font-weight: bold; color: #dc2626; margin-bottom: 0.5rem;">45,000</div>
-                            <div style="font-size: 0.9rem; color: #7f1d1d;">New customers daily</div>
+                        <div style="background: var(--color-white); border-radius: 12px; padding: 1.5rem; border: 1px solid rgba(0, 0, 0, 0.1); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);">
+                            <div style="font-size: 2rem; font-weight: bold; color: var(--color-black); margin-bottom: 0.5rem;">45,000</div>
+                            <div style="font-size: 0.9rem; color: var(--color-gray);">New customers daily</div>
                         </div>
-                        <div style="background: linear-gradient(135deg, #fed7d7 0%, #fca5a5 100%); border-radius: 12px; padding: 1.5rem; border: 2px solid #dc2626;">
-                            <div style="font-size: 2rem; font-weight: bold; color: #991b1b; margin-bottom: 0.5rem;">400,000</div>
-                            <div style="font-size: 0.9rem; color: #7f1d1d;">Collectors needed</div>
+                        <div style="background: var(--color-white); border-radius: 12px; padding: 1.5rem; border: 1px solid rgba(0, 0, 0, 0.1); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);">
+                            <div style="font-size: 2rem; font-weight: bold; color: var(--color-black); margin-bottom: 0.5rem;">400,000</div>
+                            <div style="font-size: 0.9rem; color: var(--color-gray);">Collectors needed</div>
                         </div>
-                        <div style="background: linear-gradient(135deg, #fecdd3 0%, #f87171 100%); border-radius: 12px; padding: 1.5rem; border: 2px solid #b91c1c;">
-                            <div style="font-size: 2rem; font-weight: bold; color: #7f1d1d; margin-bottom: 0.5rem;">$800M</div>
-                            <div style="font-size: 0.9rem; color: #7f1d1d;">In salaries alone</div>
+                        <div style="background: var(--color-white); border-radius: 12px; padding: 1.5rem; border: 1px solid rgba(0, 0, 0, 0.1); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);">
+                            <div style="font-size: 2rem; font-weight: bold; color: var(--color-black); margin-bottom: 0.5rem;">$800M</div>
+                            <div style="font-size: 0.9rem; color: var(--color-gray);">In salaries alone</div>
                         </div>
                     </div>
                     
@@ -908,7 +900,7 @@
                     </p>
                     
                     <!-- Compact origin story -->
-                    <div style="background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border-radius: 12px; padding: 1.5rem; margin: 1.5rem auto; max-width: 700px;">
+                    <div style="background: var(--color-white); border-radius: 12px; padding: 1.5rem; margin: 1.5rem auto; max-width: 700px; border: 1px solid rgba(0, 0, 0, 0.1); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);">
                         <h3 style="color: #0284c7; font-size: 1.2rem; margin-bottom: 1rem;">How we landed here</h3>
                         <p style="font-size: 0.95rem; line-height: 1.5; color: #334155; margin-bottom: 1rem;">
                             While building AI for McDonald's, Tito from Vana dropped a bombshell:
